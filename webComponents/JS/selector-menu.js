@@ -13,6 +13,10 @@ switch (nomPag) {
         index.style.backgroundColor = "#034492";
         index.style.color = "#fff";
         break;
+    case 'app.html':
+        rv.style.backgroundColor = "#034492";
+        rv.style.color = "#fff";
+        break;
     default: console.log(nomPag);
 
 }
