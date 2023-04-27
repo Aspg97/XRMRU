@@ -10,6 +10,11 @@
     padding: 0;
 }
 
+body{
+    background-image: url("../IMG/fondo_body_2.jpg");
+    background-position: center;
+}
+
 /*Estilos cabecera*/
 
 .head-page {
