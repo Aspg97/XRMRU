@@ -89,13 +89,19 @@
 
 .nav-elementos{
     width: 940px;
-    position: relative;
     margin: 0 auto; 
 }
 
+
+.nav-elementos ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
 .nav-elementos li{
-    display: inline;
     margin: 0 0 0 25px;
+    text-align: center;
 }
 
 .nav-elementos a{
