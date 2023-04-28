@@ -90,10 +90,6 @@ function definirOP(nume1, nume2, op, numObj) {
         case "distancia":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> ap97
             let num1S = num1.toString();
             if(num1S.length>num1S.lastIndexOf("0")+4){
                 if(num1S.lastIndexOf("0")==-1){
