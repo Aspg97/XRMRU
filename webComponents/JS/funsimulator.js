@@ -90,7 +90,10 @@ function definirOP(nume1, nume2, op, numObj) {
         case "distancia":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ap97
             let num1S = num1.toString();
             if(num1S.length>num1S.lastIndexOf("0")+4){
                 if(num1S.lastIndexOf("0")==-1){
@@ -99,9 +102,14 @@ function definirOP(nume1, nume2, op, numObj) {
                 console.log("tiene mas de 4 decimales"+num1S.lastIndexOf("0"));
             }else{
                 console.log("tiene menos de 4 decimales");
+<<<<<<< HEAD
             }
 
             
+=======
+            }        
+                
+>>>>>>> ap97
             num2 = nume2;
             console.log(num1);
             res = num1 * num2;
