@@ -3,16 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../Estilos/estilosIndex.css" <meta http-equiv="X-UA-Compatible"
-        content="IE=edge">
+    <link rel="stylesheet" href="../Estilos/estilosIndex.css">
+    <link rel="stylesheet" href="../Estilos/estilosSimulator.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.R.U</title>
-    
+
 </head>
+
 <body>
     <!-- Inicio de cabecera-->
     <header class="head-page">
@@ -37,11 +39,29 @@
     </div>
     <!-- Fin de cabecera-->
     <!-- Inicio de contenido-->
-    <main>
-        <section></section>
-        <section></section>
+    <main class="cont-simulator">
+        <div class="simulator">
+            <section class="enter-date">
+                <div>
+                    <label>Numero de Objetos</label>
+                    <select class="option-num-obj" id="num-obj"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+                    <button id="btn-gen">Generar</button>
+                </div>
+                
+            </section>
+            <section class="acc-sim">
+                <div class="titulo-obj">
+                    <label>Velocidad</label>
+                    <label>Desplazamiento</label>
+                    <label>Tiempo</label>
+                </div>
+                <div class="obj" id="cont-date-obj"></div>
+                <button id="btn-simu">Calcular</button>
+            </section>
+        </div>
 
     </main>
+    <script src="../JS/funsimulator.js" defer></script>
     <!-- Fin de contenido-->
     <!-- Inicio de pie de pagina-->
     <footer class="footer-page">
@@ -53,4 +73,5 @@
     <!-- Fin de pie de pagina-->
 </body>
 <script src="../JS/selectormenu.js"></script>
+
 </html>

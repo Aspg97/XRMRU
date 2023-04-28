@@ -1,0 +1,10 @@
+.cont-simulator{
+    width: 100%;
+    padding: 50px;
+}
+
+.simulator{
+    width: 80%;
+    margin: 0 auto;
+    background-color: bisque;
+}
