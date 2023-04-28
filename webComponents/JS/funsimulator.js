@@ -54,7 +54,6 @@ calcular.addEventListener("click", () => {
         const inpV = document.getElementById(idV);
         const inpD = document.getElementById(idD);
         const inpT = document.getElementById(idT);
-        //console.log(idV+" , " + idD +", "+ idT);
         if ((inpV.value == "" & inpD.value == "") || (inpV.value == "" & inpT.value == "") || (inpD.value == "" & inpT.value == "")) {
             alert("Llene almenos 2 datos de cada objeto");
         } else if (inpV.value != "" & inpD.value != "") {
@@ -90,6 +89,17 @@ function definirOP(nume1, nume2, op, numObj) {
             break;
         case "distancia":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
+
+            let num1S = num1.toString();
+            if(num1S.length>num1S.lastIndexOf("0")+4){
+                if(num1S.lastIndexOf("0")==-1){
+                    num1 = num1.toFixed(3);
+                }
+                console.log("tiene mas de 4 decimales"+num1S.lastIndexOf("0"));
+            }else{
+                console.log("tiene menos de 4 decimales");
+            }        
+                
             num2 = nume2;
             console.log(num1);
             res = num1 * num2;
