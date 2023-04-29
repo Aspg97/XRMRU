@@ -1,3 +1,7 @@
+.acc-sim{
+    width: 100%;
+    text-align: center;
+}
 .cont-simulator{
     width: 100%;
     padding: 50px;
@@ -7,4 +11,40 @@
     width: 80%;
     margin: 0 auto;
     background-color: bisque;
+}
+
+.cont-simu{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #8EC200;
+}
+
+
+.cont-calle{
+    position: relative;
+    display: flex;
+}
+
+.cont-calle img{
+    width: 100%;
+    
+}
+
+.cont-auto{
+    width: 120px;
+    position: absolute;
+    top:0px;
+    right: 10px;
+    
+}
+
+.auto-simu{
+    width: 100%;
+}
+
+.btn-play{
+    width: 40px;
+    margin: 20px;
 }

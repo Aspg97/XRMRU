@@ -85,33 +85,20 @@ function definirOP(nume1, nume2, op, numObj) {
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
             num2 = nume2;
             res = num2 / num1;
-            console.log(res);
+            res = redondear(res);
             break;
         case "distancia":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
-
-            let num1S = num1.toString();
-            if(num1S.length>num1S.lastIndexOf("0")+4){
-                if(num1S.lastIndexOf("0")==-1){
-                    num1 = num1.toFixed(3);
-                }
-                console.log("tiene mas de 4 decimales"+num1S.lastIndexOf("0"));
-            }else{
-                console.log("tiene menos de 4 decimales");
-            }
-
-            
-                    
-                
             num2 = nume2;
-            console.log(num1);
             res = num1 * num2;
+            res = redondear(res);
+
             break;
         case "velocidad":
             num1 = transformacionD(nume1, inumD.value, inumV.value);
             num2 = transformacionT(nume2, inumT.value, inumV.value);
-            console.log(num1 + "," + num2);
             res = num1 / num2;
+            res = redondear(res);
             break;
     }
     return res;
@@ -376,4 +363,29 @@ function transformacionT(num, unI, unF) {
             break;
     }
     return numT
+}
+
+function redondear(res) {
+    let resulF;
+    let resulS = res.toString();
+
+    if (resulS.lastIndexOf(".")>0) {
+        if (resulS.lastIndexOf("0") == -1 || resulS.length > resulS.lastIndexOf(".") + 4) {
+
+            resulF = res.toFixed(3);
+            console.log("pss"+resulS.lastIndexOf(","));
+            if (resulF == 0.000) {
+                alert("Resultado fuera de rango");
+            }
+        } else if (resulS.lastIndexOf("0") > 8) {
+            console.log(resulS);
+            resulF = res.toFixed(8);
+        }else{resulF = res;}
+    }else{
+        resulF = res;
+        console.log("pss"+resulS.lastIndexOf(","));
+    }
+
+
+    return resulF;
 }

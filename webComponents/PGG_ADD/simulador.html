@@ -44,12 +44,14 @@
             <section class="enter-date">
                 <div>
                     <label>Numero de Objetos</label>
-                    <select class="option-num-obj" id="num-obj"><option>1</option><option>2</option><option>3</option><option>4</option></select>
+                    <select class="option-num-obj" id="num-obj">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
                     <button id="btn-gen">Generar</button>
                 </div>
-                
-            </section>
-            <section class="acc-sim">
                 <div class="titulo-obj">
                     <label>Velocidad</label>
                     <label>Desplazamiento</label>
@@ -58,10 +60,21 @@
                 <div class="obj" id="cont-date-obj"></div>
                 <button id="btn-simu">Calcular</button>
             </section>
+            <section class="acc-sim">
+                <h2 class="title-simu-state">Simulador en espera de objetos</h2>
+                <div class="cont-simu">
+                    <img src="../IMG/Simulator/componente-hierva-top.png" width="100%">
+                    <div class="cont-simu-street">
+                    </div>
+                    <img src="../IMG/Simulator/componente-hierva-bottom.png" width="100%">
+                </div>
+                <button class="btn-play" id="btn-ini-simu">play</button>
+            </section>
         </div>
 
     </main>
     <script src="../JS/funsimulator.js" defer></script>
+    <script src="../JS/accsimulator.js" defer></script>
     <!-- Fin de contenido-->
     <!-- Inicio de pie de pagina-->
     <footer class="footer-page">
@@ -73,5 +86,6 @@
     <!-- Fin de pie de pagina-->
 </body>
 <script src="../JS/selectormenu.js"></script>
+
 
 </html>
