@@ -29,7 +29,7 @@
                     <li>Inicio</li>
                 </a>
                 <a href="simulador.html" id="page-sim">
-                    <li>Simulador</li>
+                    <li>Simulador 2D</li>
                 </a>
                 <a href="../../Software/app.html" id="page-RV">
                     <li>Realidad Virtual</li>
@@ -62,11 +62,14 @@
             </section>
             <section class="acc-sim">
                 <h2 class="title-simu-state">Simulador en espera de objetos</h2>
-                <div class="cont-simu">
-                    <img src="../IMG/Simulator/componente-hierva-top.png" width="100%">
-                    <div class="cont-simu-street">
+                <div class="cont-simu-glob">
+                    <div class="cont-simu">
+                        <img src="../IMG/Simulator/componente-hierva-top.png" width="100%">
+                        <div class="cont-simu-street">
+                        </div>
+                        <img src="../IMG/Simulator/componente-hierva-bottom.png" width="100%">
                     </div>
-                    <img src="../IMG/Simulator/componente-hierva-bottom.png" width="100%">
+                    <div class="simu-start"></div>
                 </div>
                 <button class="btn-play" id="btn-ini-simu">play</button>
             </section>
@@ -75,6 +78,7 @@
     </main>
     <script src="../JS/funsimulator.js" defer></script>
     <script src="../JS/accsimulator.js" defer></script>
+    <script src="../JS/funcionesutil.js"></script>
     <!-- Fin de contenido-->
     <!-- Inicio de pie de pagina-->
     <footer class="footer-page">
