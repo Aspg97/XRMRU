@@ -1,10 +1,13 @@
-let numObj = document.getElementById("num-obj");
+var numObj = document.getElementById("num-obj");
 let crearObj = document.querySelector(".obj");
 let generar = document.getElementById("btn-gen");
 let calcular = document.getElementById("btn-simu");
+let conSimS = document.querySelector(".cont-simu-street");
+let frag = document.createDocumentFragment();
 let cont = false;
 generar.addEventListener("click", () => {
-    crearObj.innerHTML = ""
+    crearObj.innerHTML = "";
+    conSimS.innerHTML = "";
     console.log("Se genero " + numObj.value + " elementos");
     const objUni = document.createDocumentFragment();
     for (let i = 0; i < numObj.value; i++) {
@@ -40,8 +43,14 @@ generar.addEventListener("click", () => {
                 </div>
             </div>`;
         objUni.appendChild(contInfoObj);
+        const div = document.createElement("DIV");
+        div.classList.add("cont-calle");
+        div.id = "street"
+        div.innerHTML = `<div class="cont-auto cont-auto-`+i+`"><img src="../IMG/Simulator/componente-auto-` + i + `.png"  class="auto-simu"></div><img src="../IMG/Simulator/componente-asfalto.png">`;
+        frag.appendChild(div);
     }
     crearObj.appendChild(objUni);
+    conSimS.appendChild(frag);
 });
 //let conInp = document.getElementById("cont-inp-info");
 let op;
@@ -369,21 +378,21 @@ function redondear(res) {
     let resulF;
     let resulS = res.toString();
 
-    if (resulS.lastIndexOf(".")>0) {
+    if (resulS.lastIndexOf(".") > 0) {
         if (resulS.lastIndexOf("0") == -1 || resulS.length > resulS.lastIndexOf(".") + 4) {
 
             resulF = res.toFixed(3);
-            console.log("pss"+resulS.lastIndexOf(","));
+            console.log("pss" + resulS.lastIndexOf(","));
             if (resulF == 0.000) {
                 alert("Resultado fuera de rango");
             }
         } else if (resulS.lastIndexOf("0") > 8) {
             console.log(resulS);
             resulF = res.toFixed(8);
-        }else{resulF = res;}
-    }else{
+        } else { resulF = res; }
+    } else {
         resulF = res;
-        console.log("pss"+resulS.lastIndexOf(","));
+        console.log("pss" + resulS.lastIndexOf(","));
     }
 
 
