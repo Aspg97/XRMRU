@@ -3,60 +3,63 @@
     --second-color: #E8DAEF;
     --compl-color: #0070C2;
 }
+
 /*Estilos de la parte de requeriemientos de datos*/
-.cont-simulator{
+.cont-simulator {
     width: 100%;
     padding: 50px;
 }
 
-.simulator{
+.simulator {
     width: 100%;
     margin: 0 auto;
     background-color: bisque;
 }
 
-.enter-date{
+.enter-date {
     padding: 30px;
     margin-bottom: 30px;
     border-radius: 15px;
     background-color: #1F2366;
 }
 
-label{
+label {
     font-size: 17px;
     color: #fff;
     font-family: 'Cabin', sans-serif;
 }
 
-select, input {
+select,
+input {
+    height: 25px;
     border-style: none;
     border-radius: 5px;
     font-family: 'Cabin', sans-serif;
     outline: none;
 }
 
-.lbl-num-obj{
+.lbl-num-obj {
     margin: 0 10px 0 0;
 }
 
 .option-info {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
-.option-info select, select {
+.option-info select,
+select {
     width: 50px;
-    height: 25px;
     font-size: 15px;
     text-align: center;
     margin-right: 25px;
-    background: linear-gradient(to top, #fff5, #0000,#0000);
+    background: linear-gradient(to top, #fff5, #0000, #0000);
     border-bottom: solid 1px #fff;
     color: #fff;
 }
 
-.option-info select:hover{
+select:hover {
     transition: 0.5s;
     background: none;
     background-color: #fffa;
@@ -67,7 +70,8 @@ option {
     color: #000;
 }
 
-.btn-gen-obj {
+.btn-gen-obj,
+.btn-simu {
     width: 100px;
     height: 35px;
     border-style: none;
@@ -80,39 +84,65 @@ option {
     font-weight: 500;
 }
 
-.btn-gen-obj:hover {
+.btn-simu{
+    width: 150px;
+}
+
+.btn-gen-obj:hover,
+.btn-simu:hover {
     transition: 0.5s;
     background-color: var(--compl-color);
 }
 
-.cont-lbl-in{
-    width: 80%;
+.cont-lbl-in {
+    width: 90%;
     margin: 0 auto;
+    padding: 20px;
+    background-color: var(--first-color);
+    border-radius: 15px;
 }
 
 .mos-obj {
     display: flex;
     margin: 20px;
+    justify-content: center;
+    padding: 2px;
 }
 
-.mos-obj label{
+.cont-inp {
+    display: flex;
+    align-items: center;
+}
+
+.mos-obj label {
     width: 100px;
 }
 
-
-
-.btn-simu{
-    display: block;
+.inpO {
+    height: 28px;
+    width: 100px;
+    padding: 10px;
+    font-size: 15px;
 }
+
+.opt-um{
+    width: 80px;
+}
+
+.btn-simu {
+    display: block;
+    margin: 50px auto 0 auto;
+}
+
 /*Fin de los estilos de la seccion de requerimientos de datos   */
 
 /*Estilos para el bloque de simulacion*/
-.acc-sim{
+.acc-sim {
     width: 100%;
     text-align: center;
 }
 
-.cont-simu-glob{
+.cont-simu-glob {
     display: flex;
     margin: 0 auto;
     width: 90%;
@@ -121,23 +151,23 @@ option {
     flex-grow: 1;
 }
 
-.cont-simu{
+.cont-simu {
     display: flex;
     flex-wrap: wrap;
 }
 
-.simu-start{
+.simu-start {
     min-width: 130px;
     background-color: black;
     border-left: solid 5px #fff;
 }
 
-.cont-calle{
+.cont-calle {
     position: relative;
     display: flex;
 }
 
-.eti-a{
+.eti-a {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -146,24 +176,24 @@ option {
 }
 
 
-.cont-calle img{
+.cont-calle img {
     width: 100%;
-    
+
 }
 
-.cont-auto{
+.cont-auto {
     width: 120px;
     position: absolute;
-    top:0px;
+    top: 0px;
     right: -120px;
-    
+
 }
 
-.auto-simu{
+.auto-simu {
     width: 100%;
 }
 
-.btn-play{
+.btn-play {
     width: 40px;
     margin: 20px;
 }

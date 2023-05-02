@@ -7,7 +7,7 @@ let conSimS = document.querySelector(".cont-simu-street");
 let frag = document.createDocumentFragment();
 var cont = false;
 generar.addEventListener("click", () => {
-    cont =true; // La variable detecta el click en el boton generar para cambiar la leyenda del titlo "Simulador en espera de objetos"
+    cont = true; // La variable detecta el click en el boton generar para cambiar la leyenda del titlo "Simulador en espera de objetos"
     crearObj.innerHTML = "";
     conSimS.innerHTML = "";
     console.log("Se genero " + numObj.value + " elementos");
@@ -18,7 +18,8 @@ generar.addEventListener("click", () => {
             `<div class="mos-obj" id="mos-obj-uni">
                 <label>Auto #`+ (i + 1) + `</label>
                 <div class="cont-inp" id="cont-inp-info">
-                    <input type="number" class="inpO" value="" id="inpV`+ i + `">
+                    <div class="cont-inp-info-par">
+                <input type="number" class="inpO" value="" id="inpV`+ i + `">
                     <select class="opt-um" id="umV`+ i + `">
                         <option>km/h</option>
                         <option>m/h</option>
@@ -30,25 +31,30 @@ generar.addEventListener("click", () => {
                         <option>km/s</option>
                         <option>cm/s</option>
                     </select>
+                    </div>
+                    <div class="cont-inp-info-par">
                     <input type="number" class="inpO" value="" id="inpD`+ i + `">
                     <select class="opt-um" id="umD`+ i + `">
                         <option>km</option>
                         <option>m</option>
                         <option>cm</option>
                     </select>
+                    </div>
+                    <div class="cont-inp-info-par">
                     <input type="number" class="inpO" value="" id="inpT`+ i + `">
                     <select class="opt-um" id="umT`+ i + `">
                         <option>h</option>
                         <option>s</option>
                         <option>m</option>
                     </select>
+                    </div>
                 </div>
             </div>`;
         objUni.appendChild(contInfoObj); //Agregamos los inputs necesarios segun la seleccion de elementos
         const div = document.createElement("DIV");
         div.classList.add("cont-calle");
         div.id = "street"
-        div.innerHTML = `<label class="eti-a">Auto `+(i+1)+`</label><div class="cont-auto cont-auto-`+i+`"><img src="../IMG/Simulator/componente-auto-` + i + `.png"  class="auto-simu"></div><img src="../IMG/Simulator/componente-asfalto.png">`;
+        div.innerHTML = `<label class="eti-a">Auto ` + (i + 1) + `</label><div class="cont-auto cont-auto-` + i + `"><img src="../IMG/Simulator/componente-auto-` + i + `.png"  class="auto-simu"></div><img src="../IMG/Simulator/componente-asfalto.png">`;
         frag.appendChild(div); // Agregamos las diferentes pistas con los autos segun la seleccion de elementos
         idTitulo.textContent = "Simulación 2D";
         idTitulo.classList.add("traslation-tittle");
