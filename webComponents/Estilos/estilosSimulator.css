@@ -6,7 +6,8 @@
 
 /*Estilos de la parte de requeriemientos de datos*/
 .cont-simulator {
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
     padding: 50px;
 }
 
@@ -27,6 +28,23 @@ label {
     font-size: 17px;
     color: #fff;
     font-family: 'Cabin', sans-serif;
+}
+
+.titulo-obj{
+    margin: 0 20px;
+    display: flex;
+}
+
+.space{
+    width: 90px;
+    height: 10px;
+    background-color: #E8DAEF;
+    display: inline-block;
+}
+
+.titulo-obj label{
+    text-align: center;
+    width: 180px;
 }
 
 select,
@@ -118,15 +136,25 @@ option {
     width: 100px;
 }
 
+.cont-inp-info-par{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    max-width: 185px;
+    justify-content: center;
+    margin: 0 25px;
+}
+
 .inpO {
     height: 28px;
-    width: 100px;
+    max-width: 100px;
     padding: 10px;
     font-size: 15px;
 }
 
 .opt-um{
     width: 80px;
+    margin: 0;
 }
 
 .btn-simu {

@@ -19,18 +19,18 @@ generar.addEventListener("click", () => {
                 <label>Auto #`+ (i + 1) + `</label>
                 <div class="cont-inp" id="cont-inp-info">
                     <div class="cont-inp-info-par">
-                <input type="number" class="inpO" value="" id="inpV`+ i + `">
-                    <select class="opt-um" id="umV`+ i + `">
-                        <option>km/h</option>
-                        <option>m/h</option>
-                        <option>cm/h</option>
-                        <option>km/m</option>
-                        <option>m/m</option>
-                        <option>cm/m</option>
-                        <option>m/s</option>
-                        <option>km/s</option>
-                        <option>cm/s</option>
-                    </select>
+                        <input type="number" class="inpO" value="" id="inpV`+ i + `">
+                        <select class="opt-um" id="umV`+ i + `">
+                            <option>km/h</option>
+                            <option>m/h</option>
+                            <option>cm/h</option>
+                            <option>km/m</option>
+                            <option>m/m</option>
+                            <option>cm/m</option>
+                            <option>m/s</option>
+                            <option>km/s</option>
+                            <option>cm/s</option>
+                        </select>
                     </div>
                     <div class="cont-inp-info-par">
                     <input type="number" class="inpO" value="" id="inpD`+ i + `">
