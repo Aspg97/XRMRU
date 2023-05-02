@@ -1,7 +1,9 @@
-.acc-sim{
-    width: 100%;
-    text-align: center;
+:root {
+    --first-color: #034492;
+    --second-color: #E8DAEF;
+    --compl-color: #0070C2;
 }
+/*Estilos de la parte de requeriemientos de datos*/
 .cont-simulator{
     width: 100%;
     padding: 50px;
@@ -11,6 +13,103 @@
     width: 100%;
     margin: 0 auto;
     background-color: bisque;
+}
+
+.enter-date{
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background-color: #1F2366;
+}
+
+label{
+    font-size: 17px;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+}
+
+select, input {
+    border-style: none;
+    border-radius: 5px;
+    font-family: 'Cabin', sans-serif;
+    outline: none;
+}
+
+.lbl-num-obj{
+    margin: 0 10px 0 0;
+}
+
+.option-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.option-info select, select {
+    width: 50px;
+    height: 25px;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 25px;
+    background: linear-gradient(to top, #fff5, #0000,#0000);
+    border-bottom: solid 1px #fff;
+    color: #fff;
+}
+
+.option-info select:hover{
+    transition: 0.5s;
+    background: none;
+    background-color: #fffa;
+    color: #000;
+}
+
+option {
+    color: #000;
+}
+
+.btn-gen-obj {
+    width: 100px;
+    height: 35px;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: var(--first-color);
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-gen-obj:hover {
+    transition: 0.5s;
+    background-color: var(--compl-color);
+}
+
+.cont-lbl-in{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.mos-obj {
+    display: flex;
+    margin: 20px;
+}
+
+.mos-obj label{
+    width: 100px;
+}
+
+
+
+.btn-simu{
+    display: block;
+}
+/*Fin de los estilos de la seccion de requerimientos de datos   */
+
+/*Estilos para el bloque de simulacion*/
+.acc-sim{
+    width: 100%;
+    text-align: center;
 }
 
 .cont-simu-glob{
@@ -64,9 +163,9 @@
     width: 100%;
 }
 
-
-
 .btn-play{
     width: 40px;
     margin: 20px;
 }
+
+/*fin de estilos para el bloque de simulacion*/

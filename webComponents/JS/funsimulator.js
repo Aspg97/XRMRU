@@ -1,11 +1,13 @@
 var numObj = document.getElementById("num-obj");
+const idTitulo = document.getElementById("id-title-simu");
 let crearObj = document.querySelector(".obj");
 let generar = document.getElementById("btn-gen");
 let calcular = document.getElementById("btn-simu");
 let conSimS = document.querySelector(".cont-simu-street");
 let frag = document.createDocumentFragment();
-let cont = false;
+var cont = false;
 generar.addEventListener("click", () => {
+    cont =true; // La variable detecta el click en el boton generar para cambiar la leyenda del titlo "Simulador en espera de objetos"
     crearObj.innerHTML = "";
     conSimS.innerHTML = "";
     console.log("Se genero " + numObj.value + " elementos");
@@ -42,12 +44,14 @@ generar.addEventListener("click", () => {
                     </select>
                 </div>
             </div>`;
-        objUni.appendChild(contInfoObj);
+        objUni.appendChild(contInfoObj); //Agregamos los inputs necesarios segun la seleccion de elementos
         const div = document.createElement("DIV");
         div.classList.add("cont-calle");
         div.id = "street"
         div.innerHTML = `<label class="eti-a">Auto `+(i+1)+`</label><div class="cont-auto cont-auto-`+i+`"><img src="../IMG/Simulator/componente-auto-` + i + `.png"  class="auto-simu"></div><img src="../IMG/Simulator/componente-asfalto.png">`;
-        frag.appendChild(div);
+        frag.appendChild(div); // Agregamos las diferentes pistas con los autos segun la seleccion de elementos
+        idTitulo.textContent = "Simulación 2D";
+        idTitulo.classList.add("traslation-tittle");
     }
     crearObj.appendChild(objUni);
     conSimS.appendChild(frag);

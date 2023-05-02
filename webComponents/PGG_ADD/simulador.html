@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.R.U</title>
 
@@ -42,32 +43,36 @@
     <main class="cont-simulator">
         <div class="simulator">
             <section class="enter-date">
-                <div>
-                    <label>Numero de Objetos</label>
+                <div class="option-info">
+                    <label class="lbl-num-obj">Numero de Objetos:</label>
                     <select class="option-num-obj" id="num-obj">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                     </select>
-                    <button id="btn-gen">Generar</button>
+                    <button class="btn-gen-obj" id="btn-gen">Generar</button>
                 </div>
-                <div class="titulo-obj">
-                    <label>Velocidad</label>
-                    <label>Desplazamiento</label>
-                    <label>Tiempo</label>
+                <div class="cont-lbl-in">
+                    <div class="titulo-obj">
+                        <label>Velocidad</label>
+                        <label>Desplazamiento</label>
+                        <label>Tiempo</label>
+                    </div>
+                    <div class="obj" id="cont-date-obj"></div>
                 </div>
-                <div class="obj" id="cont-date-obj"></div>
-                <button id="btn-simu">Calcular</button>
+                <button class="btn-simu" id="btn-simu">Calcular</button>
             </section>
             <section class="acc-sim">
-                <h2 class="title-simu-state">Simulador en espera de objetos</h2>
+                <h2 class="title-simu-state" id="id-title-simu">Simulador en espera de objetos</h2>
+                <p>Para la simulación de los objetos se debe utilizar las mismas unidades de medida</p>
                 <div class="cont-simu-glob">
                     <div class="cont-simu">
                         <img src="../IMG/Simulator/componente-hierva-top.png" width="100%">
                         <div class="cont-simu-street">
                         </div>
                         <img src="../IMG/Simulator/componente-hierva-bottom.png" width="100%">
+                        
                     </div>
                     <div class="simu-start"></div>
                 </div>
