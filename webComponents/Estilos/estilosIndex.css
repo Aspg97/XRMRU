@@ -11,8 +11,10 @@
 }
 
 body{
-    background-image: url("../IMG/fondo_body_2.jpg");
+    background-image: url("../IMG/fondo-body-3.jpg");
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*Estilos cabecera*/

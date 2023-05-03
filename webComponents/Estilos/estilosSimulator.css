@@ -134,6 +134,7 @@ option {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 15px;
+    border-top: solid 3px #0070C2;
     
 }
 
