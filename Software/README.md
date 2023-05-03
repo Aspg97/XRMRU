@@ -1,2 +1,0 @@
-# XRMRU
-Desarrollo Propuesta tecnológica
