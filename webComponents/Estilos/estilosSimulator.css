@@ -8,20 +8,18 @@
 .cont-simulator {
     margin: 0 auto;
     width: 80%;
-    padding: 50px;
+    padding: 15px 0;
 }
 
 .simulator {
     width: 100%;
     margin: 0 auto;
-    background-color: bisque;
 }
 
 .enter-date {
     padding: 30px;
-    margin-bottom: 30px;
     border-radius: 15px;
-    background-color: #1F2366;
+    
 }
 
 label {
@@ -33,18 +31,19 @@ label {
 .titulo-obj{
     margin: 0 20px;
     display: flex;
+    justify-content: center;
 }
 
 .space{
     width: 90px;
     height: 10px;
-    background-color: #E8DAEF;
     display: inline-block;
 }
 
 .titulo-obj label{
     text-align: center;
     width: 180px;
+    margin: 0 25px;
 }
 
 select,
@@ -56,18 +55,19 @@ input {
     outline: none;
 }
 
-.lbl-num-obj {
-    margin: 0 10px 0 0;
-}
-
 .option-info {
+    width: 35%;
+    margin: 0 80px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    border: solid 3px var(--compl-color);
+    background-image: url("../IMG/Simulator/fondo-eti-gen-info-02.jpg");
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
 }
 
-.option-info select,
-select {
+.option-info select, select {
     width: 50px;
     font-size: 15px;
     text-align: center;
@@ -77,12 +77,25 @@ select {
     color: #fff;
 }
 
+.option-num-obj{
+    text-shadow: 0px 0px 5px #000;
+}
+
+.lbl-num-obj {
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-shadow: 0px 0px 5px #000;
+}
+
 select:hover {
     transition: 0.5s;
     background: none;
     background-color: #fffa;
     color: #000;
+    text-shadow: none;
 }
+
+
 
 option {
     color: #000;
@@ -95,7 +108,7 @@ option {
     border-style: none;
     outline: none;
     border-radius: 5px;
-    background-color: var(--first-color);
+    background-color: #034492;
     font-family: 'Cabin', sans-serif;
     font-size: 15px;
     color: #fff;
@@ -109,15 +122,19 @@ option {
 .btn-gen-obj:hover,
 .btn-simu:hover {
     transition: 0.5s;
-    background-color: var(--compl-color);
+    background-color: #043775;
 }
 
 .cont-lbl-in {
     width: 90%;
     margin: 0 auto;
-    padding: 20px;
-    background-color: var(--first-color);
+    padding: 30px 20px;
+    background-image: url("../IMG/Simulator/fondo-info_Mesa\ de\ trabajo\ 1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 15px;
+    
 }
 
 .mos-obj {
@@ -141,6 +158,7 @@ option {
     flex-wrap: wrap;
     flex-grow: 1;
     max-width: 185px;
+    align-items: flex-end;
     justify-content: center;
     margin: 0 25px;
 }
@@ -150,19 +168,62 @@ option {
     max-width: 100px;
     padding: 10px;
     font-size: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .opt-um{
     width: 80px;
     margin: 0;
+    border-bottom-left-radius: 0;
 }
 
 .btn-simu {
     display: block;
-    margin: 50px auto 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 /*Fin de los estilos de la seccion de requerimientos de datos   */
+
+/*Estilos para el titulos y comentario ded simulacion*/
+.cont-subtitle-state{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../IMG/Simulator/fondo-estado-rojo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60px;
+}
+
+.title-simu-state{
+    color: #fff;
+    text-shadow: 0px 0px 5px #000;
+    font-weight: 10;
+    font-family: 'Federant', cursive;
+}
+
+.advertencia-simulador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff8c00;
+    width: 70%;
+    border-radius: 13px;
+    padding: 5px 25px;
+    margin: 0 auto 30px auto;
+}
+
+.acc-sim p{
+    font-family: 'Cabin', sans-serif;
+    font-weight: lighter;
+    margin: 0 15px;
+    color: #fff;
+}
+/*Fin para el titulos y comentario ded simulacion*/
+
 
 /*Estilos para el bloque de simulacion*/
 .acc-sim {
@@ -175,7 +236,6 @@ option {
     margin: 0 auto;
     width: 90%;
     text-align: center;
-    background-color: aquamarine;
     flex-grow: 1;
 }
 
