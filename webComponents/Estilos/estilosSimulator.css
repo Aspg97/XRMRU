@@ -19,28 +19,28 @@
 .enter-date {
     padding: 30px;
     border-radius: 15px;
-    
+
 }
 
 label {
-    font-size: 17px;
+    font-size: 20px;
     color: #fff;
     font-family: 'Cabin', sans-serif;
 }
 
-.titulo-obj{
+.titulo-obj {
     margin: 0 20px;
     display: flex;
     justify-content: center;
 }
 
-.space{
+.space {
     width: 90px;
     height: 10px;
     display: inline-block;
 }
 
-.titulo-obj label{
+.titulo-obj label {
     text-align: center;
     width: 180px;
     margin: 0 25px;
@@ -56,18 +56,20 @@ input {
 }
 
 .option-info {
-    width: 35%;
+    width: 40%;
     margin: 0 80px;
     padding: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
     border: solid 3px var(--compl-color);
     background-image: url("../IMG/Simulator/fondo-eti-gen-info-02.jpg");
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
 
-.option-info select, select {
+.option-info select,
+select {
     width: 50px;
     font-size: 15px;
     text-align: center;
@@ -77,7 +79,7 @@ input {
     color: #fff;
 }
 
-.option-num-obj{
+.option-num-obj {
     text-shadow: 0px 0px 5px #000;
 }
 
@@ -102,7 +104,9 @@ option {
 }
 
 .btn-gen-obj,
-.btn-simu {
+.btn-simu,
+.prev-btn-play,
+.btn-play {
     width: 100px;
     height: 35px;
     border-style: none;
@@ -115,7 +119,7 @@ option {
     font-weight: 500;
 }
 
-.btn-simu{
+.btn-simu {
     width: 150px;
 }
 
@@ -135,7 +139,7 @@ option {
     background-size: cover;
     border-radius: 15px;
     border-top: solid 3px #0070C2;
-    
+
 }
 
 .mos-obj {
@@ -154,7 +158,7 @@ option {
     width: 100px;
 }
 
-.cont-inp-info-par{
+.cont-inp-info-par {
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -173,10 +177,12 @@ option {
     border-bottom-right-radius: 0;
 }
 
-.opt-um{
+.opt-um {
+    height: 28px;
     width: 80px;
     margin: 0;
     border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 
 .btn-simu {
@@ -187,7 +193,7 @@ option {
 /*Fin de los estilos de la seccion de requerimientos de datos   */
 
 /*Estilos para el titulos y comentario ded simulacion*/
-.cont-subtitle-state{
+.cont-subtitle-state {
     position: relative;
     display: flex;
     align-items: center;
@@ -196,17 +202,18 @@ option {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    transition: background-image 0.5s ease-out;
     height: 60px;
 }
 
-.title-simu-state{
+.title-simu-state {
     color: #fff;
     text-shadow: 0px 0px 5px #000;
     font-weight: 10;
     font-family: 'Federant', cursive;
 }
 
-.advertencia-simulador{
+.advertencia-simulador {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -217,12 +224,13 @@ option {
     margin: 0 auto 30px auto;
 }
 
-.acc-sim p{
+.acc-sim p {
     font-family: 'Cabin', sans-serif;
     font-weight: lighter;
     margin: 0 15px;
     color: #fff;
 }
+
 /*Fin para el titulos y comentario ded simulacion*/
 
 
@@ -238,6 +246,7 @@ option {
     width: 90%;
     text-align: center;
     flex-grow: 1;
+    border: solid 5px #555;
 }
 
 .cont-simu {
@@ -283,8 +292,17 @@ option {
 }
 
 .btn-play {
-    width: 40px;
-    margin: 20px;
+    width: 150px;
+    height: 35px;
+    margin: 20px auto;
+    color: #aaa;
+    padding: 7px 0px;
+    background: linear-gradient(135deg, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492);
+    transition: background 1s ease-out;
 }
 
+.btn-play:hover{
+    transition: 0.5s;
+    box-shadow: 0px 0px 5px #000;
+}
 /*fin de estilos para el bloque de simulacion*/
