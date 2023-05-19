@@ -123,6 +123,94 @@ body{
     color: var(--second-color);
 }
 
+/*Estilos de inicio de contenido*/
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cont-info-mru {
+    width: 65%;
+    text-align: justify;
+    line-height: 40px;
+}
+
+.cont-info-mru ul{
+    padding-left: 60px;
+}
+
+h2{
+    padding-top: 15px;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+}
+
+h3{
+    padding-top: 5px;
+    font-family: 'Righteous', cursive;
+}
+
+.cont-info-mag{
+    width: 65%;
+    text-align: justify;
+    line-height: 40px;
+}
+
+.cont-vel{
+    display: flex;
+    align-items: center;
+}
+
+.cont-t{
+    display: flex;
+    align-items: center;
+}
+
+.cont-dis{
+    display: flex;
+    align-items: center;
+}
+
+
+/*Estilos para tablas de conversion*/
+
+.cont-table{
+    width: 65%;
+}
+
+.tables{
+    display: flex;
+    justify-content: center;
+}
+
+.fact-conv{
+    padding-top: 15px;
+    padding: 10px;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+}
+
+table{
+    margin: 10px 30px 30px 30px;
+    display: inline-table;
+}
+
+thead{
+    background: var(--compl-color);
+    color: white;
+    font-weight: bold;
+}
+
+.subtitulos{
+    background: var(--second-color);
+}
+
+td, th{
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
 
 /*footer: pie de pagina*/
 
