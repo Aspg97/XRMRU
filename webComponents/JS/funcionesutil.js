@@ -297,7 +297,7 @@ function redondear(res) {
     let resulS = res.toString();
 
     if (resulS.lastIndexOf(".") > 0) {
-        if (resulS.lastIndexOf("0") == -1 || resulS.length > resulS.lastIndexOf(".") + 4) {
+        if (resulS.length > resulS.lastIndexOf(".") + 4) {
 
             resulF = res.toFixed(3);
             console.log("pss" + resulS.lastIndexOf(","));

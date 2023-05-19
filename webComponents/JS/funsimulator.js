@@ -102,7 +102,6 @@ calcular.addEventListener("click", () => {
         document.querySelector(".btn-play").disabled = false;
         btn_play.style.background = "#034492"
         btn_play.style.color = "#fff"
-
     }
 });
 
