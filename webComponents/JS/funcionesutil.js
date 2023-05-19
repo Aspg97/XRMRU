@@ -9,22 +9,25 @@ function definirOP(nume1, nume2, op, numObj) {
     switch (op) {
         case "tiempo":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
-            num2 = nume2;
-            res = num2 / num1;
-            res = redondear(res);
+            if (validaciones(num1, nume2, op) == true) {
+                res = nume2 / num1;
+                res = redondear(res);
+            }
             break;
         case "distancia":
             num1 = transformacionV(nume1, inumV.value, inumD.value, inumT.value);
-            num2 = nume2;
-            res = num1 * num2;
-            res = redondear(res);
-
+            if (validaciones(num1, nume2, op) == true) {
+                res = num1 * nume2;
+                res = redondear(res);
+            }
             break;
         case "velocidad":
             num1 = transformacionD(nume1, inumD.value, inumV.value);
             num2 = transformacionT(nume2, inumT.value, inumV.value);
-            res = num1 / num2;
-            res = redondear(res);
+            if (validaciones(num1, num2, op) == true) {
+                res = num1 / num2;
+                res = redondear(res);
+            }
             break;
     }
     return res;
@@ -297,8 +300,7 @@ function redondear(res) {
     let resulS = res.toString();
 
     if (resulS.lastIndexOf(".") > 0) {
-        if (resulS.lastIndexOf("0") == -1 || resulS.length > resulS.lastIndexOf(".") + 4) {
-
+        if (resulS.length > resulS.lastIndexOf(".") + 4) {
             resulF = res.toFixed(3);
             console.log("pss" + resulS.lastIndexOf(","));
             if (resulF == 0.000) {
@@ -314,9 +316,60 @@ function redondear(res) {
     }
     return resulF;
 }
-
+// INICIO >>> Recoleccion de id de informacion inputs
+function idInputs(i) {
+    let idIn = [];
+    let idV = "inpV" + i;
+    let idD = "inpD" + i;
+    let idT = "inpT" + i;
+    const inpV = document.getElementById(idV);
+    const inpD = document.getElementById(idD);
+    const inpT = document.getElementById(idT);
+    idIn = [inpV, inpD, inpT];
+    return idIn;
+}
+// FIN >>> Recoleccion de id de informacion inputs
+// INICIO >>> Funcion para activar el boton de play
+function activarBtnPlay(afi) {
+    if (afi == true) {
+        idTitulo.textContent = "Simulación 2D: estamos ready!";
+        backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-verde.png")';
+        document.querySelector(".btn-play").disabled = false;
+        btn_play.style.background = "#034492"
+        btn_play.style.color = "#fff"
+    } else {
+        document.querySelector(".btn-play").disabled = true;
+        btn_play.style.background = "linear-gradient(135deg, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492)";
+    }
+}
+// FIN >>> Funcion para activar el boton de play
+// INICIO >>> Validaciones para numeros negativos y divisiones por cero
+function validaciones(num1, num2, op) {
+    let confValidacion = true;
+    if (num1 < 0 || num2 < 0) {
+        alert("Ingresa valores positivos");
+        confValidacion = false;
+    }
+    switch (op) {
+        case "tiempo":
+            if (num1 == 0) {
+                alert("No se pueden realizar divisiones por 0");
+                confValidacion = false;
+            }
+            break;
+        case "velocidad":
+            if (num2 == 0) {
+                alert("No se pueden realizar divisiones por 0");
+                confValidacion = false;
+            }
+            break;
+        default:
+            console.log("DESDE VALIDACIONES >>> Seguramente tiene que ver con la distancia");
+    }
+    return confValidacion;
+}
+// FIN >>> Validaciones para numeros negativos y divisiones por cero
 // TEST >>> FUNCION PARA TOMAR EN CUENTA A LAS DIFERENTES UNIDADES DE VALOCIDADES
-
 // function transformarVelocidad(vel, i) {
 //     let idInputVelocidad = "umV" + i;
 //     const uMVel = document.getElementById(idInputVelocidad);

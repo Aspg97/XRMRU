@@ -64,6 +64,8 @@ input {
     justify-content: center;
     border: solid 3px var(--compl-color);
     background-image: url("../IMG/Simulator/fondo-eti-gen-info-02.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
 }
@@ -268,7 +270,7 @@ option {
 
 .eti-a {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     left: 10px;
     color: #fff;
     font-family: 'Righteous', cursive;
