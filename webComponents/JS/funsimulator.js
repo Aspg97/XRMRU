@@ -1,7 +1,7 @@
 var numObj = document.getElementById("num-obj");
 const idTitulo = document.getElementById("id-title-simu");
 const backTitulo = document.querySelector(".cont-subtitle-state");
-document.querySelector(".btn-play").disabled = true;
+const contDate = document.getElementById("cont-date-obj");
 let crearObj = document.querySelector(".obj");
 let generar = document.getElementById("btn-gen");
 let calcular = document.getElementById("btn-simu");
@@ -11,7 +11,6 @@ let frag = document.createDocumentFragment();
 
 
 generar.addEventListener("click", () => {
-    
     crearObj.innerHTML = "";
     conSimS.innerHTML = "";
     console.log("Se genero " + numObj.value + " elementos");
@@ -68,40 +67,57 @@ generar.addEventListener("click", () => {
 });
 //let conInp = document.getElementById("cont-inp-info");
 let op;
+let afi; // Variable para activar el boton de play
 calcular.addEventListener("click", () => {
-    let afi = true;
     console.log("Calculando");
     for (let i = 0; i < numObj.value; i++) {
-        let idV = "inpV" + i;
-        let idD = "inpD" + i;
-        let idT = "inpT" + i;
-        const inpV = document.getElementById(idV);
-        const inpD = document.getElementById(idD);
-        const inpT = document.getElementById(idT);
-        if ((inpV.value == "" & inpD.value == "") || (inpV.value == "" & inpT.value == "") || (inpD.value == "" & inpT.value == "")) {
+        if ((idInputs(i)[0].value == "" & idInputs(i)[1].value == "") || (idInputs(i)[0].value == "" & idInputs(i)[2].value == "") || (idInputs(i)[1].value == "" & idInputs(i)[2].value == "")) {
             alert("Llene almenos 2 datos de cada objeto");
-            afi = false;
+            afi=false
             break;
-        } else if (inpV.value != "" & inpD.value != "") {
+        } else if (idInputs(i)[0].value != "" & idInputs(i)[1].value != "") {
             op = "tiempo";
-            inpT.value = definirOP(inpV.value, inpD.value, op, i);
+            idInputs(i)[2].value = definirOP(idInputs(i)[0].value, idInputs(i)[1].value, op, i);
+            afi = true;
 
-        } else if (inpV.value != "" & inpT.value != "") {
+        } else if (idInputs(i)[0].value != "" & idInputs(i)[2].value != "") {
             op = "distancia";
-            inpD.value = definirOP(inpV.value, inpT.value, op, i);
+            idInputs(i)[1].value = definirOP(idInputs(i)[0].value, idInputs(i)[2].value, op, i);
+            afi = true;
 
-        } else if (inpD.value != "" & inpT.value != "") {
+        } else if (idInputs(i)[1].value != "" & idInputs(i)[2].value != "") {
             op = "velocidad";
-            inpV.value = definirOP(inpD.value, inpT.value, op, i);
-
+            idInputs(i)[0].value = definirOP(idInputs(i)[1].value, idInputs(i)[2].value, op, i);
+            afi = true;
         }
     }
-    if(afi == true){
-        idTitulo.textContent = "Simulación 2D: estamos ready!";
-        backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-verde.png")';
-        document.querySelector(".btn-play").disabled = false;
-        btn_play.style.background = "#034492"
-        btn_play.style.color = "#fff"
-    }
+    activarBtnPlay(afi);
 });
-
+//INICIO PROCESO >> para empezar el movimiento y aplicar estilos al btn play
+contDate.addEventListener("keyup", () => {
+    for (let i = 0; i < numObj.value; i++) {
+        if ((idInputs(i)[0].value == "" & idInputs(i)[1].value == "") || (idInputs(i)[0].value == "" & idInputs(i)[2].value == "") || (idInputs(i)[1].value == "" & idInputs(i)[2].value == "")) {
+            afi = false;
+            idTitulo.textContent = "Llena mínimo 2 datos de cada objeto";
+            backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-amarillo.png")';
+            console.log("faltan datos");
+            break;
+        } else if (idInputs(i)[1].value == "") {
+            idTitulo.textContent = "Se necesita de una distancia";
+            backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-amarillo.png")';
+            afi = false;
+            break;
+        }else if (idInputs(i)[0].value == "") {
+            idTitulo.textContent = "Se necesita de una velocidad";
+            backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-amarillo.png")';
+            afi = false;
+            break;
+        } 
+        else {
+            afi = true;
+            console.log("datos minimos completados");
+        }
+    }
+    activarBtnPlay(afi);
+});
+//FIN PROCESO >> para empezar el movimiento y aplicar estilos al btn play
