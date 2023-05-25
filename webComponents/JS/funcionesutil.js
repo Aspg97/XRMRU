@@ -369,6 +369,7 @@ function validaciones(num1, num2, op) {
     return confValidacion;
 }
 // FIN >>> Validaciones para numeros negativos y divisiones por cero
+
 // TEST >>> FUNCION PARA TOMAR EN CUENTA A LAS DIFERENTES UNIDADES DE VALOCIDADES
 // function transformarVelocidad(vel, i) {
 //     let idInputVelocidad = "umV" + i;

@@ -64,6 +64,7 @@ generar.addEventListener("click", () => {
     conSimS.appendChild(frag);
     idTitulo.textContent = "Llena mínimo 2 datos de cada objeto";
     backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-amarillo.png")';
+    ubicacionFooter();
 });
 //let conInp = document.getElementById("cont-inp-info");
 let op;
