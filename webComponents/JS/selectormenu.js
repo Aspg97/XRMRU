@@ -29,12 +29,12 @@ switch (nomPag) {
     default: console.log(nomPag);
 
 }
-ubicacionFooter();
 //INICIO PROCESO >> Vista de footer
+/*var heightDoc,heightWin;
 function ubicacionFooter() {
-    let heightWin = document.documentElement.clientHeight;
-    let heightDoc = body.clientHeight;
-    console.log(heightDoc + "--" + heightWin);
+    heightWin = document.documentElement.clientHeight;
+    heightDoc = body.clientHeight;
+    //console.log(heightDoc + "--" + heightWin);
     if (heightDoc < heightWin) {
         foot.style.position = "absolute";
         foot.style.bottom = "0";
@@ -44,7 +44,7 @@ function ubicacionFooter() {
 }
 document.documentElement.addEventListener("mouseover",()=>{
     ubicacionFooter();
-});
+});*/
 //FIN PROCESO >> Vista de footer
 //INICIO PROCESO >> Vista de menu
 window.addEventListener("scroll", () => {

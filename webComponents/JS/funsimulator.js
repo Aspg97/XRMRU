@@ -64,7 +64,6 @@ generar.addEventListener("click", () => {
     conSimS.appendChild(frag);
     idTitulo.textContent = "Llena mínimo 2 datos de cada objeto";
     backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-amarillo.png")';
-    ubicacionFooter();
 });
 //let conInp = document.getElementById("cont-inp-info");
 let op;
@@ -92,7 +91,6 @@ calcular.addEventListener("click", () => {
             afi = true;
         }
     }
-    activarBtnPlay(afi);
 });
 //INICIO PROCESO >> para empezar el movimiento y aplicar estilos al btn play
 contDate.addEventListener("keyup", () => {
