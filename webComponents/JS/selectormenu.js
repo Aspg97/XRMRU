@@ -26,25 +26,26 @@ switch (nomPag) {
 }
 ubicacionFooter();
 //INICIO PROCESO >> Vista de footer
-function ubicacionFooter(){
+function ubicacionFooter() {
     let heightWin = document.documentElement.clientHeight;
     let heightDoc = body.clientHeight;
-    console.log(heightDoc+"--"+heightWin);
-    if(heightDoc<heightWin){
+    console.log(heightDoc + "--" + heightWin);
+    if (heightDoc < heightWin) {
         foot.style.position = "absolute";
         foot.style.bottom = "0";
-    }else{
+    } else {
         foot.removeAttribute("style");
     }
 }
 //FIN PROCESO >> Vista de footer
 //INICIO PROCESO >> Vista de menu
-window.addEventListener("scroll",()=>{
-    if(window.scrollY>80){
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 80) {
         menu.style.position = "fixed";
         menu.style.top = "0";
-    }else{
+    } else {
         menu.removeAttribute("style");
     }
 });
+//FIN PROCESO >> Vista de menu
 
