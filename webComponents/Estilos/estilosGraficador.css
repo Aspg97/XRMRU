@@ -17,7 +17,15 @@ button:hover {
     background-color: var(--first-color);
 }
 
-/*Estilos seccion eleccion modo de graficar*/
+/*Estilos para main*/
+
+.main-cal-graph{
+    margin: 0 auto;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+/*Estilos contenedor eleccion modo de graficar*/
 .cont-elec-mod-graf {
     width: 40%;
     margin-top: 25px;
@@ -46,8 +54,48 @@ button:hover {
     z-index: 1;
     border-bottom-left-radius: 15px;
     border-bottom: solid 5px var(--first-color);
+    transition: border-bottom 0.2s ease-out;
 }
 
 .cont-btn-mod-graf>button:nth-child(2) {
     border-bottom-right-radius: 15px;
+    transition: border-bottom 0.2s ease-out;
+}
+/*Estilos seccion de grafico y datos*/
+.cont-date-graph{
+    width: 100%;
+}
+
+/*Estilos graficadora*/
+.cont-graph{
+    margin: 20px;
+    text-align: center;
+    
+}
+
+.graph{
+    border: solid 2px #000;
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+}
+
+/*Estilos btn generar*/
+.btn-generar{
+    width: 125px;
+    height: 35px;
+    margin: 0 auto;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #034492;
+    font-family: 'Cabin', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn-generar:hover{
+    transition: 0.5s;
+    background-color: #043775;
 }

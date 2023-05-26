@@ -39,24 +39,25 @@
             </ul>
         </nav>
     </div>
-    <main>
+    <main class="main-cal-graph">
         <div class="cont-elec-mod-graf">
             <h3 class="tit-elec-mod-graf">Forma de generar el grafico</h3>
             <div class="cont-btn-mod-graf">
-                <button id="btn-auto">Automático</button>
-                <button id="btn-per">Personalizado</button>
+                <button class="btn-active-auto" id="btn-auto">Automático</button>
+                <button class="btn-active-per" id="btn-per">Personalizado</button>
             </div>
         </div>
         <section class="cont-date-graph">
             <div class="cont-info-graph">
 
             </div>
-            <div class="">
-                <canvas>
-    
+            <div class="cont-graph">
+                <canvas class="graph" id="canvas">
+
                 </canvas>
             </div>
         </section>
+        <button class="btn-generar" id="gen-graph">Generar</button>
     </main>
     <script src="../JS/fungraficadora.js"></script>
     <footer class="footer-page">

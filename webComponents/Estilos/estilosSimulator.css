@@ -297,7 +297,7 @@ option {
 .btn-play {
     width: 150px;
     height: 35px;
-    margin: 20px auto 80px auto;
+    margin: 20px auto;
     color: #aaa;
     padding: 7px 0px;
     background: linear-gradient(135deg, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492);
