@@ -5,16 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../Estilos/estilosIndex.css">
+    <link rel="stylesheet" href="../Estilos/estilosGraficador.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M.R.U</title>
 </head>
 
 <body>
-    <!-- Inicio de cabecera-->
     <header class="head-page">
         <div class="cont-head-title">
             <h1 class="title-page">M.R.U.</h1>
@@ -38,22 +39,32 @@
             </ul>
         </nav>
     </div>
-    <!-- Fin de cabecera-->
-
-    <!-- Inicio de contenido-->
     <main>
+        <div class="cont-elec-mod-graf">
+            <h3 class="tit-elec-mod-graf">Forma de generar el grafico</h3>
+            <div class="cont-btn-mod-graf">
+                <button id="btn-auto">Automático</button>
+                <button id="btn-per">Personalizado</button>
+            </div>
+        </div>
+        <section class="cont-date-graph">
+            <div class="cont-info-graph">
 
-       
+            </div>
+            <div class="">
+                <canvas>
+    
+                </canvas>
+            </div>
+        </section>
     </main>
-    <!-- Fin de contenido-->
-    <!-- Inicio de pie de pagina-->
+    <script src="../JS/fungraficadora.js"></script>
     <footer class="footer-page">
         <div class="footer-info-dep">
             <p class="sub-info-dep">Desarrollado por:</p>
             <h3 class="info-dep">Ap97 & FDYanza</h3>
         </div>
     </footer>
-    <!-- Fin de pie de pagina-->
 </body>
 <script src="../JS/selectormenu.js"></script>
 

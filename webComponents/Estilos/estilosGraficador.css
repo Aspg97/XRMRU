@@ -1,0 +1,53 @@
+:root {
+    --first-color: #034492;
+    --second-color: #E8DAEF;
+    --compl-color: #0070C2;
+}
+
+/*Estilos globales de etiquetas*/
+button {
+    font-family: 'Cabin', sans-serif;
+    background-color: var(--compl-color);
+    color: #fff;
+    transition: 0.5s;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: var(--first-color);
+}
+
+/*Estilos seccion eleccion modo de graficar*/
+.cont-elec-mod-graf {
+    width: 40%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.tit-elec-mod-graf {
+    margin-bottom: 15px;
+    font-weight: lighter;
+    font-size: 20px;
+    text-shadow: 0 0 5px #666;
+}
+
+.cont-btn-mod-graf {
+    display: flex;
+    justify-content: center;
+}
+
+.cont-btn-mod-graf button {
+    height: 35px;
+    width: 40%;
+    border-style: none;
+}
+
+.cont-btn-mod-graf>button:nth-child(1) {
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom: solid 5px var(--first-color);
+}
+
+.cont-btn-mod-graf>button:nth-child(2) {
+    border-bottom-right-radius: 15px;
+}
