@@ -19,7 +19,7 @@ button:hover {
 
 /*Estilos para main*/
 
-.main-cal-graph{
+.main-cal-graph {
     margin: 0 auto;
     flex-wrap: wrap;
     width: 90%;
@@ -61,27 +61,62 @@ button:hover {
     border-bottom-right-radius: 15px;
     transition: border-bottom 0.2s ease-out;
 }
+
 /*Estilos seccion de grafico y datos*/
-.cont-date-graph{
+.cont-date-graph {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
     width: 100%;
+    min-height: 435px;
+}
+
+.cont-info-graph {
+    display: none;
+    position: relative;
+    /*left: 0px;*/
+    height: 25px;
+    background-color: #0070C2;
+    animation: none;
+}
+
+@keyframes transparenciaActive {
+    0% {
+        opacity: 0%;
+    }
+
+    25% {
+        opacity: 25%;
+    }
+
+    50% {
+        opacity: 50%;
+    }
+
+    75% {
+        opacity: 75%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
 
 /*Estilos graficadora*/
-.cont-graph{
-    margin: 20px;
-    text-align: center;
-    
+.cont-graph {
+    position: none;
+    left: none;
+    transition: left 1s ease-out;
 }
 
-.graph{
-    border: solid 2px #000;
-    width: 700px;
-    height: 400px;
+.graph {
+    padding: 15px;
     background-color: #fff;
 }
 
 /*Estilos btn generar*/
-.btn-generar{
+.btn-generar {
     width: 125px;
     height: 35px;
     margin: 0 auto;
@@ -95,7 +130,7 @@ button:hover {
     font-weight: 500;
 }
 
-.btn-generar:hover{
+.btn-generar:hover {
     transition: 0.5s;
     background-color: #043775;
 }
