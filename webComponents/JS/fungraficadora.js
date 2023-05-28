@@ -116,6 +116,7 @@ btnGen.addEventListener("click", () => {
             letra.dibujarPunto();
         }
     }
+    //Imprimir lineas guias
     
 });
 //FIN PROCESO >> accion del boton generar

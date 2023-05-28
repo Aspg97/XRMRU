@@ -137,7 +137,7 @@ const guias = ()=>({
     y1,
     x2,
     y2,
-    dibujarGuia(){
+    dibujarGuiasX(){
         pincel.beginPath();
         pincel.strokeStyle = "#555";
         pincel
