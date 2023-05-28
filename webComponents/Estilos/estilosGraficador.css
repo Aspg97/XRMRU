@@ -69,7 +69,6 @@ button:hover {
     flex-wrap: wrap;
     margin: 20px;
     width: 100%;
-    min-height: 435px;
 }
 
 .cont-info-graph {
@@ -105,13 +104,13 @@ button:hover {
 
 /*Estilos graficadora*/
 .cont-graph {
-    position: none;
-    left: none;
-    transition: left 1s ease-out;
+    display: flex;
+    padding: 5px;
+    background-color: #0070C2;
 }
 
 .graph {
-    padding: 15px;
+    padding: 5px;
     background-color: #fff;
 }
 
