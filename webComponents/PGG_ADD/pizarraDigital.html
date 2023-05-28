@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../Estilos/estilosIndex.css">
+    <link rel="stylesheet" href="../Estilos/estilosPizarra.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
@@ -42,9 +43,72 @@
 
     <!-- Inicio de contenido-->
     <main>
-        <p>
-            Aqui va la pizarra digital que se esta desarrollando por FDYanza
-        </p>
+
+        <div class="container">
+            <section class="tools-board">
+    
+                <div class="row">
+                    <label class="title">Figuras</label>
+                    <ul class="options">
+                        <li class="option tool" id="rectangle">
+                            <img src="../IMG/icons/rectangle.svg" alt="">
+                            <span>Rectángulo</span>
+                        </li>
+                        <li class="option tool" id="circle">
+                            <img src="../IMG/icons/circle.svg" alt="">
+                            <span>Círculo</span>
+                        </li>
+                        <li class="option tool" id="triangle">
+                            <img src="../IMG/icons/triangle.svg" alt="">
+                            <span>Triángulo</span>
+                        </li>
+                        <li class="option">
+                            <input type="checkbox" id="fill-color">
+                            <label for="fill-color">Relleno</label>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="row">
+                    <label class="title">Opciones</label>
+                    <ul class="options">
+                        <li class="option active tool" id="brush">
+                            <img src="../IMG/icons/brush.svg" alt="">
+                            <span>Pintar</span>
+                        </li>
+                        <li class="option tool" id="eraser">
+                            <img src="../IMG/icons/eraser.svg" alt="">
+                            <span>Borrar</span>
+                        </li>
+                        <li class="option">
+                            <input type="range" id="size-slider" min="1" max="30" value="5">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="row colors">
+                    <label class="title">Colores</label>
+                    <ul class="options">
+                        <li class="option"></li>
+                        <li class="option selected"></li>
+                        <li class="option"></li>
+                        <li class="option"></li>
+                        <li class="option">
+                            <input type="color" id="color-picker" value="#4A98F7">
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="row buttons">
+                    <button class="clear-canvas">Limpiar Pizarra</button>
+                    <button class="save-img">Guardar imagen</button>
+                </div>
+                
+            </section>
+            <section class="drawing-board">
+                <canvas></canvas>
+            </section>
+        </div> 
        
     </main>
     <!-- Fin de contenido-->
@@ -57,6 +121,7 @@
     </footer>
     <!-- Fin de pie de pagina-->
 </body>
+<script src="../JS/funPizarra.js"></script>
 <script src="../JS/selectormenu.js"></script>
 
 </html>
