@@ -132,7 +132,9 @@ const segmento = ({px1 = 0,py1 = 0 , px2 = 50, py2 = 50}) => ({
 //FIN PROCESO >> dibujar segmento
 //INICIO PROCESO >> dibujar lineas guias
 const guias = ()=>({
-    limit,
+    limitecX,
+    limitecY,
+    recorrido,
     x1,
     y1,
     x2,
@@ -140,7 +142,8 @@ const guias = ()=>({
     dibujarGuiasX(){
         pincel.beginPath();
         pincel.strokeStyle = "#555";
-        pincel
+        pincel.moveTo(this.x1,this.x2);
+        pincel.lineTo(this.x1,this.x2);
     }
 })
 //FIN PROCESO >> dibujar lineas guias
