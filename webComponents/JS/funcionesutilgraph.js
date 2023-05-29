@@ -93,7 +93,7 @@ const linNumX = ({ porcentaje = 20, etinum = 1 }) => ({
 });
 //FIN PROCESO >> dibujar numeros
 //INICIO PROCESO >> nomenclatura de punto del segmento
-const componentesSegmento = ({letra = 'a',px = 0, py = 0}) => ({
+const componentesSegmento = ({ letra = 'a', px = 0, py = 0 }) => ({
     letra,
     x: (((canvas.width - 80) / 100) * px) + 22,
     y: (((canvas.height - 80) / 100) * py) + (canvas.height - 25),
@@ -105,45 +105,49 @@ const componentesSegmento = ({letra = 'a',px = 0, py = 0}) => ({
         pincel.fillText(this.letra, this.x, this.y);
         pincel.closePath();
     },
-    dibujarPunto(){
+    dibujarPunto() {
         pincel.beginPath();
         pincel.fillStyle = "#034492";
-        pincel.arc(this.x+13,this.y,3,0,2*Math.PI,false);
+        pincel.arc(this.x + 13, this.y, 3, 0, 2 * Math.PI, false);
         pincel.fill();
         pincel.closePath();
     }
 });
 //FIN PROCESO >> nomenclatura de punto del segmento
 //INICIO PROCESO >> dibujar segmento
-const segmento = ({px1 = 0,py1 = 0 , px2 = 50, py2 = 50}) => ({
+const segmento = ({ px1 = 0, py1 = 0, px2 = 50, py2 = 50 }) => ({
     x1: (((canvas.width - 80) / 100) * px1) + 35,
     y1: (((canvas.height - 80) / 100) * py1) + (canvas.height - 25),
     x2: (((canvas.width - 80) / 100) * px2) + 35,
     y2: (((canvas.height - 80) / 100) * py2) + (canvas.height - 25),
-    dibujarSegmento(){
+    dibujarSegmento() {
         pincel.beginPath();
         pincel.strokeStyle = "#0070C2";
-        pincel.moveTo(this.x1,this.y1);
-        pincel.lineTo(this.x2,this.y2);
+        pincel.moveTo(this.x1, this.y1);
+        pincel.lineTo(this.x2, this.y2);
         pincel.stroke();
         pincel.closePath();
     }
 });
 //FIN PROCESO >> dibujar segmento
 //INICIO PROCESO >> dibujar lineas guias
-const guias = ()=>({
-    limitecX,
-    limitecY,
+const guias = ({ lcx = 50, lcy = 50, recorrido = 0, ancx1 = 20, ancy1 = 20, ancx2 = 25, ancy2 = 20 }) => ({
+    limitecX: (((canvas.width - 80) / 100) * lcx) + 35,
+    limitecY: (((canvas.height - 80) / 100) * lcy) + (canvas.height - 25),
     recorrido,
-    x1,
-    y1,
-    x2,
-    y2,
-    dibujarGuiasX(){
-        pincel.beginPath();
-        pincel.strokeStyle = "#555";
-        pincel.moveTo(this.x1,this.x2);
-        pincel.lineTo(this.x1,this.x2);
+    x1: (((canvas.width - 80) / 100) * ancx1) + 35,
+    y1: (((canvas.height - 80) / 100) * ancy1) + (canvas.height - 25),
+    x2: (((canvas.width - 80) / 100) * ancx2) + 35,
+    y2: (((canvas.height - 80) / 100) * ancy2) + (canvas.height - 25),
+    dibujarGuiasX() {
+        while (recorrido < this.limitecX) {
+            pincel.beginPath();
+            pincel.strokeStyle = "#555";
+            pincel.moveTo(this.x1+5, this.y1);
+            pincel.lineTo(this.x2+5, this.y2);
+            pincel.closePath();
+            recorrido += (this.x2-this.x1+5);
+        }
     }
 })
 //FIN PROCESO >> dibujar lineas guias

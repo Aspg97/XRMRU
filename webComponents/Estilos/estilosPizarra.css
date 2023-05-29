@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 main{
@@ -20,8 +19,10 @@ main{
     display: flex;
     width: 100%;
     gap: 10px;
+    margin: 30px;
     padding: 10px;
     max-width: 1050px;
+    font-family: 'Poppins', sans-serif;
 }
 
 section{
