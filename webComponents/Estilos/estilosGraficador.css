@@ -122,39 +122,7 @@ option {
     color: #000;
 }
 
-/*Estilos de etiquetas e inputs de ingreso de valores*/
 
-.cont-info-per{
-    padding: 7px;
-}
-
-.cont-info-per-uni div{
-    margin-bottom: 5px;
-}
-
-.cont-info-per h3{
-    font-weight: lighter;
-    color: #fff;
-    margin: 10px 0;
-}
-
-.eti-dat{
-    display: inline-block;
-    width: 55px;
-    font-size: 16px;
-    color: #fff;
-    font-family: 'Cabin', sans-serif;
-    
-}
-
-.inpDato{
-    height: 28px;
-    max-width: 75px;
-    margin: 0 0 0 5px;
-    padding: 10px;
-    font-size: 15px;
-    text-shadow: none;
-}
 /*Estilos seccion de grafico y datos*/
 .cont-date-graph {
     display: flex;
@@ -166,11 +134,11 @@ option {
 .cont-info-graph {
     flex-grow: 1;
     display: none;
-    justify-content: center;
+    justify-content: space-around;
     border-radius: 10px;
     max-width: 400px;
     margin: 0 20px 0 0;
-    padding: 10px;
+    padding: 15px;
     background-image: url("../IMG/Simulator/fondo-info_Mesa\ de\ trabajo\ 1.jpg");
     animation: none;
 }
@@ -195,6 +163,45 @@ option {
     100% {
         opacity: 100%;
     }
+}
+
+/*Estilos de etiquetas e inputs de ingreso de valores*/
+
+.cont-info-per{
+    border: solid 1px #fff;
+    padding: 10px;
+    border-style: dashed;
+    border-radius: 10px;
+}
+
+.cont-info-per-uni div{
+    margin-bottom: 5px;
+}
+
+.cont-info-per h3{
+    font-weight: lighter;
+    color: #fff;
+    margin: 0 0 10px 0;
+    text-align: center;
+    padding: 0;
+}
+
+.eti-dat{
+    display: inline-block;
+    width: 55px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+    
+}
+
+.inpDato{
+    height: 28px;
+    max-width: 75px;
+    margin: 0 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    text-shadow: none;
 }
 
 /*Estilos graficadora*/
