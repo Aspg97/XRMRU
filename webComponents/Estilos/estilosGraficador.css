@@ -22,7 +22,7 @@ button:hover {
 .main-cal-graph {
     margin: 0 auto;
     flex-wrap: wrap;
-    width: 90%;
+    width: 95%;
 }
 
 /*Estilos contenedor eleccion modo de graficar*/
@@ -62,21 +62,116 @@ button:hover {
     transition: border-bottom 0.2s ease-out;
 }
 
+/*Estilos de selectores de cantidades*/
+
+.cont-op-cant{
+    background-image: url("../IMG/Simulator/fondo-eti-gen-info-02.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    border: solid 3px var(--compl-color);
+    text-shadow: 0 0 5px #000;
+    margin: 20px auto;
+    padding: 5px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+.cont-op-cant>div:nth-child(1){
+    border-right: solid 2px #fff;
+}
+
+.cont-op{
+    text-align: center;
+}
+
+.lbl-op-cant{
+    display: block;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+}
+
+select,input{
+    height: 25px;
+    border-style: none;
+    border-radius: 5px;
+    font-family: 'Cabin', sans-serif;
+    outline: none;
+    text-shadow: 0 0 5px #000;
+}
+
+.op-num{
+    width: 50px;
+    font-size: 15px;
+    text-align: center;
+    background: linear-gradient(to top, #fff5, #0000, #0000);
+    border-bottom: solid 1px #fff;
+    color: #fff;
+}
+
+select:hover {
+    transition: 0.5s;
+    background: none;
+    background-color: #fffa;
+    color: #000;
+    text-shadow: none;
+}
+
+option {
+    color: #000;
+}
+
+/*Estilos de etiquetas e inputs de ingreso de valores*/
+
+.cont-info-per{
+    padding: 7px;
+}
+
+.cont-info-per-uni div{
+    margin-bottom: 5px;
+}
+
+.cont-info-per h3{
+    font-weight: lighter;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.eti-dat{
+    display: inline-block;
+    width: 55px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Cabin', sans-serif;
+    
+}
+
+.inpDato{
+    height: 28px;
+    max-width: 75px;
+    margin: 0 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
+    text-shadow: none;
+}
 /*Estilos seccion de grafico y datos*/
 .cont-date-graph {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 20px;
     width: 100%;
 }
 
 .cont-info-graph {
+    flex-grow: 1;
     display: none;
-    position: relative;
-    /*left: 0px;*/
-    height: 25px;
-    background-color: #0070C2;
+    justify-content: center;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 0 20px 0 0;
+    padding: 10px;
+    background-image: url("../IMG/Simulator/fondo-info_Mesa\ de\ trabajo\ 1.jpg");
     animation: none;
 }
 
@@ -103,22 +198,30 @@ button:hover {
 }
 
 /*Estilos graficadora*/
+
 .cont-graph {
-    display: flex;
     padding: 5px;
     background-color: #0070C2;
+    border-radius: 10px;
+}
+
+.tit-graph{
+    font-weight: lighter;
+    color: #fff;
 }
 
 .graph {
     padding: 5px;
     background-color: #fff;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 /*Estilos btn generar*/
-.btn-generar {
+.btn-generar, .btn-ingresar-datos {
     width: 125px;
     height: 35px;
-    margin: 0 auto;
+    margin: 10px auto;
     border-style: none;
     outline: none;
     border-radius: 5px;
@@ -129,7 +232,7 @@ button:hover {
     font-weight: 500;
 }
 
-.btn-generar:hover {
+.btn-generar:hover, .btn-ingresar-datos:hover {
     transition: 0.5s;
     background-color: #043775;
 }

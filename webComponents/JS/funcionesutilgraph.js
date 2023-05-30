@@ -131,23 +131,47 @@ const segmento = ({ px1 = 0, py1 = 0, px2 = 50, py2 = 50 }) => ({
 });
 //FIN PROCESO >> dibujar segmento
 //INICIO PROCESO >> dibujar lineas guias
-const guias = ({ lcx = 50, lcy = 50, recorrido = 0, ancx1 = 20, ancy1 = 20, ancx2 = 25, ancy2 = 20 }) => ({
-    limitecX: (((canvas.width - 80) / 100) * lcx) + 35,
-    limitecY: (((canvas.height - 80) / 100) * lcy) + (canvas.height - 25),
-    recorrido,
+const guias = ({ lcx = 1000, ancx1 = 0, ancy1 = -20, guia = "y" }) => ({
+    limitecX: (((canvas.width - 80) / 100) * lcx),
+    recorrido: 0,
+    anchoLinea: 5,
+    espacio:10,
     x1: (((canvas.width - 80) / 100) * ancx1) + 35,
     y1: (((canvas.height - 80) / 100) * ancy1) + (canvas.height - 25),
-    x2: (((canvas.width - 80) / 100) * ancx2) + 35,
-    y2: (((canvas.height - 80) / 100) * ancy2) + (canvas.height - 25),
-    dibujarGuiasX() {
-        while (recorrido < this.limitecX) {
+    guia,
+    dibujarGuias(){
+        if(this.guia === "y"){
+            this.dibujarGuiasY();
+        }else{
+            this.dibujarGuiasX();
+        }
+    },
+    dibujarGuiasY() {
+        while (this.recorrido < this.limitecX) {
             pincel.beginPath();
-            pincel.strokeStyle = "#555";
-            pincel.moveTo(this.x1+5, this.y1);
-            pincel.lineTo(this.x2+5, this.y2);
+            pincel.strokeStyle = "#999";
+            pincel.lineWidth = 0.3;
+            pincel.moveTo(this.x1+this.anchoLinea, this.y1);
+            pincel.lineTo(this.x1, this.y1);
+            pincel.stroke();
             pincel.closePath();
-            recorrido += (this.x2-this.x1+5);
+            this.x1+=this.espacio;
+            this.recorrido += this.espacio;
+        }
+    },
+    dibujarGuiasX() {
+        this.recorrido = this.y1;
+        while (this.recorrido < canvas.height-25) {
+            pincel.beginPath();
+            pincel.strokeStyle = "#999";
+            pincel.lineWidth = 0.3;
+            pincel.moveTo(this.x1, this.y1);
+            pincel.lineTo(this.x1, this.y1+this.anchoLinea);
+            pincel.stroke();
+            pincel.closePath();
+            this.y1+=this.espacio;
+            this.recorrido += this.espacio;
         }
     }
-})
+});
 //FIN PROCESO >> dibujar lineas guias
