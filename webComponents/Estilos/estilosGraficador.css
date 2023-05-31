@@ -73,12 +73,27 @@ button:hover {
     text-shadow: 0 0 5px #000;
     margin: 20px auto;
     padding: 5px;
-    display: grid;
     width: 100%;
+}
+
+.cont-op-grid-auto{
+    width: 100%;
+    display: grid;
     grid-template-columns: 50% 50%;
 }
 
-.cont-op-cant>div:nth-child(1){
+.cont-op-per{
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-op-per label{
+    margin: 0 10px 0 0;
+}
+
+.cont-op-grid>div:nth-child(1){
     border-right: solid 2px #fff;
 }
 
