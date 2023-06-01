@@ -33,7 +33,7 @@ button:hover {
 }
 
 .tit-elec-mod-graf {
-    margin-bottom: 15px;
+    margin: 30px 0 15px 0;
     font-weight: lighter;
     font-size: 20px;
     text-shadow: 0 0 5px #666;
@@ -71,7 +71,7 @@ button:hover {
     border-radius: 15px;
     border: solid 3px var(--compl-color);
     text-shadow: 0 0 5px #000;
-    margin: 20px auto;
+    margin: 35px auto 20px auto;
     padding: 5px;
     width: 100%;
 }
@@ -89,7 +89,7 @@ button:hover {
     justify-content: center;
 }
 
-.cont-op-per label{
+.cont-op-per label, .lbl-op-solu{
     margin: 0 10px 0 0;
 }
 
@@ -101,7 +101,7 @@ button:hover {
     text-align: center;
 }
 
-.lbl-op-cant{
+.lbl-op-cant,.lbl-op-solu{
     display: block;
     color: #fff;
     font-family: 'Cabin', sans-serif;
@@ -146,8 +146,9 @@ option {
     width: 100%;
 }
 
-.cont-info-graph {
+.cont-info-graph, .cont-info-graph-solu {
     flex-grow: 1;
+    flex-wrap: wrap;
     display: none;
     justify-content: space-around;
     border-radius: 10px;
@@ -180,20 +181,22 @@ option {
     }
 }
 
-/*Estilos de etiquetas e inputs de ingreso de valores*/
+/*Estilos de etiquetas e inputs de ingreso de valores y mostar solucion*/
 
 .cont-info-per{
     border: solid 1px #fff;
-    padding: 10px;
+    padding: 10px 5px;
     border-style: dashed;
     border-radius: 10px;
+    width: 45%;
 }
 
 .cont-info-per-uni div{
     margin-bottom: 5px;
+    text-align: center;
 }
 
-.cont-info-per h3{
+.cont-info-per h3, .cont-info-graph-solu h3{
     font-weight: lighter;
     color: #fff;
     margin: 0 0 10px 0;
@@ -203,7 +206,7 @@ option {
 
 .eti-dat{
     display: inline-block;
-    width: 55px;
+    width: 60px;
     font-size: 16px;
     color: #fff;
     font-family: 'Cabin', sans-serif;
@@ -217,6 +220,79 @@ option {
     padding: 10px;
     font-size: 15px;
     text-shadow: none;
+}
+
+/*Estilos cuadro soluciones*/
+.mos-cont-op-res{
+    width: 100%;
+}
+.cont-info-graph-solu h3{
+    width: 100%;
+}
+
+.lbl-op-solu{
+    display: inline-block;
+}
+
+.op-seg-solu{
+    width: 100%;
+    text-align: center;
+}
+
+.op-seg-solu select {
+    width: 80px;
+    height: 25px;
+    font-size: 17px;
+}
+
+.mos-res{
+    display: none;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    padding: 20px;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.mos-res-part-info{
+    display: inline-block;
+}
+
+
+
+.mos-res-part{
+    width: 100%;
+    text-align: center;
+}
+
+.mos-res-part p {
+    display: inline-block;
+    text-align: left;
+}
+
+.auto-gen-solu{
+    width: 100%;
+    text-align: center;
+}
+
+.auto-gen-solu div{
+    text-align: left;
+}
+
+.auto-gen-solu label{
+    margin: 0 10px 0 25px;
+}
+
+h4{
+    text-align: left;
+    margin: 5px 0;
+}
+
+math{
+    font-size: 20px;
+    margin: 5px 0;
 }
 
 /*Estilos graficadora*/
@@ -243,7 +319,7 @@ option {
 .btn-generar, .btn-ingresar-datos {
     width: 125px;
     height: 35px;
-    margin: 10px auto;
+    margin: 25px auto;
     border-style: none;
     outline: none;
     border-radius: 5px;

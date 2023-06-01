@@ -41,7 +41,7 @@
     </div>
     <main class="main-cal-graph">
         <div class="cont-elec-mod-graf">
-            <h3 class="tit-elec-mod-graf">Forma de generar el grafico</h3>
+            <h3 class="tit-elec-mod-graf">Forma de generar el gráfico</h3>
             <div class="cont-btn-mod-graf">
                 <button class="btn-active-auto" id="btn-auto">Automático</button>
                 <button class="btn-active-per" id="btn-per">Personalizado</button>
@@ -49,21 +49,6 @@
 
             <div class="cont-op-cant">
                 <div class="cont-op-grid-auto">
-                    <div class="cont-op">
-                        <label class="lbl-op-cant">Cant. valores distancia (Eje Y)</label>
-                        <select class="op-num" id="select-cant-y">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                    </div>
                     <div class="cont-op">
                         <label class="lbl-op-cant">Cant. valores tiempo (Eje X)</label>
                         <select class="op-num" id="select-cant-x">
@@ -79,10 +64,9 @@
                             <option>10</option>
                         </select>
                     </div>
-                </div>
-                <div class="cont-op-per">
-                        <label class="lbl-op-cant">Número de Coordenadas: </label>
-                        <select class="op-num" id="select-cant-coor">
+                    <div class="cont-op">
+                        <label class="lbl-op-cant">Cant. valores distancia (Eje Y)</label>
+                        <select class="op-num" id="select-cant-y">
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -94,14 +78,40 @@
                             <option>9</option>
                             <option>10</option>
                         </select>
+                    </div>
+                </div>
+                <div class="cont-op-per">
+                    <label class="lbl-op-cant">Número de Coordenadas: </label>
+                    <select class="op-num" id="select-cant-coor">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
                 </div>
             </div>
         </div>
         <section class="cont-date-graph">
             <div class="cont-info-graph">
             </div>
+            <div class="cont-info-graph-solu">
+                <div class="mos-cont-op-res">
+                    <h3>Soluciones</h3>
+                    <div class="op-seg-solu">
+                    </div>
+                    <div class="mos-res">
+
+                    </div>
+                </div>
+            </div>
             <div class="cont-graph">
-                <h2 class="tit-graph">Gráfico: Velocidad vs Tiempo</h2>
+                <h2 class="tit-graph">Gráfico: Distancia vs Tiempo</h2>
                 <canvas class="graph" id="canvas">
                 </canvas>
             </div>
@@ -109,6 +119,7 @@
         <button class="btn-generar" id="gen-graph">Generar</button>
     </main>
     <script src="../JS/funcionesutilgraph.js"></script>
+    <script src="../JS/funcionesutil.js"></script>
     <script src="../JS/fungraficadora.js"></script>
     <footer class="footer-page">
         <div class="footer-info-dep">

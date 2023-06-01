@@ -4,8 +4,12 @@ const btnGen = document.getElementById("gen-graph");
 const cantX = document.getElementById("select-cant-x");
 const cantY = document.getElementById("select-cant-y");
 const cantC = document.getElementById("select-cant-coor");
+const cantOpSol = document.querySelector(".op-seg-solu");
+const mosRes = document.querySelector(".mos-res");
 const contDateGraph = document.querySelector(".cont-date-graph");
 const contInfoGraph = document.querySelector(".cont-info-graph");
+const contInfoGraphSolu = document.querySelector(".cont-info-graph-solu");
+const contMosRes = document.querySelector(".mos-cont-op-res");
 const contModoDatosG = document.querySelector(".cont-op-cant");
 const contModoDatosA = document.querySelector(".cont-op-grid-auto");
 const contModoDatosP = document.querySelector(".cont-op-per");
@@ -15,6 +19,8 @@ var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion 
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
 var cntC;
 btnPerf.addEventListener("click", () => {
+    contInfoGraphSolu.style.display = "none";
+    mosRes.style.display="none";
     cntC = cantC.value;
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000"
@@ -38,6 +44,7 @@ cantC.addEventListener("click", () => {
 //FIN PROCESO >> cuando el usuario cambia de valores en las opciones de cantidad de valores
 //INICIO PROCESO >> cuando el usuario selecciona automatico
 btnAuto.addEventListener("click", () => {
+    contInfoGraphSolu.style.display = "none";
     slcAuto = true;
     btnSelected(slcAuto);
     contInfoGraph.innerHTML = "Esfuérzate un poquito mas papu";
@@ -49,12 +56,13 @@ btnAuto.addEventListener("click", () => {
 //FIN PROCESO >> cuando el usuario selecciona automatico
 //INICIO PROCESO >> accion del boton generar
 btnGen.addEventListener("click", () => {
+    
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000";
     pincel.strokeStyle = "#000";
-    let numY = cantY.value; // Recoge la cantidad de datos que se van a graficar en Y
-    let numX = cantX.value; // Recoge la cantidad de datos que se van a graficar en X
-    let numC = cantC.value; // Recoge la cantidad de datos que se van a graficar en X
+    let numY = parseInt(cantY.value); // Recoge la cantidad de datos que se van a graficar en Y
+    let numX = parseInt(cantX.value); // Recoge la cantidad de datos que se van a graficar en X
+    let numC = parseInt(cantC.value); // Recoge la cantidad de datos que se van a graficar en X
     let letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]; //Letras para puntos de segmento
     ini();
     console.log(numY + "---" + numX + "---" + numC);
@@ -63,6 +71,7 @@ btnGen.addEventListener("click", () => {
     } else {
         console.log("se va de largo");
         if (slcAuto === true) {
+            mosRes.innerHTML = "";
             const valoresY = llenarDatosAutomatico(numY); //Ingreso valores een recta > Eje Y
             const valoresX = llenarDatosAutomatico(numX);  //Ingreso valores een recta > Eje X
             const cy = coorCompletasY(numY, numX, valoresY); // Preparacion para graficar > arreglo para las coordenadas de Y
@@ -71,10 +80,11 @@ btnGen.addEventListener("click", () => {
             imprimirSegmento(numX, cy, valoresX, valoresY); // Imprimir Segmento
             imprimirLetrasSegmento(numX, cy, valoresX, valoresY, letras); // Imprimir letra de cada punto del segmento
             imprimirGuiasDePuntos(numX, cy, valoresX, valoresY); //Imprimir lineas guias de cada punto el plano cartesiano
+            mostrarSolucion(mosRes, numX, letras, valoresX[0], cy);
         } else {
             if (conf === true) {
-                const valoresPY = validarCampos(numC, "datY");
-                const valoresPX = validarCampos(numC, "datX");
+                const valoresPY = validarCampos(numC, "datY"); //Se envia la cantidad de coordenadas y el inicio del id
+                const valoresPX = validarCampos(numC, "datX"); //Se envia la cantidad de coordenadas y el inicio del id
                 if (valoresPX[2] === false || valoresPY[2] === false) {
                     alert("Llene todos los campos de valores");
                 } else {
@@ -127,12 +137,11 @@ const validarCampos = (nC, tipCoor) => {
     for (let i = 0; i < nC; i++) {
         let idInpC = tipCoor + String(i);
         const idC = document.getElementById(idInpC);
-        console.log(i);
         if (idC.value === "") {
             continuar = false;
             break;
         } else {
-            coor[i] = idC.value;
+            coor[i] = parseFloat(idC.value);
         }
         if (max < coor[i]) {
             max = coor[i];
@@ -262,26 +271,27 @@ function agregarInputs() {
     contInfoGraph.style.alignItems = "flex-start"
     let numCoor = cantC.value; // Recoge la cantidad de datos que se van a graficar en X
 
-    const divContY = document.createElement("div"); // Creacion de contenedor de datos  en Y
-    divContY.classList.add("cont-info-per");
-    const divContX = document.createElement("div"); // Creacion de contenedor de datos  en X
+    const divContX = document.createElement("div"); // Creacion de contenedor de datos  en Y
     divContX.classList.add("cont-info-per");
-    const titContY = document.createElement("h3"); // Creacion de contenedor de datos  en Y
-    titContY.innerHTML = "Distancia";
-    const titContX = document.createElement("h3"); // Creacion de contenedor de datos  en X
-    titContX.innerHTML = "Tiempo";
-    const divInpY = document.createElement("div"); // Creacion de contenedor de datos  en Y
-    divInpY.classList.add("cont-info-per-uni");
-    const divInpX = document.createElement("div"); // Creacion de contenedor de datos  en X
+    const divContY = document.createElement("div"); // Creacion de contenedor de datos  en X
+    divContY.classList.add("cont-info-per");
+    const titContX = document.createElement("h3"); // Creacion de contenedor de datos  en Y
+    titContX.innerHTML = "Tiempo (s)";
+    const titContY = document.createElement("h3"); // Creacion de contenedor de datos  en X
+    titContY.innerHTML = "Distancia (m)";
+    const divInpX = document.createElement("div"); // Creacion de contenedor de datos  en Y
     divInpX.classList.add("cont-info-per-uni");
+    const divInpY = document.createElement("div"); // Creacion de contenedor de datos  en X
+    divInpY.classList.add("cont-info-per-uni");
+
     const fragY = document.createDocumentFragment();
     const fragX = document.createDocumentFragment();
-    divContY.appendChild(titContY);
-    divContY.appendChild(divInpY);
     divContX.appendChild(titContX);
     divContX.appendChild(divInpX);
-    contInfoGraph.appendChild(divContY);
+    divContY.appendChild(titContY);
+    divContY.appendChild(divInpY);
     contInfoGraph.appendChild(divContX);
+    contInfoGraph.appendChild(divContY);
 
     for (let i = 0; i < numCoor; i++) {
         const contItemY = document.createElement("div");
@@ -295,4 +305,155 @@ function agregarInputs() {
     divInpY.appendChild(fragY);
     divInpX.appendChild(fragX);
 
+}
+//>> funcion inicio para mostrar la solucion
+function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
+    contInfoGraphSolu.style.display = "flex";
+    contInfoGraphSolu.style.animation = "transparenciaActive 0.3s";
+    const slec = document.createElement("select");
+    slec.classList.add("op-num");
+    slec.id = "select-sg-solu";
+    const slectFrag = document.createDocumentFragment();
+    cantOpSol.innerHTML = `<label class="lbl-op-solu">Segmento: </label>`;
+    for (let i = 0; i < nPuntos; i++) {
+        if (i === 0) {
+            const optionIni = document.createElement("option");
+            optionIni.value = -1;
+            optionIni.innerHTML = `/ - /`;
+            slectFrag.appendChild(optionIni);
+        }
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = `${letra[i]} - ${letra[i + 1]}`;
+        slectFrag.appendChild(option);
+    }
+    slec.appendChild(slectFrag);
+    cantOpSol.appendChild(slec);
+    const numSelec = document.getElementById("select-sg-solu");
+    let numS = 0
+    numSelec.addEventListener("click", () => {
+        if (numS != numSelec.value && numSelec.value != -1) {
+            mosRes.style.display = "flex";
+            mosRes.innerHTML = "";
+            mostrarRes(conRes, parseInt(numSelec.value), letra, cX, cY)
+
+        }
+        numS = numSelec.value;
+    });
+}
+//>> Funcion para mostrar el resultado con sus datos y contenidos
+function mostrarRes(cRes, nSeg, letra, cx, cy) {
+    const divCont = document.createElement("div");
+    const divEncaDat = document.createElement("div");
+    const expFor = document.createElement("div");
+    const expGraf = document.createElement("div");
+    const expGrafRes = document.createElement("div");
+    divEncaDat.classList.add("mos-res-part");
+    expFor.classList.add("mos-res-part");
+    expGraf.classList.add("mos-res-part");
+    expGrafRes.classList.add("auto-gen-solu");
+    const p1 = document.createElement("div");
+    const p2 = document.createElement("div");
+    let aux = 0, res;
+    divCont.classList.add("auto-gen-solu");
+    if (nSeg === 0) {
+        cx[aux-1]=0;
+        cy[aux-1]=0;
+        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux-1]} ; d<sub>1</sub> = ${cy[aux-1]}</p>`;
+        p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; d<sub>2</sub> = ${cy[aux]}</p> `;
+    } else {
+        aux = nSeg;
+        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; d<sub>1</sub> = ${cy[aux - 1]}</p> `;
+        p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; d<sub>2</sub> = ${cy[aux]}</p>`;
+    }
+    if(nSeg === 0){
+        res = cy[aux]/cx[aux];
+    }else{
+        res = (cy[aux]-cy[aux-1])/(cx[aux]-cx[aux-1])
+    }
+    expFor.innerHTML = `
+    <h4>Tomar en cuenta que:</h4>
+    <math>
+        <mi>v</mi>
+        <mo>=</mo>
+        <mrow>
+        <mfrac>
+            <msup>
+                <mrow>
+                    <mi>Δd</mi>
+                </mrow>
+            </msup>
+            <msup>
+                <mrow>
+                    <mi>Δt</mi>
+                </mrow>
+            </msup>
+        </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mrow>
+        <mfrac>
+        <mrow>
+            <msup>
+                
+                    <mi>d2</mi>
+                    </msup>
+                    <mo>-</mo>
+                    <msup>
+                    <mi>d1</mi>
+                
+            </msup>
+            </mrow>
+            <mrow>
+            <msup>
+                
+                    <mi>t2</mi>
+                    </msup>
+                    <mo>-</mo>
+                    <msup>
+                    <mi>t1</mi>
+                
+            </msup>
+            </mrow>
+        </mfrac>
+        </mrow>
+    </math>`;
+    expGraf.innerHTML=`
+    <h4>Entonces:</h4>
+    <math>
+        <mi>v</mi>
+        <mo>=</mo>
+        <mrow>
+        <mfrac>
+            <msup>
+                <mrow>
+                <munder>
+                    <mo>${cy[aux]}m</mo>
+                    </munder>
+                    <mo>-</mo>
+                    <mi>${cy[aux - 1]}m</mi>
+                </mrow>
+            </msup>
+            <msup>
+                <mrow>
+                    <mi>${cx[aux]}s</mi>
+                    <mo>-</mo>
+                    <mi>${cx[aux - 1]}s</mi>
+                </mrow>
+            </msup>
+        </mfrac>
+        </mrow>
+    </math>`
+    expGrafRes.innerHTML = `
+    <math><mi>v</mi>
+    <mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
+    divCont.innerHTML=`<h4>Datos:</h4>`;
+    divEncaDat.appendChild(p1);
+    divEncaDat.appendChild(p2);
+    divCont.appendChild(divEncaDat);
+    cRes.appendChild(divCont);
+    cRes.appendChild(expFor);
+    cRes.appendChild(expGraf);
+    cRes.appendChild(expGrafRes);
+    console.log(nSeg);
 }

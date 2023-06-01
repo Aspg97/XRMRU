@@ -96,7 +96,7 @@ const linNumX = ({ porcentaje = 20, etinum = 1 }) => ({
 const componentesSegmento = ({ letra = 'a', px = 0, py = 0 }) => ({
     letra,
     x: (((canvas.width - 80) / 100) * px) + 22,
-    y: (((canvas.height - 80) / 100) * py) + (canvas.height - 25),
+    y: (((canvas.height - 80) / 100) * py) + (canvas.height - 30),
     fontSS: "15px Arial",
     dibujarLetra() {
         pincel.beginPath();
@@ -108,7 +108,7 @@ const componentesSegmento = ({ letra = 'a', px = 0, py = 0 }) => ({
     dibujarPunto() {
         pincel.beginPath();
         pincel.fillStyle = "#034492";
-        pincel.arc(this.x + 13, this.y, 3, 0, 2 * Math.PI, false);
+        pincel.arc(this.x + 13, this.y+5, 3, 0, 2 * Math.PI, false);
         pincel.fill();
         pincel.closePath();
     }
