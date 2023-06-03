@@ -44,6 +44,9 @@ cantC.addEventListener("click", () => {
 //FIN PROCESO >> cuando el usuario cambia de valores en las opciones de cantidad de valores
 //INICIO PROCESO >> cuando el usuario selecciona automatico
 btnAuto.addEventListener("click", () => {
+    pincel.clearRect(0, 0, canvas.width, canvas.height);
+    pincel.fillStyle = "#000"
+    ini();
     contInfoGraphSolu.style.display = "none";
     slcAuto = true;
     btnSelected(slcAuto);
@@ -371,82 +374,9 @@ function mostrarRes(cRes, nSeg, letra, cx, cy) {
     }else{
         res = (cy[aux]-cy[aux-1])/(cx[aux]-cx[aux-1])
     }
-    expFor.innerHTML = `
-    <h4>Tomar en cuenta que:</h4>
-    <math>
-        <mi>v</mi>
-        <mo>=</mo>
-        <mrow>
-        <mfrac>
-            <msup>
-                <mrow>
-                    <mi>Δd</mi>
-                </mrow>
-            </msup>
-            <msup>
-                <mrow>
-                    <mi>Δt</mi>
-                </mrow>
-            </msup>
-        </mfrac>
-        </mrow>
-        <mo>=</mo>
-        <mrow>
-        <mfrac>
-        <mrow>
-            <msup>
-                
-                    <mi>d2</mi>
-                    </msup>
-                    <mo>-</mo>
-                    <msup>
-                    <mi>d1</mi>
-                
-            </msup>
-            </mrow>
-            <mrow>
-            <msup>
-                
-                    <mi>t2</mi>
-                    </msup>
-                    <mo>-</mo>
-                    <msup>
-                    <mi>t1</mi>
-                
-            </msup>
-            </mrow>
-        </mfrac>
-        </mrow>
-    </math>`;
-    expGraf.innerHTML=`
-    <h4>Entonces:</h4>
-    <math>
-        <mi>v</mi>
-        <mo>=</mo>
-        <mrow>
-        <mfrac>
-            <msup>
-                <mrow>
-                <munder>
-                    <mo>${cy[aux]}m</mo>
-                    </munder>
-                    <mo>-</mo>
-                    <mi>${cy[aux - 1]}m</mi>
-                </mrow>
-            </msup>
-            <msup>
-                <mrow>
-                    <mi>${cx[aux]}s</mi>
-                    <mo>-</mo>
-                    <mi>${cx[aux - 1]}s</mi>
-                </mrow>
-            </msup>
-        </mfrac>
-        </mrow>
-    </math>`
-    expGrafRes.innerHTML = `
-    <math><mi>v</mi>
-    <mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
+    expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δd</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msup><mi>d2</mi></msup><mo>-</mo><msup><mi>d1</mi></msup></mrow><mrow><msup><mi>t2</mi></msup><mo>-</mo><msup><mi>t1</mi></msup></mrow></mfrac></mrow></math>`;
+    expGraf.innerHTML=`<h4>Entonces:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
+    expGrafRes.innerHTML = `<math><mi>v</mi><mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
     divCont.innerHTML=`<h4>Datos:</h4>`;
     divEncaDat.appendChild(p1);
     divEncaDat.appendChild(p2);

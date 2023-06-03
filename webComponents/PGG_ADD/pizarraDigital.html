@@ -43,72 +43,73 @@
 
     <!-- Inicio de contenido-->
     <main>
-
-        <div class="container">
-            <section class="tools-board">
-    
-                <div class="row">
-                    <label class="title">Figuras</label>
-                    <ul class="options">
-                        <li class="option tool" id="rectangle">
-                            <img src="../IMG/icons/rectangle.svg" alt="">
-                            <span>Rectángulo</span>
-                        </li>
-                        <li class="option tool" id="circle">
-                            <img src="../IMG/icons/circle.svg" alt="">
-                            <span>Círculo</span>
-                        </li>
-                        <li class="option tool" id="triangle">
-                            <img src="../IMG/icons/triangle.svg" alt="">
-                            <span>Triángulo</span>
-                        </li>
-                        <li class="option">
-                            <input type="checkbox" id="fill-color">
-                            <label for="fill-color">Relleno</label>
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="row">
-                    <label class="title">Opciones</label>
-                    <ul class="options">
-                        <li class="option active tool" id="brush">
-                            <img src="../IMG/icons/brush.svg" alt="">
-                            <span>Pintar</span>
-                        </li>
-                        <li class="option tool" id="eraser">
-                            <img src="../IMG/icons/eraser.svg" alt="">
-                            <span>Borrar</span>
-                        </li>
-                        <li class="option">
-                            <input type="range" id="size-slider" min="1" max="30" value="5">
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="row colors">
-                    <label class="title">Colores</label>
-                    <ul class="options">
-                        <li class="option"></li>
-                        <li class="option selected"></li>
-                        <li class="option"></li>
-                        <li class="option"></li>
-                        <li class="option">
-                            <input type="color" id="color-picker" value="#4A98F7">
-                        </li>
-                    </ul>
-                </div>
-    
-                <div class="row buttons">
-                    <button class="clear-canvas">Limpiar Pizarra</button>
-                    <button class="save-img">Guardar imagen</button>
-                </div>
-                
-            </section>
-            <section class="drawing-board">
-                <canvas></canvas>
-            </section>
-        </div> 
+        <div class="container-pizz" id="cont-pizarra">
+            <div class="container">
+                <section class="tools-board">
+                    <div class="row">
+                        <label class="title">Figuras</label>
+                        <ul class="options">
+                            <li class="option tool" id="rectangle">
+                                <img src="../IMG/icons/rectangle.svg" alt="">
+                                <span>Rectángulo</span>
+                            </li>
+                            <li class="option tool" id="circle">
+                                <img src="../IMG/icons/circle.svg" alt="">
+                                <span>Círculo</span>
+                            </li>
+                            <li class="option tool" id="triangle">
+                                <img src="../IMG/icons/triangle.svg" alt="">
+                                <span>Triángulo</span>
+                            </li>
+                            <li class="option">
+                                <input type="checkbox" id="fill-color">
+                                <label for="fill-color">Relleno</label>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="row">
+                        <label class="title">Opciones</label>
+                        <ul class="options">
+                            <li class="option active tool" id="brush">
+                                <img src="../IMG/icons/brush.svg" alt="">
+                                <span>Pintar</span>
+                            </li>
+                            <li class="option tool" id="eraser">
+                                <img src="../IMG/icons/eraser.svg" alt="">
+                                <span>Borrar</span>
+                            </li>
+                            <li class="option">
+                                <input type="range" id="size-slider" min="1" max="30" value="5">
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="row colors">
+                        <label class="title">Colores</label>
+                        <ul class="options">
+                            <li class="option"></li>
+                            <li class="option selected"></li>
+                            <li class="option"></li>
+                            <li class="option"></li>
+                            <li class="option">
+                                <input type="color" id="color-picker" value="#4A98F7">
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="row buttons">
+                        <button class="clear-canvas">Limpiar Pizarra</button>
+                        <button class="save-img">Guardar imagen</button>
+                    </div>
+                    
+                </section>
+                <section class="drawing-board">
+                    <canvas></canvas>
+                </section>
+            </div> 
+            <!--<div class="pantalla-completa"></div>-->
+        </div>
        
     </main>
     <!-- Fin de contenido-->

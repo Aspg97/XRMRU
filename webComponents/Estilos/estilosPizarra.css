@@ -13,16 +13,24 @@ main{
     min-height: 80vh;
 }
 
-.container{
-    background-image: url("../IMG/icons/pizarra.jpg");
+.container-pizz{
+    background-image: url("../IMG/texturaDeMadera.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 80%;
-    display: flex;
     width: 100%;
-    gap: 10px;
-    margin: 30px;
-    padding: 10px;
-    max-width: 1050px;
+    padding: 20px;
     font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.container{
+    flex-grow: 1;
+    background-image: url("../IMG/icons/pizarra.jpg");
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
 }
 
 section{
@@ -181,3 +189,18 @@ section{
     height: 100%;
 }
 
+.pantalla-completa{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-image: url("../IMG/icons/pantalla-completa-01.svg");
+    background-size: cover;
+    top: 15px;
+    right: 15px;
+    transition: 0.3s;
+}
+
+.pantalla-completa:hover{
+    box-shadow: 0 0 7px #000;
+}
