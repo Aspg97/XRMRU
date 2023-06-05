@@ -14,13 +14,14 @@ const contModoDatosG = document.querySelector(".cont-op-cant");
 const contModoDatosA = document.querySelector(".cont-op-grid-auto");
 const contModoDatosP = document.querySelector(".cont-op-per");
 const contGraph = document.querySelector(".cont-graph");
+const descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
 var cntC;
 btnPerf.addEventListener("click", () => {
     contInfoGraphSolu.style.display = "none";
-    mosRes.style.display="none";
+    mosRes.style.display = "none";
     cntC = cantC.value;
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000"
@@ -59,7 +60,7 @@ btnAuto.addEventListener("click", () => {
 //FIN PROCESO >> cuando el usuario selecciona automatico
 //INICIO PROCESO >> accion del boton generar
 btnGen.addEventListener("click", () => {
-    
+
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000";
     pincel.strokeStyle = "#000";
@@ -104,6 +105,10 @@ btnGen.addEventListener("click", () => {
     }
 });
 //FIN PROCESO >> accion del boton generar
+
+descargar.addEventListener("click", ()=>{
+    descargarCanvas(canvas)
+});
 
 //>> funcion estilo seleccion tipo de generar
 function btnSelected(auto) {
@@ -360,24 +365,24 @@ function mostrarRes(cRes, nSeg, letra, cx, cy) {
     let aux = 0, res;
     divCont.classList.add("auto-gen-solu");
     if (nSeg === 0) {
-        cx[aux-1]=0;
-        cy[aux-1]=0;
-        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux-1]} ; d<sub>1</sub> = ${cy[aux-1]}</p>`;
+        cx[aux - 1] = 0;
+        cy[aux - 1] = 0;
+        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; d<sub>1</sub> = ${cy[aux - 1]}</p>`;
         p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; d<sub>2</sub> = ${cy[aux]}</p> `;
     } else {
         aux = nSeg;
         p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; d<sub>1</sub> = ${cy[aux - 1]}</p> `;
         p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; d<sub>2</sub> = ${cy[aux]}</p>`;
     }
-    if(nSeg === 0){
-        res = cy[aux]/cx[aux];
-    }else{
-        res = (cy[aux]-cy[aux-1])/(cx[aux]-cx[aux-1])
+    if (nSeg === 0) {
+        res = cy[aux] / cx[aux];
+    } else {
+        res = (cy[aux] - cy[aux - 1]) / (cx[aux] - cx[aux - 1])
     }
     expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δd</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msup><mi>d2</mi></msup><mo>-</mo><msup><mi>d1</mi></msup></mrow><mrow><msup><mi>t2</mi></msup><mo>-</mo><msup><mi>t1</mi></msup></mrow></mfrac></mrow></math>`;
-    expGraf.innerHTML=`<h4>Entonces:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
+    expGraf.innerHTML = `<h4>Entonces:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
     expGrafRes.innerHTML = `<math><mi>v</mi><mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
-    divCont.innerHTML=`<h4>Datos:</h4>`;
+    divCont.innerHTML = `<h4>Datos:</h4>`;
     divEncaDat.appendChild(p1);
     divEncaDat.appendChild(p2);
     divCont.appendChild(divEncaDat);

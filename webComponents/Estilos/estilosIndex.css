@@ -26,24 +26,31 @@ body{
     background-image: url("../IMG/Fondo-header_Mesa\ de\ trabajo\ 1.jpg");
     background-position: center;
     width: 100%;
-    height: 80px;
+    padding: 10px;
+}
+
+.cont-head-tittle {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 365px;
 }
 
-.cont-head-title {
-    width: 40%;
-    height: 50px;
-    text-align: center;
-}
-
-.title-page {
+.tittle-page {
     display: inline-block;
     color: #fff;
     font-family: 'Sedgwick Ave Display', cursive;
     font-weight: lighter;
     font-size: 50px;
+}
+
+.tittle-complete-page {
+    color: #fff;
+    font-family: 'Righteous', cursive;
+    font-weight: lighter;
+    font-size: 25px;
 }
 
 /* Estilos menu de experiencia */
@@ -249,4 +256,14 @@ td, th{
     font-family: 'Vina Sans', cursive;
     font-weight: lighter;
     font-size: 25px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 450px){
+    .tittle-complete-page{
+        font-size: 20px;
+    }
+
+    .nav-items ul a{
+        text-align: center;
+    }
 }

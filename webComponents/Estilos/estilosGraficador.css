@@ -27,13 +27,16 @@ button:hover {
 
 /*Estilos contenedor eleccion modo de graficar*/
 .cont-elec-mod-graf {
-    width: 40%;
+    flex: 1;
+    max-width: 500px;
     margin-top: 25px;
     text-align: center;
 }
 
 .tit-elec-mod-graf {
-    margin: 0px 0 25px 0;
+    text-align: center;
+    width: 100%;
+    margin: 25px 0 0 0;
     font-weight: lighter;
     font-size: 35px;
     text-shadow: 0 0 5px #666;
@@ -148,14 +151,14 @@ option {
 }
 
 .cont-info-graph, .cont-info-graph-solu {
-    flex-grow: 1;
+    flex: 1;
     flex-wrap: wrap;
     display: none;
     justify-content: space-around;
     border-radius: 10px;
+    min-width: 300px;
     max-width: 400px;
-    height: 100%;
-    margin: 0 20px 0 0;
+    margin: 0 20px 20px 0;
     padding: 15px;
     background-image: url("../IMG/Simulator/fondo-info_Mesa\ de\ trabajo\ 1.jpg");
     animation: none;
@@ -301,9 +304,16 @@ math{
 /*Estilos graficadora*/
 
 .cont-graph {
-    padding: 5px;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 5px;
     background-color: #0070C2;
     border-radius: 10px;
+    min-width: 550px;
+    max-width: 750px;
+    width: 50%;
 }
 
 .tit-graph{
@@ -312,10 +322,31 @@ math{
 }
 
 .graph {
+    width: 100%;
+    height: 300px;
     padding: 5px;
     background-color: #fff;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
+}
+
+.cont-des-grap{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cont-des-grap:hover{
+    transition: 0.5s;
+    text-shadow: 0 0 10px #000;
+}
+
+.cont-des-grap p{
+    font-family: 'Cabin', sans-serif;   
+    color: #fff;
+    display: inline-block;
 }
 
 /*Estilos btn generar*/
@@ -336,4 +367,20 @@ math{
 .btn-generar:hover, .btn-ingresar-datos:hover {
     transition: 0.5s;
     background-color: #043775;
+}
+
+@media screen and (min-width: 375px) and (max-width: 450px){
+    .cont-graph{    
+        max-width: 90%;
+        min-width: 200px;
+    }
+    .cont-info-graph, .cont-info-graph-solu{
+        margin: 0 0 20px 0;
+    }
+    .graph{
+        height: 200px;
+    }
+    .tit-elec-mod-graf{
+        font-size: 25px;
+    }
 }

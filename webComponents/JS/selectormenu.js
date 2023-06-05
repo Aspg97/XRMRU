@@ -56,4 +56,6 @@ window.addEventListener("scroll", () => {
     }
 });
 //FIN PROCESO >> Vista de menu
-
+body.addEventListener("resize",()=>{
+    console.log("hola");
+});

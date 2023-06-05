@@ -1,8 +1,10 @@
 //INICIO PROCESO >> inicializacion del grafico con canvas
 const canvas = document.getElementById("canvas");
 const pincel = canvas.getContext("2d");
-canvas.width = 700;
-canvas.height = 300;
+
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+let espX = 30;
 function ini() {
     pincel.lineWidth = 1;
     // EjeY
@@ -27,22 +29,22 @@ function ini() {
     pincel.closePath();
     // EjeX
     pincel.beginPath();
-    pincel.moveTo(0, canvas.height - 25);
-    pincel.lineTo(canvas.width, canvas.height - 25);
+    pincel.moveTo(0, canvas.height - espX);
+    pincel.lineTo(canvas.width, canvas.height - espX);
     pincel.stroke();
     pincel.closePath();
     // EjeX > direccion-
     pincel.beginPath();
-    pincel.moveTo(0, canvas.height - 25);
-    pincel.lineTo(10, canvas.height - 28);
-    pincel.lineTo(10, canvas.height - 22);
+    pincel.moveTo(0, canvas.height - espX);
+    pincel.lineTo(10, canvas.height - (espX+3));
+    pincel.lineTo(10, canvas.height - (espX-3));
     pincel.fill();
     pincel.closePath();
     // EjeX > direccion+
     pincel.beginPath();
-    pincel.moveTo(canvas.width, canvas.height - 25);
-    pincel.lineTo(canvas.width - 10, canvas.height - 28);
-    pincel.lineTo(canvas.width - 10, canvas.height - 22);
+    pincel.moveTo(canvas.width, canvas.height - espX);
+    pincel.lineTo(canvas.width - 10, canvas.height - (espX+3));
+    pincel.lineTo(canvas.width - 10, canvas.height - (espX-3));
     pincel.fill();
     pincel.closePath();
     // Letra Eje Y
@@ -58,9 +60,9 @@ function ini() {
 //Dibujar numeros > EjeY
 const linNumY = ({ porcentaje = 0, etinum = 1 }) => ({
     x1: 30,
-    y1: (((canvas.height - 80) / 100) * porcentaje) + (canvas.height - 25),
+    y1: (((canvas.height - 80) / 100) * porcentaje) + (canvas.height - espX),
     x2: 40,
-    y2: (((canvas.height - 80) / 100) * porcentaje) + (canvas.height - 25),
+    y2: (((canvas.height - 80) / 100) * porcentaje) + (canvas.height - espX),
     etinum,
     fontSS: "12px Arial",
     dibujarNumero() {
@@ -76,9 +78,9 @@ const linNumY = ({ porcentaje = 0, etinum = 1 }) => ({
 //Dibujar numeros > EjeX
 const linNumX = ({ porcentaje = 20, etinum = 1 }) => ({
     x1: (((canvas.width - 80) / 100) * porcentaje) + 35,
-    y1: canvas.height - 30,
+    y1: canvas.height - (espX+5),
     x2: (((canvas.width - 80) / 100) * porcentaje) + 35,
-    y2: canvas.height - 20,
+    y2: canvas.height - (espX-5),
     etinum,
     fontSS: "12px Arial",
     dibujarNumero() {
@@ -96,7 +98,7 @@ const linNumX = ({ porcentaje = 20, etinum = 1 }) => ({
 const componentesSegmento = ({ letra = 'a', px = 0, py = 0 }) => ({
     letra,
     x: (((canvas.width - 80) / 100) * px) + 22,
-    y: (((canvas.height - 80) / 100) * py) + (canvas.height - 30),
+    y: (((canvas.height - 80) / 100) * py) + (canvas.height - (espX+5)),
     fontSS: "15px Arial",
     dibujarLetra() {
         pincel.beginPath();
@@ -117,9 +119,9 @@ const componentesSegmento = ({ letra = 'a', px = 0, py = 0 }) => ({
 //INICIO PROCESO >> dibujar segmento
 const segmento = ({ px1 = 0, py1 = 0, px2 = 50, py2 = 50 }) => ({
     x1: (((canvas.width - 80) / 100) * px1) + 35,
-    y1: (((canvas.height - 80) / 100) * py1) + (canvas.height - 25),
+    y1: (((canvas.height - 80) / 100) * py1) + (canvas.height - espX),
     x2: (((canvas.width - 80) / 100) * px2) + 35,
-    y2: (((canvas.height - 80) / 100) * py2) + (canvas.height - 25),
+    y2: (((canvas.height - 80) / 100) * py2) + (canvas.height - espX),
     dibujarSegmento() {
         pincel.beginPath();
         pincel.strokeStyle = "#0070C2";
@@ -137,7 +139,7 @@ const guias = ({ lcx = 1000, ancx1 = 0, ancy1 = -20, guia = "y" }) => ({
     anchoLinea: 5,
     espacio:10,
     x1: (((canvas.width - 80) / 100) * ancx1) + 35,
-    y1: (((canvas.height - 80) / 100) * ancy1) + (canvas.height - 25),
+    y1: (((canvas.height - 80) / 100) * ancy1) + (canvas.height - espX),
     guia,
     dibujarGuias(){
         if(this.guia === "y"){
@@ -161,7 +163,7 @@ const guias = ({ lcx = 1000, ancx1 = 0, ancy1 = -20, guia = "y" }) => ({
     },
     dibujarGuiasX() {
         this.recorrido = this.y1;
-        while (this.recorrido < canvas.height-25) {
+        while (this.recorrido < canvas.height-espX) {
             pincel.beginPath();
             pincel.strokeStyle = "#999";
             pincel.lineWidth = 0.3;
@@ -175,3 +177,18 @@ const guias = ({ lcx = 1000, ancx1 = 0, ancy1 = -20, guia = "y" }) => ({
     }
 });
 //FIN PROCESO >> dibujar lineas guias
+//>> Funcion descargar Canvas
+function descargarCanvas(canvas){
+    const canvasTemp = document.createElement("canvas");
+    canvasTemp.width = canvas.width;
+    canvasTemp.height = canvas.height;
+    const ctx = canvasTemp.getContext("2d");
+    ctx.beginPath();
+    ctx.fillStyle="#fff"
+    ctx.fillRect(0,0,canvasTemp.width,canvasTemp.height);
+    ctx.drawImage(canvas,0,0);
+    let enlace = document.createElement('a');
+    enlace.download = "gráfica-dvst.jpg";
+    enlace.href = canvasTemp.toDataURL("image/jpg", 1);
+    enlace.click();
+}
