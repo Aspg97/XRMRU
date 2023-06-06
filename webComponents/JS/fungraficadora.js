@@ -1,20 +1,20 @@
-const btnAuto = document.getElementById("btn-auto");
-const btnPerf = document.getElementById("btn-per");
-const btnGen = document.getElementById("gen-graph");
-const cantX = document.getElementById("select-cant-x");
-const cantY = document.getElementById("select-cant-y");
-const cantC = document.getElementById("select-cant-coor");
-const cantOpSol = document.querySelector(".op-seg-solu");
-const mosRes = document.querySelector(".mos-res");
-const contDateGraph = document.querySelector(".cont-date-graph");
-const contInfoGraph = document.querySelector(".cont-info-graph");
-const contInfoGraphSolu = document.querySelector(".cont-info-graph-solu");
-const contMosRes = document.querySelector(".mos-cont-op-res");
-const contModoDatosG = document.querySelector(".cont-op-cant");
-const contModoDatosA = document.querySelector(".cont-op-grid-auto");
-const contModoDatosP = document.querySelector(".cont-op-per");
-const contGraph = document.querySelector(".cont-graph");
-const descargar = document.querySelector(".cont-des-grap");
+const btnAuto = document.getElementById("btn-auto"),
+btnPerf = document.getElementById("btn-per"),
+btnGen = document.getElementById("gen-graph"),
+cantX = document.getElementById("select-cant-x"),
+cantY = document.getElementById("select-cant-y"),
+cantC = document.getElementById("select-cant-coor"),
+cantOpSol = document.querySelector(".op-seg-solu"),
+mosRes = document.querySelector(".mos-res"),
+contDateGraph = document.querySelector(".cont-date-graph"),
+contInfoGraph = document.querySelector(".cont-info-graph"),
+contInfoGraphSolu = document.querySelector(".cont-info-graph-solu"),
+contMosRes = document.querySelector(".mos-cont-op-res"),
+contModoDatosG = document.querySelector(".cont-op-cant"),
+contModoDatosA = document.querySelector(".cont-op-grid-auto"),
+contModoDatosP = document.querySelector(".cont-op-per"),
+contGraph = document.querySelector(".cont-graph"),
+descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
@@ -106,7 +106,7 @@ btnGen.addEventListener("click", () => {
 });
 //FIN PROCESO >> accion del boton generar
 
-descargar.addEventListener("click", ()=>{
+descargar.addEventListener("click", () => {
     descargarCanvas(canvas)
 });
 
@@ -338,7 +338,7 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     slec.appendChild(slectFrag);
     cantOpSol.appendChild(slec);
     const numSelec = document.getElementById("select-sg-solu");
-    let numS = 0
+    let numS = -1;
     numSelec.addEventListener("click", () => {
         if (numS != numSelec.value && numSelec.value != -1) {
             mosRes.style.display = "flex";
