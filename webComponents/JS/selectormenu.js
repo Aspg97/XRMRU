@@ -1,8 +1,8 @@
 const dirPa = window.location.href;
 const foot = document.querySelector(".footer-page");
-const body = document.querySelector("body");
 const menu = document.querySelector(".cont-nav-items");
-//const full = document.getElementById("fullscreen");
+const btnMenu = document.querySelector(".menu-responsive");
+const listaMenu = document.querySelector(".nav-items");
 let nomPag = dirPa.substring(dirPa.lastIndexOf("/") + 1, dirPa.length);
 let index = document.getElementById('page-ini');
 let simulator = document.getElementById('page-sim');
@@ -29,33 +29,38 @@ switch (nomPag) {
     default: console.log(nomPag);
 
 }
-//INICIO PROCESO >> Vista de footer
-/*var heightDoc,heightWin;
-function ubicacionFooter() {
-    heightWin = document.documentElement.clientHeight;
-    heightDoc = body.clientHeight;
-    //console.log(heightDoc + "--" + heightWin);
-    if (heightDoc < heightWin) {
-        foot.style.position = "absolute";
-        foot.style.bottom = "0";
-    } else {
-        foot.removeAttribute("style");
-    }
-}
-document.documentElement.addEventListener("mouseover",()=>{
-    ubicacionFooter();
-});*/
-//FIN PROCESO >> Vista de footer
-//INICIO PROCESO >> Vista de menu
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 80) {
-        menu.style.position = "fixed";
-        menu.style.top = "0";
-    } else {
-        menu.removeAttribute("style");
+//>>identificar cuando el tamano es pequeno
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 750) {
+        listaMenu.style.display = "flex";
+    }else{
+        listaMenu.style.display = "none";
     }
 });
-//FIN PROCESO >> Vista de menu
-body.addEventListener("resize",()=>{
-    console.log("hola");
+//INICIO PROCESO >> Vista de menu
+window.addEventListener("scroll", () => {
+    if (window.innerWidth > 750) {
+        if (window.scrollY > 80) {
+            menu.style.position = "fixed";
+            menu.style.top = "0";
+        } else {
+            menu.removeAttribute("style");
+        }
+    }
+});
+//>> Menu responsive
+let desplegar = false
+btnMenu.addEventListener("click", () => {
+    if (desplegar === false) {
+        menu.style.width = "100%";
+        menu.style.height = "auto";
+        menu.style.borderRadius = "0px";
+        btnMenu.style.margin = "5px";
+        listaMenu.style.display = "flex";
+        desplegar = true;
+    } else {
+        menu.removeAttribute("style");
+        listaMenu.style.display = "none";
+        desplegar = false;
+    }
 });

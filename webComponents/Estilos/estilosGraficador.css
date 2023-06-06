@@ -369,18 +369,23 @@ math{
     background-color: #043775;
 }
 
-@media screen and (min-width: 375px) and (max-width: 450px){
+@media screen and (min-width: 260px) and (max-width: 600px){
     .cont-graph{    
         max-width: 90%;
         min-width: 200px;
     }
     .cont-info-graph, .cont-info-graph-solu{
         margin: 0 0 20px 0;
+        min-width: 200px;
+        padding: 5px;
     }
     .graph{
         height: 200px;
     }
     .tit-elec-mod-graf{
         font-size: 25px;
+    }
+    .tit-graph{
+        font-size: 20px;
     }
 }
