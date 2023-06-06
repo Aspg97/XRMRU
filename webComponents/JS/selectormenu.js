@@ -55,7 +55,7 @@ btnMenu.addEventListener("click", () => {
         menu.style.width = "100%";
         menu.style.height = "auto";
         menu.style.borderRadius = "0px";
-        btnMenu.style.margin = "5px";
+        btnMenu.style.marginBottom = "5px";
         listaMenu.style.display = "flex";
         desplegar = true;
     } else {

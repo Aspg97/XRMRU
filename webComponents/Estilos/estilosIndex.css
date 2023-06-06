@@ -98,7 +98,6 @@ body{
     border-style: none;
     display: none;
     width: 25px;
-    margin: 5px auto;
 }
 
 /*Estilos menu de información*/
@@ -278,6 +277,7 @@ td, th{
         text-align: center;
     }
     .cont-nav-items{
+        padding: 10px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;

@@ -35,15 +35,12 @@ label {
 }
 
 .space {
-    width: 90px;
     height: 10px;
-    display: inline-block;
 }
 
 .titulo-obj label {
     text-align: center;
-    width: 180px;
-    margin: 0 25px;
+    width: 100px;
 }
 
 select,
@@ -72,7 +69,7 @@ input {
 
 .option-info select,
 select {
-    width: 50px;
+    width: 60px;
     font-size: 15px;
     text-align: center;
     margin-right: 25px;
@@ -152,13 +149,26 @@ option {
     padding: 2px;
 }
 
-.cont-inp {
+.cont-inp,
+.cont-label-tit {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 90%;
 }
 
-.mos-obj label {
-    width: 100px;
+.label-tit {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    max-width: 185px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mos-obj label,
+.space {
+    width: 10%;
 }
 
 .cont-inp-info-par {
@@ -168,7 +178,6 @@ option {
     max-width: 185px;
     align-items: flex-end;
     justify-content: center;
-    margin: 0 25px;
 }
 
 .inpO {
@@ -182,7 +191,7 @@ option {
 
 .opt-um {
     height: 28px;
-    width: 80px;
+    max-width: 80px;
     margin: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
@@ -304,8 +313,110 @@ option {
     transition: background 1s ease-out;
 }
 
-.btn-play:hover{
+.btn-play:hover {
     transition: 0.5s;
     box-shadow: 0px 0px 5px #000;
 }
+
 /*fin de estilos para el bloque de simulacion*/
+@media screen and (min-width:260px) and (max-width:950px) {
+    .cont-auto{
+        width: 100px;
+        right: -100px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    label{
+        font-size: 20px;
+    }
+    .mos-obj select {
+        width: 80%;
+    }
+
+    .enter-date {
+        padding: 3px;
+    }
+
+    .cont-simulator {
+        width: 100%;
+    }
+
+    .option-info {
+        padding: 10px 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .cont-lbl-in {
+        padding: 15px;
+    }
+
+    .label-tit label{
+        width: 100%;
+    }
+
+    .titulo-obj {
+        margin: 0;
+    }
+
+    .mos-obj {
+        margin: 10px auto;
+    }
+
+    .cont-inp-info-par {
+        margin: 0 5px;
+        width: 25%;
+    }
+
+    .inpO {
+        width: 80%
+    }
+    
+    .cont-subtitle-state{
+        padding: 10px;
+    }
+    .title-simu-state{
+        font-size: 20px;
+    }
+    .advertencia-simulador{
+        width: 90%;
+        padding: 5px 15px;
+    }
+
+    .acc-sim p{
+        margin: 0 5px;
+    }
+    .cont-calle{
+        height: 40px;
+    }
+    .cont-simu-street{
+        width: 100%;
+    }
+    .simu-start{
+        min-width: 80px;
+    }
+    .cont-auto{
+        width: 70px;
+        right: -70px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    label{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:350px) {
+    label{
+        font-size: 15px;
+    }
+    .btn-gen-obj{
+        font-size: 12px;
+    }
+    .advertencia-simulador{
+        width: 90%;
+        padding: 5px;
+    }
+}
