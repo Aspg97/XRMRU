@@ -1,0 +1,40 @@
+:root {
+    --first-color: #034492;
+    --second-color: #E8DAEF;
+    --compl-color: #0070C2;
+}
+.cont-manual{
+    justify-content: flex-start;
+}
+.cont-list-herramientas{
+    background-color: var(--compl-color);
+}
+.cont-tit-manual{
+    width: 100%;
+    background-color: var(--first-color);
+    padding: 25px;
+}
+.tit-manual-de-usuario{
+    color: #fff;
+}
+.list-herramientas{
+    height: 100%;
+}
+ul{
+    
+    font-family: 'Righteous', cursive;
+    list-style: none;
+}
+.list-herramientas a{
+    color: #fff;
+    text-decoration: none;
+}
+.list-herramientas li {
+    padding: 15px;
+}
+.cont-manual-herramientas{
+    flex-grow: 1;
+    min-width: 80px;
+    min-height: 25px;
+    background-color: aqua;
+}
