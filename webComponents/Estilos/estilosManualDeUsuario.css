@@ -7,7 +7,10 @@
     justify-content: flex-start;
 }
 .cont-list-herramientas{
+    flex-grow: 1;
     background-color: var(--compl-color);
+    max-width: 15%;
+    text-align: center;
 }
 .cont-tit-manual{
     width: 100%;
@@ -20,7 +23,7 @@
 .list-herramientas{
     height: 100%;
 }
-ul{
+.list-herramientas ul{
     
     font-family: 'Righteous', cursive;
     list-style: none;
@@ -35,6 +38,7 @@ ul{
 .cont-manual-herramientas{
     flex-grow: 1;
     min-width: 80px;
+    max-width: 85%;
     min-height: 25px;
     background-color: aqua;
 }
