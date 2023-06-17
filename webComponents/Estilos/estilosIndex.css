@@ -148,6 +148,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    font-family: 'Cabin', sans-serif;
 }
 .cont-info-mru {
     width: 65%;
@@ -160,19 +161,43 @@ main {
 }
 
 h2{
+    padding: 10px;
     font-family: 'Righteous', cursive;
     text-align: center;
 }
 
 h3{
-    padding-top: 5px;
+    padding-top: 15px;
     font-family: 'Righteous', cursive;
+}
+
+.ejemplo-mru{
+    display: flex;
+    padding: 10px;
+}
+
+.eje-mru{
+    padding: 5px;
+    text-align: center;
+}
+
+.eje-mru img{
+    border-color: var(--compl-color);
+    border-width: 1px;
+    border-style: solid;
+    width: 470px;
+    height: 160px;
 }
 
 .cont-info-mag{
     width: 65%;
     text-align: justify;
     line-height: 40px;
+}
+
+.info-mag{
+    display: flex;
+    padding: 10px;
 }
 
 .cont-vel{
@@ -190,6 +215,84 @@ h3{
     align-items: center;
 }
 
+/*Estilos para los gifts*/
+.gift1{
+    height: 160px;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gift2{
+    height: 160px;
+    width: 470px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gift3{
+    height: 160px;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
+
+.gift img{
+    object-fit: fill;
+}
+
+/* sección de Gráficos y Ecuaciones*/
+
+.cont-graph{
+    padding-top: 25px;
+    width: 65%;
+}
+
+.ecuaciones{
+    text-align: justify;
+    line-height: 40px; 
+}
+
+.formula{
+    padding: 10px;
+    text-align: center;
+}
+
+.formula img{
+    width: 300px;
+    height: 230px;
+}
+
+.ecuaciones ul{
+    padding-left: 60px;
+}
+
+.cont-graph-speed{
+    text-align: justify;
+    line-height: 40px;
+}
+
+.cont-graph-speed ul{
+    padding-left: 60px;
+}
+
+.img-speed{
+    text-align: center;
+}
+
+.img-speed img{
+    width: 550px;
+    height: 250px;
+}
+
+.img-dist{
+    text-align: center;
+}
+
+.img-dist img{
+    width: 600px;
+    height: 250px;
+}
 
 /*Estilos para tablas de conversion*/
 
