@@ -3,42 +3,166 @@
     --second-color: #E8DAEF;
     --compl-color: #0070C2;
 }
-.cont-manual{
-    justify-content: flex-start;
-}
-.cont-list-herramientas{
-    flex-grow: 1;
-    background-color: var(--compl-color);
-    max-width: 15%;
-    text-align: center;
-}
-.cont-tit-manual{
+
+/*Estilos lista caja de herramientas*/
+
+.cont-tit-manual {
     width: 100%;
     background-color: var(--first-color);
     padding: 25px;
 }
-.tit-manual-de-usuario{
+
+.tit-manual-de-usuario {
     color: #fff;
+    padding: 0;
 }
-.list-herramientas{
+
+.list-herramientas {
     height: 100%;
 }
-.list-herramientas ul{
-    
+
+.cont-list-herramientas {
+    background-color: var(--compl-color);
+    text-align: center;
+}
+
+
+.list-herramientas ul {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
     font-family: 'Righteous', cursive;
     list-style: none;
 }
-.list-herramientas a{
+
+.list-herramientas a {
     color: #fff;
     text-decoration: none;
 }
+
 .list-herramientas li {
-    padding: 15px;
+    padding: 0 15px;
+    transition: 0.3s;
+    text-align: center;
 }
-.cont-manual-herramientas{
-    flex-grow: 1;
+
+.list-herramientas li:hover {
+    text-shadow: 0 0 15px #000, 0 0 15px #000;
+}
+
+/*Estilos contenido manual*/
+
+.cont-manual-herramientas {
     min-width: 80px;
     max-width: 85%;
     min-height: 25px;
-    background-color: aqua;
+}
+
+.section-manual-usuario {
+    margin: 25px;
+}
+
+.det-seccion-manual ul {
+    margin-bottom: 15px;
+}
+
+.det-seccion-manual li,
+.sec-herr-indv li {
+    margin: 5px;
+}
+
+.tit-section-manual {
+    background-color: var(--compl-color);
+    color: #fff;
+    font-weight: lighter;
+}
+
+p {
+    text-align: center;
+}
+
+.des-sec-herr-indv {
+    margin: 25px;
+}
+
+.seccion-herramienta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.sec-herr-indv {
+    background-color: #fff8;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 5px var(--first-color);
+    border-radius: 1em;
+    padding: 10px;
+}
+
+.tit-secc-herramienta {
+    margin: 10px;
+    padding: 0;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.5em;
+}
+
+.cont-img-herr {
+    width: 100%;
+    text-align: center;
+}
+
+.cont-img-herr img {
+    max-width: 100%;
+}
+
+.info-herr p {
+    margin: 10px;
+}
+
+.cont-info-herr ul {
+    padding-left: 30px;
+}
+
+.cont-unidades-de-medida {
+    display: grid;
+    grid-template-columns: 60% 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.cont-unidades-de-medida ul {
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.cont-unidades-de-medida ul h4 {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.uni-velocidad {
+    grid-row: 1/3;
+}
+
+@media screen and (min-width: 200px) and (max-width:950px) {
+    .cont-unidades-de-medida{
+        grid-template-columns: 1fr;
+    }
+    .tit-secc-herramienta {
+        margin: 10px;
+        padding: 0;
+        text-align: center;
+        font-weight: lighter;
+        font-size: 1em;
+    }
+    .cont-manual-herramientas{
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .seccion-herramienta{
+        grid-template-columns: 1fr;
+    }
 }

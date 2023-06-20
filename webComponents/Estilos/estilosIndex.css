@@ -167,7 +167,6 @@ h2{
 }
 
 h3{
-    padding-top: 15px;
     font-family: 'Righteous', cursive;
 }
 
@@ -376,7 +375,31 @@ td, th{
     font-size: 25px;
 }
 
+/*Estilos de acceder al manual*/
+
+.acc-manual{
+    position: absolute;
+    top: 180px;
+    right: 20px;
+}
+
+.acc-manual div{
+    width: 100px;
+    margin: 0 auto;
+}
+
+.acc-manual a img {
+    width: 100%;
+}
+
+.acc-manual h2{
+    font-weight: lighter;
+    font-size: 1.3em;
+    color: #034492;
+}
+
 @media screen and (min-width: 260px) and (max-width: 750px){
+
     .cont-head-tittle{
         width: 90%;
         
@@ -412,5 +435,18 @@ td, th{
     }
     .menu-responsive{
         display: flex;
+    }
+
+    .acc-manual div{
+        width: 80px;
+    }
+    .acc-manual{
+        align-items: center;
+        display: flex;
+        top: 130px;
+    }
+
+    .acc-manual h2{
+        font-size: 1em;
     }
 }
