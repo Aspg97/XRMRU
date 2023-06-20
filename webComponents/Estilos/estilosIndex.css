@@ -173,6 +173,8 @@ h3{
 .ejemplo-mru{
     display: flex;
     padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .eje-mru{
@@ -186,6 +188,7 @@ h3{
     border-style: solid;
     width: 470px;
     height: 160px;
+    margin: 0 auto;
 }
 
 .cont-info-mag{
@@ -197,6 +200,15 @@ h3{
 .info-mag{
     display: flex;
     padding: 10px;
+    flex-wrap: wrap;
+}
+
+.velocidad{
+    flex: 1;
+}
+
+.tiempo{
+    flex: 1;
 }
 
 .cont-vel{
@@ -214,26 +226,19 @@ h3{
     align-items: center;
 }
 
+.cont-expl{
+    width: 80%;
+}
+
 /*Estilos para los gifts*/
-.gift1{
-    height: 160px;
-    width: 500px;
+.gift1, .gift2, .gift3{
+    width: 20%;
     padding: 10px;
     text-align: center;
 }
 
-.gift2{
-    height: 160px;
-    width: 470px;
-    padding: 10px;
-    text-align: center;
-}
-
-.gift3{
-    height: 160px;
-    width: 300px;
-    padding: 10px;
-    text-align: center;
+.gift1, .gift2{
+    min-width: 200px;
 }
 
 .gift img{
@@ -253,13 +258,9 @@ h3{
 }
 
 .formula{
+    width: 70%;
     padding: 10px;
     text-align: center;
-}
-
-.formula img{
-    width: 300px;
-    height: 230px;
 }
 
 .ecuaciones ul{
@@ -276,31 +277,38 @@ h3{
 }
 
 .img-speed{
+    width: 70%;
     text-align: center;
-}
-
-.img-speed img{
-    width: 550px;
-    height: 250px;
 }
 
 .img-dist{
     text-align: center;
 }
 
-.img-dist img{
-    width: 600px;
-    height: 250px;
+.cont-graph-ace{
+    text-align: justify;
+    line-height: 40px;
+}
+
+.img-ace{
+    text-align: center;
 }
 
 /*Estilos para tablas de conversion*/
 
-.cont-table{
-    width: 65%;
+.cont-magnitudes{
+    width: 50%;
+}
+
+.cont-tabla{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .tables{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -312,8 +320,7 @@ h3{
 }
 
 table{
-    margin: 10px 30px 30px 30px;
-    display: inline-table;
+    margin: 5px 15px 15px 15px;
 }
 
 thead{
