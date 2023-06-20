@@ -396,6 +396,18 @@ td, th{
     font-weight: lighter;
     font-size: 1.3em;
     color: #034492;
+    text-shadow: 0 0 5px #fff;
+}
+
+@media screen and (min-width: 760px) and (max-width: 950px){
+    .acc-manual h2{
+        padding: 0;
+        text-align: center;
+        max-width: 120px;
+    }
+    .nav-items ul a{
+        width: 150px;
+    }
 }
 
 @media screen and (min-width: 260px) and (max-width: 750px){
@@ -443,7 +455,7 @@ td, th{
     .acc-manual{
         align-items: center;
         display: flex;
-        top: 130px;
+        top: 135px;
     }
 
     .acc-manual h2{

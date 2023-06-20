@@ -22,7 +22,6 @@
 }
 
 .cont-list-herramientas {
-    background-color: var(--compl-color);
     text-align: center;
 }
 
@@ -72,6 +71,7 @@
 }
 
 .tit-section-manual {
+    border-radius: 0 35px;
     background-color: var(--compl-color);
     color: #fff;
     font-weight: lighter;

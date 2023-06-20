@@ -324,9 +324,12 @@ option {
         width: 100px;
         right: -100px;
     }
+    .cont-simulator{
+        width: 100%;
+    }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:750px) {
     label{
         font-size: 20px;
     }
