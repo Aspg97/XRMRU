@@ -1,0 +1,190 @@
+.cont-fun-teo {
+    margin: 25px 0;
+}
+
+.cont-graph,
+.cont-info-mru,
+.cont-table {
+    padding-top: 25px;
+    width: 80%;
+    text-align: justify;
+    line-height: 40px;
+}
+
+.cont-info-mru ul {
+    padding-left: 60px;
+}
+
+.fact-conv {
+    border-radius: 0 35px;
+    background-color: var(--compl-color);
+    color: #fff;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.ejemplo-mru {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.eje-mru {
+    padding: 5px;
+    text-align: center;
+    width: 60%;
+}
+
+
+.eje-mru img {
+    border-color: var(--compl-color);
+    border-width: 1px;
+    width: 100%;
+    border-style: solid;
+    margin: 0 auto;
+}
+
+.cont-info-mag {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: justify;
+    line-height: 40px;
+}
+
+.velocidad h3,
+.tiempo h3,
+.distancia h3 {
+    text-align: center;
+}
+
+.cont-vel,
+.cont-dis,
+.cont-t {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+}
+
+.velocidad,
+.tiempo {
+    flex: 1;
+    min-width: 200px;
+}
+
+.velocidad,
+.tiempo,
+.distancia,
+.cont-graph-speed {
+    margin: 15px;
+    background-color: #fff8;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0 5px var(--first-color);
+    border-radius: 1em;
+    padding: 10px;
+}
+
+.gift1,
+.gift2,
+.gift3 {
+    align-self: center;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.gift3 img {
+    max-width: 300px;
+}
+
+.ecuaciones ul,
+.cont-graph-speed ul {
+    padding-left: 60px;
+}
+
+.ecuaciones {
+    text-align: justify;
+    line-height: 40px;
+}
+
+.formula {
+    width: 400px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.cont-grafica h3 {
+    text-align: center;
+}
+
+.img-speed,
+.img-dist,
+.img-ace {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.cont-graph-speed {
+    text-align: justify;
+    line-height: 40px;
+}
+
+.tables {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cont-magnitudes {
+    flex: 1;
+    width: 50%;
+    min-width: 300px;
+}
+
+.cont-tabla {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+table {
+    margin: 5px 15px 15px 15px;
+}
+
+thead {
+    background: var(--compl-color);
+    color: white;
+    font-weight: bold;
+}
+
+.subtitulos {
+    background: var(--second-color);
+}
+
+td,
+th {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 8px 15px;
+}
+
+@media screen and (min-width: 200px) and (max-width:900px) {
+    .formula, .eje-mru {
+        width: 90%;
+    }
+
+    .img-speed,
+    .img-dist,
+    .img-ace {
+        width: 95%;
+    }
+
+    .cont-vel,
+    .cont-dis,
+    .cont-t {
+        display: grid;
+        grid-template-columns: 80%;
+        justify-content: center;
+    }
+}
