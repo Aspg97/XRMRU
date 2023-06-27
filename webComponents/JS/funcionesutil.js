@@ -332,7 +332,7 @@ function idInputs(i) {
 // INICIO >>> Funcion para activar el boton de play
 function activarBtnPlay(afi) {
     if (afi == true) {
-        idTitulo.textContent = "Simulación 2D: estamos ready!";
+        idTitulo.textContent = "Simulación 2D: estamos listos!";
         backTitulo.style.backgroundImage = 'url("../IMG/Simulator/fondo-estado-verde.png")';
         document.querySelector(".btn-play").disabled = false;
         btn_play.style.background = "#034492"

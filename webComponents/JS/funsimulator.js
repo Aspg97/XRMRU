@@ -91,6 +91,7 @@ calcular.addEventListener("click", () => {
             afi = true;
         }
     }
+    activarBtnPlay(afi);
 });
 //INICIO PROCESO >> para empezar el movimiento y aplicar estilos al btn play
 contDate.addEventListener("keyup", () => {
