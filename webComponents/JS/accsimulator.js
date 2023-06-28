@@ -1,5 +1,4 @@
 const btn_play = document.getElementById("btn-ini-simu");
-//const widthObjeto = document.querySelector(".cont-auto");
 // INICIO >>> CREACION DEL METODO MOVER AUTO
 btn_play.addEventListener("click", () => {
     //Se recogen los datos esperados del numero mayor de distancia y tiempo de los inputs
@@ -49,7 +48,7 @@ const mayores = () => {
 const mover = (maxD, maxV) => {
     // INICIO SUBPROCESO >> Para alamacenar los datos de los inputs de velocidad y distancia ya a proporcion para la implementacion en el movimiento
     const wStreet = document.getElementById("street").clientWidth;
-    const wAu = document.querySelector(".cont-auto").clientWidth;
+    let wAu = document.querySelector(".cont-auto").clientWidth;
     let velocidadesInput = [];
     let distanciasInput = [];
     for (let i = 0; i < numObj.value; i++) {
@@ -62,10 +61,10 @@ const mover = (maxD, maxV) => {
     }
     // FIN >>
     // Declaracion de variables para el desplazamiento de los autos !PROXIMO A MEJORAR
-    const despRight1 = document.querySelector(".cont-auto").clientRight;
-    const despRight2 = document.querySelector(".cont-auto").clientRight;
-    const despRight3 = document.querySelector(".cont-auto").clientRight;
-    const despRight4 = document.querySelector(".cont-auto").clientRight;
+    let despRight1 = -wAu;
+    let despRight2 = -wAu;
+    let despRight3 = -wAu;
+    let despRight4 = -wAu;
     console.log(despRight1);
     //INICIO SUB PROCESO >> para movimiento de cada elemento
     try {
