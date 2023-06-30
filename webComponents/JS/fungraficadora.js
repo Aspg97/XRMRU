@@ -339,15 +339,14 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     const numSelec = document.getElementById("select-sg-solu");
     let numS = -1;
     numSelec.addEventListener("click", () => {
-        /*try {
+        try {
             mosRes.style.display = "flex";
             mosRes.innerHTML = "";
             mostrarRes(conRes, parseInt(numSelec.value), letra, cX, cY)
             numS = numSelec.value;
         } catch (error) {
             console.log("Sin seleccionar segmento");
-        }*/
-        console.log("hola");
+        }
     });
 }
 //>> Funcion para mostrar el resultado con sus datos y contenidos
