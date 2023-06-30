@@ -1,20 +1,20 @@
 const btnAuto = document.getElementById("btn-auto"),
-btnPerf = document.getElementById("btn-per"),
-btnGen = document.getElementById("gen-graph"),
-cantX = document.getElementById("select-cant-x"),
-cantY = document.getElementById("select-cant-y"),
-cantC = document.getElementById("select-cant-coor"),
-cantOpSol = document.querySelector(".op-seg-solu"),
-mosRes = document.querySelector(".mos-res"),
-contDateGraph = document.querySelector(".cont-date-graph"),
-contInfoGraph = document.querySelector(".cont-info-graph"),
-contInfoGraphSolu = document.querySelector(".cont-info-graph-solu"),
-contMosRes = document.querySelector(".mos-cont-op-res"),
-contModoDatosG = document.querySelector(".cont-op-cant"),
-contModoDatosA = document.querySelector(".cont-op-grid-auto"),
-contModoDatosP = document.querySelector(".cont-op-per"),
-contGraph = document.querySelector(".cont-graph"),
-descargar = document.querySelector(".cont-des-grap");
+    btnPerf = document.getElementById("btn-per"),
+    btnGen = document.getElementById("gen-graph"),
+    cantX = document.getElementById("select-cant-x"),
+    cantY = document.getElementById("select-cant-y"),
+    cantC = document.getElementById("select-cant-coor"),
+    cantOpSol = document.querySelector(".op-seg-solu"),
+    mosRes = document.querySelector(".mos-res"),
+    contDateGraph = document.querySelector(".cont-date-graph"),
+    contInfoGraph = document.querySelector(".cont-info-graph"),
+    contInfoGraphSolu = document.querySelector(".cont-info-graph-solu"),
+    contMosRes = document.querySelector(".mos-cont-op-res"),
+    contModoDatosG = document.querySelector(".cont-op-cant"),
+    contModoDatosA = document.querySelector(".cont-op-grid-auto"),
+    contModoDatosP = document.querySelector(".cont-op-per"),
+    contGraph = document.querySelector(".cont-graph"),
+    descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
@@ -33,16 +33,27 @@ btnPerf.addEventListener("click", () => {
     contInfoGraph.style.animation = "transparenciaActive 0.3s";
     contModoDatosA.style.display = "none";
     contModoDatosP.style.display = "flex";
-    generarBtnIn();// Generar campos para el registro de datos
-});
-//FIN PROCESO >> cuando el usuario selecciona personalizado
-//INICIO PROCESO >> cuando el usuario cambia de valores en las opciones de cantidad de valores
-cantC.addEventListener("click", () => {
-    if (cntC != cantC.value) {
+    if(dispDetected()){
+        const buttonGenCoor = document.createElement("button");
+        buttonGenCoor.classList.add("btn-ingresar-datos","btn-resul");
+        buttonGenCoor.id = "btn-ingreDatos";
+        buttonGenCoor.innerHTML = "Generar Campos";
+        contModoDatosP.appendChild(buttonGenCoor);
+        const clickButton = document.getElementById("btn-ingreDatos");
+        clickButton.addEventListener("click", () => {
+            agregarInputs();
+        });
+    }else{
         generarBtnIn();
+        cantC.addEventListener("click", () => {
+            if (cntC != cantC.value) {
+                generarBtnIn();
+            }
+        });
+        //generarBtnIn();// Generar campos para el registro de datos
     }
 });
-//FIN PROCESO >> cuando el usuario cambia de valores en las opciones de cantidad de valores
+//FIN PROCESO >> cuando el usuario selecciona personalizado
 //INICIO PROCESO >> cuando el usuario selecciona automatico
 btnAuto.addEventListener("click", () => {
     pincel.clearRect(0, 0, canvas.width, canvas.height);
@@ -73,7 +84,7 @@ btnGen.addEventListener("click", () => {
     if (numY > numX) {
         alert("Asegurese de que los valores del eje Y no superen a los valores del eje X");
     } else {
-       // console.log("se va de largo");
+        // console.log("se va de largo");
         if (slcAuto === true) {
             mosRes.innerHTML = "";
             const valoresY = llenarDatosAutomatico(numY); //Ingreso valores een recta > Eje Y
@@ -338,9 +349,14 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     slec.appendChild(slectFrag);
     cantOpSol.appendChild(slec);
     const numSelec = document.getElementById("select-sg-solu");
-    let numS = -1;
-    numSelec.addEventListener("click", () => {
-        if (numS != numSelec.value && numSelec.value != -1) {
+    if (dispDetected()) {
+        const buttonRes = document.createElement("button");
+        buttonRes.classList.add("btn-ingresar-datos","btn-resul");
+        buttonRes.id = "btn-verSolu";
+        buttonRes.innerHTML = "Ver Solución";
+        cantOpSol.appendChild(buttonRes);
+        const clickButton = document.getElementById("btn-verSolu");
+        clickButton.addEventListener("click", () => {
             try {
                 mosRes.style.display = "flex";
                 mosRes.innerHTML = "";
@@ -349,9 +365,23 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
             } catch (error) {
                 console.log("Sin seleccionar segmento");
             }
-        }
-        numS = numSelec.value;
-    });
+        });
+    } else {
+        let numS = -1;
+        numSelec.addEventListener("click", () => {
+            if (numS != numSelec.value && numSelec.value != -1) {
+                try {
+                    mosRes.style.display = "flex";
+                    mosRes.innerHTML = "";
+                    mostrarRes(conRes, parseInt(numSelec.value), letra, cX, cY)
+                    numS = numSelec.value;
+                } catch (error) {
+                    console.log("Sin seleccionar segmento");
+                }
+            }
+            numS = numSelec.value;
+        });
+    }
 }
 //>> Funcion para mostrar el resultado con sus datos y contenidos
 function mostrarRes(cRes, nSeg, letra, cx, cy) {

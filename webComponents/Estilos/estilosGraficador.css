@@ -90,6 +90,13 @@ button:hover {
     width: 100%;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cont-op-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cont-op-per label, .lbl-op-solu{
@@ -367,6 +374,10 @@ math{
 .btn-generar:hover, .btn-ingresar-datos:hover {
     transition: 0.5s;
     background-color: #043775;
+}
+
+.btn-resul{
+    margin: 5px;
 }
 
 @media screen and (min-width: 260px) and (max-width: 600px){
