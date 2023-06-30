@@ -14,6 +14,7 @@ const btnAuto = document.getElementById("btn-auto"),
     contModoDatosA = document.querySelector(".cont-op-grid-auto"),
     contModoDatosP = document.querySelector(".cont-op-per"),
     contGraph = document.querySelector(".cont-graph"),
+    contButtonDis = document.querySelector(".cont-button-dis");
     descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
@@ -28,19 +29,20 @@ btnPerf.addEventListener("click", () => {
     ini();
     slcAuto = false;
     btnSelected(slcAuto);
-    contInfoGraph.style.display = "flex";
     contInfoGraph.style.width = contDateGraph.clientWidth - 750 + "px"; // Se le asigna el tamano restante del div
     contInfoGraph.style.animation = "transparenciaActive 0.3s";
     contModoDatosA.style.display = "none";
     contModoDatosP.style.display = "flex";
     if(dispDetected()){
+        contButtonDis.innerHTML="";
         const buttonGenCoor = document.createElement("button");
         buttonGenCoor.classList.add("btn-ingresar-datos","btn-resul");
         buttonGenCoor.id = "btn-ingreDatos";
         buttonGenCoor.innerHTML = "Generar Campos";
-        contModoDatosP.appendChild(buttonGenCoor);
+        contButtonDis.appendChild(buttonGenCoor);
         const clickButton = document.getElementById("btn-ingreDatos");
         clickButton.addEventListener("click", () => {
+            contInfoGraph.style.display = "flex";
             agregarInputs();
         });
     }else{
@@ -62,7 +64,6 @@ btnAuto.addEventListener("click", () => {
     contInfoGraphSolu.style.display = "none";
     slcAuto = true;
     btnSelected(slcAuto);
-    contInfoGraph.innerHTML = "Esfuérzate un poquito más papu";
     contGraph.style.left = ((contDateGraph.clientWidth / 2) - 365) + "px";
     contInfoGraph.removeAttribute("style");
     contModoDatosA.style.display = "grid";

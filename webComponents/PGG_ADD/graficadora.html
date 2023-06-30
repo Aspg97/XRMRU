@@ -46,7 +46,7 @@
     <main class="main-cal-graph">
         <h3 class="tit-elec-mod-graf">Forma de generar el gráfico</h3>
         <div class="cont-elec-mod-graf">
-            
+
             <div class="cont-btn-mod-graf">
                 <button class="btn-active-auto" id="btn-auto">Automático</button>
                 <button class="btn-active-per" id="btn-per">Personalizado</button>
@@ -88,19 +88,23 @@
                 <div class="cont-op-per">
                     <div class="cont-op-select">
                         <label class="lbl-op-cant">Número de Coordenadas: </label>
-                    <select class="op-num" id="select-cant-coor">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                    </select>
-                    </div>     
+                        <select class="op-num" id="select-cant-coor">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                        </select>
+                    </div>
+                    
+                    <div class="cont-button-dis">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,9 +116,10 @@
                     <h3>Soluciones</h3>
                     <div class="cont-select-solu">
                         <div class="op-seg-solu">
+
                         </div>
                     </div>
-                    
+
                     <div class="mos-res">
 
                     </div>
@@ -124,7 +129,10 @@
                 <h2 class="tit-graph">Gráfico: Distancia vs Tiempo</h2>
                 <canvas class="graph" id="canvas">
                 </canvas>
-                <div class="cont-des-grap"><p>Descargar Gráfica</p><img src="../IMG/Graficadora/iconDescargar.svg" width="15px" style="margin-left: 5px;"></div>
+                <div class="cont-des-grap">
+                    <p>Descargar Gráfica</p><img src="../IMG/Graficadora/iconDescargar.svg" width="15px"
+                        style="margin-left: 5px;">
+                </div>
             </div>
         </section>
         <button class="btn-generar" id="gen-graph">Generar</button>
