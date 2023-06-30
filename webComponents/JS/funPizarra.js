@@ -19,9 +19,11 @@ let prevMouseX, prevMouseY, snapshot,
 
 
 window.addEventListener("load", () => {
-
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
+    if(dispDetected()){
+        alert("Para hacer uso de la pizarra digital utiliza una computadora o laptop");
+    }
 
 });
 

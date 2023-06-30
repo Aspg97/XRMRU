@@ -27,9 +27,9 @@ generar.addEventListener("click", () => {
                             <option>km/h</option>
                             <option>m/h</option>
                             <option>cm/h</option>
-                            <option>km/m</option>
-                            <option>m/m</option>
-                            <option>cm/m</option>
+                            <option>km/min</option>
+                            <option>m/min</option>
+                            <option>cm/min</option>
                             <option>m/s</option>
                             <option>km/s</option>
                             <option>cm/s</option>
@@ -47,8 +47,8 @@ generar.addEventListener("click", () => {
                     <input type="number" class="inpO" value="" id="inpT`+ i + `">
                     <select class="opt-um" id="umT`+ i + `">
                         <option>h</option>
+                        <option>min</option>
                         <option>s</option>
-                        <option>m</option>
                     </select>
                     </div>
                 </div>

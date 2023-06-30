@@ -26,14 +26,15 @@ switch (nomPag) {
         gr.style.backgroundColor = "#0070C2";
         gr.style.color = "#fff";
         break;
-    default: console.log(nomPag);
-
+    default:
+        index.style.backgroundColor = "#0070C2";
+        index.style.color = "#fff";
 }
 //>>identificar cuando el tamano es pequeno
 window.addEventListener("resize", () => {
     if (window.innerWidth > 750) {
         listaMenu.style.display = "flex";
-    }else{
+    } else {
         listaMenu.style.display = "none";
     }
 });
@@ -64,3 +65,14 @@ btnMenu.addEventListener("click", () => {
         desplegar = false;
     }
 });
+//>> Detectar si está en dispositivos moviles
+let disp = false;
+function dispDetected(){
+    if(navigator.userAgent.match(/Android/i)||navigator.userAgent.match(/webOS/i)||navigator.userAgent.match(/iPhone/i)||navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPod/i)||navigator.userAgent.match(/BlackBerry/i)||navigator.userAgent.match(/Windows Phone/i)){
+        console.log("dispositivo");
+        disp = true;
+    }else{
+        console.log("no dispositivo");
+    }
+    return disp;
+}
