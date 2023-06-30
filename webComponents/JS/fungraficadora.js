@@ -47,6 +47,7 @@ btnPerf.addEventListener("click", () => {
         });
     }else{
         generarBtnIn();
+        contInfoGraph.style.display = "flex";
         cantC.addEventListener("click", () => {
             if (cntC != cantC.value) {
                 generarBtnIn();
