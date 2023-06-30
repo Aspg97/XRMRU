@@ -1,20 +1,20 @@
 const btnAuto = document.getElementById("btn-auto"),
-    btnPerf = document.getElementById("btn-per"),
-    btnGen = document.getElementById("gen-graph"),
-    cantX = document.getElementById("select-cant-x"),
-    cantY = document.getElementById("select-cant-y"),
-    cantC = document.getElementById("select-cant-coor"),
-    cantOpSol = document.querySelector(".op-seg-solu"),
-    mosRes = document.querySelector(".mos-res"),
-    contDateGraph = document.querySelector(".cont-date-graph"),
-    contInfoGraph = document.querySelector(".cont-info-graph"),
-    contInfoGraphSolu = document.querySelector(".cont-info-graph-solu"),
-    contMosRes = document.querySelector(".mos-cont-op-res"),
-    contModoDatosG = document.querySelector(".cont-op-cant"),
-    contModoDatosA = document.querySelector(".cont-op-grid-auto"),
-    contModoDatosP = document.querySelector(".cont-op-per"),
-    contGraph = document.querySelector(".cont-graph"),
-    descargar = document.querySelector(".cont-des-grap");
+btnPerf = document.getElementById("btn-per"),
+btnGen = document.getElementById("gen-graph"),
+cantX = document.getElementById("select-cant-x"),
+cantY = document.getElementById("select-cant-y"),
+cantC = document.getElementById("select-cant-coor"),
+cantOpSol = document.querySelector(".op-seg-solu"),
+mosRes = document.querySelector(".mos-res"),
+contDateGraph = document.querySelector(".cont-date-graph"),
+contInfoGraph = document.querySelector(".cont-info-graph"),
+contInfoGraphSolu = document.querySelector(".cont-info-graph-solu"),
+contMosRes = document.querySelector(".mos-cont-op-res"),
+contModoDatosG = document.querySelector(".cont-op-cant"),
+contModoDatosA = document.querySelector(".cont-op-grid-auto"),
+contModoDatosP = document.querySelector(".cont-op-per"),
+contGraph = document.querySelector(".cont-graph"),
+descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
@@ -60,6 +60,7 @@ btnAuto.addEventListener("click", () => {
 //FIN PROCESO >> cuando el usuario selecciona automatico
 //INICIO PROCESO >> accion del boton generar
 btnGen.addEventListener("click", () => {
+
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000";
     pincel.strokeStyle = "#000";
@@ -72,7 +73,7 @@ btnGen.addEventListener("click", () => {
     if (numY > numX) {
         alert("Asegurese de que los valores del eje Y no superen a los valores del eje X");
     } else {
-        //console.log("se va de largo");
+       // console.log("se va de largo");
         if (slcAuto === true) {
             mosRes.innerHTML = "";
             const valoresY = llenarDatosAutomatico(numY); //Ingreso valores een recta > Eje Y
@@ -339,14 +340,17 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     const numSelec = document.getElementById("select-sg-solu");
     let numS = -1;
     numSelec.addEventListener("click", () => {
-        try {
-            mosRes.style.display = "flex";
-            mosRes.innerHTML = "";
-            mostrarRes(conRes, parseInt(numSelec.value), letra, cX, cY)
-            numS = numSelec.value;
-        } catch (error) {
-            console.log("Sin seleccionar segmento");
+        if (numS != numSelec.value && numSelec.value != -1) {
+            try {
+                mosRes.style.display = "flex";
+                mosRes.innerHTML = "";
+                mostrarRes(conRes, parseInt(numSelec.value), letra, cX, cY)
+                numS = numSelec.value;
+            } catch (error) {
+                console.log("Sin seleccionar segmento");
+            }
         }
+        numS = numSelec.value;
     });
 }
 //>> Funcion para mostrar el resultado con sus datos y contenidos
