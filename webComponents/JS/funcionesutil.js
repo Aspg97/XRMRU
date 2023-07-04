@@ -39,22 +39,22 @@ function transformacionV(num, unI, unFd, unFt) {
     switch (op) {
         //--------------******** TODO: km *******-------------
         case "km/h,km/h":
-        case "km/m,km/m":
+        case "km/min,km/min":
         case "km/s,km/s":
         case "m/h,m/h":
-        case "m/m,m/m":
+        case "m/min,m/min":
         case "m/s,m/s":
         case "cm/h,cm/h":
-        case "cm/m,cm/m":
+        case "cm/min,cm/min":
         case "cm/s,cm/s":
             numT = num;
             break;
-        case "km/h,km/m":
-        case "km/m,km/s":
-        case "m/h,m/m":
-        case "m/m,m/s":
-        case "cm/h,cm/m":
-        case "cm/m,cm/s":
+        case "km/h,km/min":
+        case "km/min,km/s":
+        case "m/h,m/min":
+        case "m/min,m/s":
+        case "cm/h,cm/min":
+        case "cm/min,cm/s":
             numT = num / 60;
             break;
         case "km/h,km/s":
@@ -62,12 +62,12 @@ function transformacionV(num, unI, unFd, unFt) {
         case "cm/h,cm/s":
             numT = num / 3600;
             break;
-        case "km/m,km/h":
-        case "km/s,km/m":
-        case "m/m,m/h":
-        case "m/s,m/m":
-        case "cm/m,cm/h":
-        case "cm/s,cm/m":
+        case "km/min,km/h":
+        case "km/s,km/min":
+        case "m/min,m/h":
+        case "m/s,m/min":
+        case "cm/min,cm/h":
+        case "cm/s,cm/min":
             numT = num / 0.0166667;
             break;
         case "km/s,km/h":
@@ -77,19 +77,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //----------***********-------------
         case "km/h,m/h":
-        case "km/m,m/m":
+        case "km/min,m/min":
         case "km/s,m/s":
             numT = num * 1000;
             break;
-        case "km/h,m/m":
-        case "km/m,m/s":
+        case "km/h,m/min":
+        case "km/min,m/s":
             numT = (num * 1000) / 60;
             break;
         case "km/h,m/s":
             numT = (num * 1000) / 3600;
             break;
-        case "km/m,m/h":
-        case "km/s,m/m":
+        case "km/min,m/h":
+        case "km/s,m/min":
             numT = (num * 1000) / 0.0166667;
             break;
         case "km/s,m/h":
@@ -97,19 +97,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //-----------*************--------------
         case "km/h,cm/h":
-        case "km/m,cm/m":
+        case "km/min,cm/min":
         case "km/s,cm/s":
             numT = num * 100000;
             break;
-        case "km/h,cm/m":
-        case "km/m,cm/s":
+        case "km/h,cm/min":
+        case "km/min,cm/s":
             numT = (num * 100000) / 60;
             break;
         case "km/h,cm/s":
             numT = (num * 100000) / 3600;
             break;
-        case "km/m,cm/h":
-        case "km/s,cm/m":
+        case "km/min,cm/h":
+        case "km/s,cm/min":
             numT = (num * 100000) / 0.0166667;
             break;
         case "km/s,cm/h":
@@ -117,19 +117,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //--------------******** TODO: m *******-------------
         case "m/h,km/h":
-        case "m/m,km/m":
+        case "m/min,km/min":
         case "m/s,km/s":
             numT = num * 0.001;
             break;
-        case "m/h,km/m":
+        case "m/h,km/min":
             numT = (num * 0.001) / 60;
             break;
         case "m/h,km/s":
-        case "m/m,km/s":
+        case "m/min,km/s":
             numT = (num * 0.001) / 3600;
             break;
-        case "m/m,km/h":
-        case "m/s,km/m":
+        case "m/min,km/h":
+        case "m/s,km/min":
             numT = (num * 0.001) / 0.0166667;
             break;
         case "m/s,km/h":
@@ -137,19 +137,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //-----------*************--------------
         case "m/h,cm/h":
-        case "m/m,cm/m":
+        case "m/min,cm/min":
         case "m/s,cm/s":
             numT = num * 100;
             break;
-        case "m/h,cm/m":
-        case "m/m,cm/s":
+        case "m/h,cm/min":
+        case "m/min,cm/s":
             numT = (num * 100) / 60;
             break;
         case "m/h,cm/s":
             numT = (num * 100) / 3600;
             break;
-        case "m/m,cm/h":
-        case "m/s,cm/m":
+        case "m/min,cm/h":
+        case "m/s,cm/min":
             numT = (num * 100) / 0.0166667;
             break;
         case "m/s,cm/h":
@@ -157,19 +157,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //------------------******* TODO: cm********------------------
         case "cm/h,km/h":
-        case "cm/m,km/m":
+        case "cm/min,km/min":
         case "cm/s,km/s":
             numT = num * 0.000010;
             break;
-        case "cm/h,km/m":
-        case "cm/m,km/s":
+        case "cm/h,km/min":
+        case "cm/min,km/s":
             numT = (num * 0.0000101) / 60;
             break;
         case "cm/h,km/s":
             numT = (num * 0.000010) / 3600;
             break;
-        case "cm/m,km/h":
-        case "cm/s,km/m":
+        case "cm/min,km/h":
+        case "cm/s,km/min":
             numT = (num * 0.000010) / 0.0166667;
             break;
         case "cm/s,km/h":
@@ -177,19 +177,19 @@ function transformacionV(num, unI, unFd, unFt) {
             break;
         //----------***********-------------
         case "cm/h,m/h":
-        case "cm/m,m/m":
+        case "cm/min,m/min":
         case "cm/s,m/s":
             numT = num * 0.01;
             break;
-        case "cm/h,m/m":
-        case "cm/m,m/s":
+        case "cm/h,m/min":
+        case "cm/min,m/s":
             numT = (num * 0.01) / 60;
             break;
         case "cm/h,m/s":
             numT = (num * 0.01) / 3600;
             break;
-        case "cm/m,m/h":
-        case "cm/s,m/m":
+        case "cm/min,m/h":
+        case "cm/s,m/min":
             numT = (num * 0.01) / 0.0166667;
             break;
         case "cm/s,m/h":
@@ -204,45 +204,45 @@ function transformacionD(num, unI, unF) {
     let op = unI + "," + unF
     switch (op) {
         case "km,km/h":
-        case "km,km/m":
+        case "km,km/min":
         case "km,km/s":
         case "m,m/h":
-        case "m,m/m":
+        case "m,m/min":
         case "m,m/s":
             numT = num;
             break;
         case "m,km/h":
-        case "m,km/m":
+        case "m,km/min":
         case "m,km/s":
             numT = num * 0.001;
             break;
         case "cm,km/h":
-        case "cm,km/m":
+        case "cm,km/min":
         case "cm,km/s":
             numT = num * 0.000010;
             break;
         case "km,m/h":
-        case "km,m/m":
+        case "km,m/min":
         case "km,m/s":
             numT = num * 1000;
             break;
         case "cm,m/h":
-        case "cm,m/m":
+        case "cm,m/min":
         case "cm,m/s":
             numT = num * 0.01;
             break;
         case "km,cm/h":
-        case "km,cm/m":
+        case "km,cm/min":
         case "km,cm/s":
             numT = num * 100000;
             break;
         case "m,cm/h":
-        case "m,cm/m":
+        case "m,cm/min":
         case "m,cm/s":
             numT = num * 100;
             break;
         case "cm,cm/h":
-        case "cm,cm/m":
+        case "cm,cm/min":
         case "cm,cm/s":
             numT = num;
             break;
@@ -257,17 +257,17 @@ function transformacionT(num, unI, unF) {
         case "h,km/h":
         case "h,m/h":
         case "h,cm/h":
-        case "m,km/m":
-        case "m,m/m":
-        case "m,cm/m":
+        case "m,km/min":
+        case "m,m/min":
+        case "m,cm/min":
         case "s,km/s":
         case "s,m/s":
         case "s,cm/s":
             numT = num;
             break;
-        case "h,km/m":
-        case "h,m/m":
-        case "h,cm/m":
+        case "h,km/min":
+        case "h,m/min":
+        case "h,cm/min":
         case "m,km/s":
         case "m,m/s":
         case "m,cm/s":
@@ -281,9 +281,9 @@ function transformacionT(num, unI, unF) {
         case "m,km/h":
         case "m,m/h":
         case "m,cm/h":
-        case "s,km/m":
-        case "s,m/m":
-        case "s,cm/m":
+        case "s,km/min":
+        case "s,m/min":
+        case "s,cm/min":
             numT = num * 0.0166667;
             break;
         case "s,km/h":
@@ -368,42 +368,64 @@ function validaciones(num1, num2, op) {
     }
     return confValidacion;
 }
-// FIN >>> Validaciones para numeros negativos y divisiones por cero
 
-// TEST >>> FUNCION PARA TOMAR EN CUENTA A LAS DIFERENTES UNIDADES DE VALOCIDADES
-// function transformarVelocidad(vel, i) {
-//     let idInputVelocidad = "umV" + i;
-//     const uMVel = document.getElementById(idInputVelocidad);
-//     let vTransformado
-//     let unidad = uMVel.value;
-//     switch (unidad) {
-//         case "km/h":
-//             vTransformado = vel * 100000 / 3600;
-//             break;
-//         case "km/m":
-//             vTransformado = vel * 100000 / 60;
-//             break;
-//         case "km/s":
-//             vTransformado = vel * 100000;
-//             break;
-//         case "m/h":
-//             vTransformado = vel * 100 / 3600;
-//             break;
-//         case "m/m":
-//             vTransformado = vel * 100 / 60;
-//             break;
-//         case "m/s":
-//             vTransformado = vel * 100;
-//             break;
-//         case "cm/h":
-//             vTransformado = vel / 3600;
-//             break;
-//         case "cm/m":
-//             vTransformado = vel / 60;
-//             break;
-//         case "cm/s":
-//             vTransformado = vel;
-//             break;
-//     }
-//     return vTransformado;
-// }
+const incogSelected = (idForMover, numIdBotones) => {
+    let idMove = idForMover.substring(0, idForMover.lastIndexOf("-"));
+    let numId = numIdBotones.substring(numIdBotones.lastIndexOf("c")+1,numIdBotones.length);
+    console.log(idMove + " --- "+ numId);
+    valores(idMove, numIdBotones, numId);
+}
+
+const valores = (idMove, numId, numIdInp) => {
+    let idV = "checked-v-" + numId,
+        idD = "checked-d-" + numId,
+        idT = "checked-t-" + numId,
+        idCV = "icg-v-" + numId,
+        idCD = "icg-d-" + numId,
+        idCT = "icg-t-" + numId,
+        idInpV = "inpV" + numIdInp,
+        idInpD = "inpD" + numIdInp,
+        idInpT = "inpT" + numIdInp;
+    const idMV = document.getElementById(idV),
+        idMD = document.getElementById(idD),
+        idMT = document.getElementById(idT),
+        idBV = document.getElementById(idCV),
+        idBD = document.getElementById(idCD),
+        idBT = document.getElementById(idCT),
+        idIV = document.getElementById(idInpV),
+        idID = document.getElementById(idInpD),
+        idIT = document.getElementById(idInpT);
+    switch (idMove) {
+        case "checked-v":
+            habilitarCheck(idBV, idMV, idIV);
+            desabilitarCheck(idBD, idMD, idID);
+            desabilitarCheck(idBT, idMT, idIT);
+            break;
+        case "checked-d":
+            desabilitarCheck(idBV, idMV, idIV);
+            habilitarCheck(idBD, idMD, idID);
+            desabilitarCheck(idBT, idMT, idIT);
+            break;
+        case "checked-t":
+            desabilitarCheck(idBV, idMV, idIV);
+            desabilitarCheck(idBD, idMD, idID);
+            habilitarCheck(idBT, idMT, idIT);
+            break;
+    }
+}
+
+const habilitarCheck = (idO, id, idInp) => {
+    id.style.left = "auto";
+    id.style.right = "2px";
+    idO.style.backgroundColor = "#FF7979";
+    idInp.readOnly = true;
+    idInp.style.backgroundColor = "#aaa";
+    idInp.value = "";
+}
+
+const desabilitarCheck = (idO, id, idInp) => {
+    id.removeAttribute('style');
+    idO.style.backgroundColor = "#51BB63";
+    idInp.readOnly = false;
+    idInp.style.backgroundColor = "#fff";
+}

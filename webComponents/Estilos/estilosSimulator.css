@@ -28,19 +28,58 @@ label {
     font-family: 'Cabin', sans-serif;
 }
 
-.titulo-obj {
-    margin: 0 20px;
-    display: flex;
+.titulo-obj, .mos-obj {
+    display: grid;
+    grid-template-columns: 5% 20% repeat(3,25%);
     justify-content: center;
 }
 
-.space {
-    height: 10px;
+.cont-slc-incog{
+    
 }
 
-.titulo-obj label {
+/*----->Diseno de check de incognita<-----*/
+.cont-inp-slc-incog{
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    justify-content: center;
+}
+
+.eti-incog{
+    margin-right: 5px;
+    font-size: 20px;
+    width: 15px;
+}
+
+.out-check{
+    position: relative;
+    width: 30%;
+    height: 25px;
+    border-radius: 12px;
+    border: solid 3.5px #fff;
+    background-color: #51BB63;
+    transition: 0.5s;
+}
+
+.into-check{
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    background-color: #aaa;
+    border-radius: 11px;
+    border: solid 2px #777;
+    box-shadow: 0 0 5px #000;
+}
+/*----------------------------------------*/
+
+.lbl-auto, .lbl-num-auto, .lbl-incog {
     text-align: center;
-    width: 100px;
+    align-self: center;
+    width: 100%;
 }
 
 select,
@@ -143,10 +182,7 @@ option {
 }
 
 .mos-obj {
-    display: flex;
-    margin: 20px;
-    justify-content: center;
-    padding: 2px;
+    margin: 20px 0;
 }
 
 .cont-inp,
@@ -166,12 +202,8 @@ option {
     justify-content: center;
 }
 
-.mos-obj label,
-.space {
-    width: 10%;
-}
-
 .cont-inp-info-par {
+    align-self: center;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
@@ -365,11 +397,6 @@ option {
 
     .mos-obj {
         margin: 10px auto;
-    }
-
-    .cont-inp-info-par {
-        margin: 0 5px;
-        width: 25%;
     }
 
     .inpO {
