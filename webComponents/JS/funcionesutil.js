@@ -257,9 +257,9 @@ function transformacionT(num, unI, unF) {
         case "h,km/h":
         case "h,m/h":
         case "h,cm/h":
-        case "m,km/min":
-        case "m,m/min":
-        case "m,cm/min":
+        case "min,km/min":
+        case "min,m/min":
+        case "min,cm/min":
         case "s,km/s":
         case "s,m/s":
         case "s,cm/s":
@@ -268,9 +268,9 @@ function transformacionT(num, unI, unF) {
         case "h,km/min":
         case "h,m/min":
         case "h,cm/min":
-        case "m,km/s":
-        case "m,m/s":
-        case "m,cm/s":
+        case "min,km/s":
+        case "min,m/s":
+        case "min,cm/s":
             numT = num * 60;
             break;
         case "h,km/s":
@@ -278,9 +278,9 @@ function transformacionT(num, unI, unF) {
         case "h,cm/s":
             numT = num * 3600;
             break;
-        case "m,km/h":
-        case "m,m/h":
-        case "m,cm/h":
+        case "min,km/h":
+        case "min,m/h":
+        case "min,cm/h":
         case "s,km/min":
         case "s,m/min":
         case "s,cm/min":
@@ -318,17 +318,27 @@ function redondear(res) {
 }
 // INICIO >>> Recoleccion de id de informacion inputs
 function idInputs(i) {
-    let idIn = [];
-    let idV = "inpV" + i;
-    let idD = "inpD" + i;
-    let idT = "inpT" + i;
-    const inpV = document.getElementById(idV);
-    const inpD = document.getElementById(idD);
-    const inpT = document.getElementById(idT);
-    idIn = [inpV, inpD, inpT];
+    let idV = "inpV" + i,
+        idD = "inpD" + i,
+        idT = "inpT" + i;
+    const inpV = document.getElementById(idV),
+        inpD = document.getElementById(idD),
+        inpT = document.getElementById(idT);
+    let idIn = [inpV, inpD, inpT];
     return idIn;
 }
-// FIN >>> Recoleccion de id de informacion inputs
+
+//INICIO >>> Recoleccion de id de informacion de unidades de medida
+function idSelec(i) {
+    let idSV = "umV" + i,
+        idSD = "umD" + i,
+        idST = "umT" + i;
+    const idSlcV = document.getElementById(idSV),
+        idSlcD = document.getElementById(idSD),
+        idSlcT = document.getElementById(idST);
+    let idSelec = [idSlcV, idSlcD, idSlcT];
+    return idSelec;
+}
 // INICIO >>> Funcion para activar el boton de play
 function activarBtnPlay(afi) {
     if (afi == true) {
@@ -342,7 +352,7 @@ function activarBtnPlay(afi) {
         btn_play.style.background = "linear-gradient(135deg, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492, #0070C2, #034492)";
     }
 }
-// FIN >>> Funcion para activar el boton de play
+
 // INICIO >>> Validaciones para numeros negativos y divisiones por cero
 function validaciones(num1, num2, op) {
     let confValidacion = true;
@@ -369,10 +379,11 @@ function validaciones(num1, num2, op) {
     return confValidacion;
 }
 
+//INICIO >>> Creacion de funciones para la seleccion de incognitas
 const incogSelected = (idForMover, numIdBotones) => {
     let idMove = idForMover.substring(0, idForMover.lastIndexOf("-"));
-    let numId = numIdBotones.substring(numIdBotones.lastIndexOf("c")+1,numIdBotones.length);
-    console.log(idMove + " --- "+ numId);
+    let numId = numIdBotones.substring(numIdBotones.lastIndexOf("c") + 1, numIdBotones.length);
+    //console.log(idMove + " --- "+ numId);
     valores(idMove, numIdBotones, numId);
 }
 
@@ -418,14 +429,46 @@ const habilitarCheck = (idO, id, idInp) => {
     id.style.left = "auto";
     id.style.right = "2px";
     idO.style.backgroundColor = "#FF7979";
-    idInp.readOnly = true;
-    idInp.style.backgroundColor = "#aaa";
+    idInp.setAttribute("disabled", "true");
+    idInp.style.backgroundColor = "#ddd";
+    idInp.style.fontWeight = "bold";
     idInp.value = "";
 }
 
 const desabilitarCheck = (idO, id, idInp) => {
     id.removeAttribute('style');
     idO.style.backgroundColor = "#51BB63";
-    idInp.readOnly = false;
+    idInp.removeAttribute("disabled");
     idInp.style.backgroundColor = "#fff";
+    idInp.style.fontWeight = "normal";
+}
+// INICIO >>> creacion de funciones para expresar los datos en simulacion
+function represtarDatosSimu(idV, idUM, i) {
+    let idDatV = "vel-auto-" + i,
+        idDatD = "dis-auto-" + i,
+        idDatT = "time-auto-" + i,
+        idUDatV = "uni-vel-auto-" + i,
+        idUDatD = "uni-dis-auto-" + i,
+        idUDatT = "uni-time-auto-" + i;
+    const lblVel = document.getElementById(idDatV),
+        lblDis = document.getElementById(idDatD),
+        lblTime = document.getElementById(idDatT),
+        lblUniVel = document.getElementById(idUDatV),
+        lblUniDis = document.getElementById(idUDatD),
+        lblUniTime = document.getElementById(idUDatT);
+    lblVel.innerHTML = "";
+    lblDis.innerHTML = "";
+    lblTime.innerHTML = "";
+    lblUniVel.innerHTML = "";
+    lblUniDis.innerHTML = "";
+    lblUniTime.innerHTML = "";
+    //ingreso de datos velocidad
+    lblVel.innerHTML = idV[0].value;
+    lblUniVel.innerHTML = idUM[0].value;
+    //ingreso de datos distancia
+    lblDis.innerHTML = idV[1].value;
+    lblUniDis.innerHTML = idUM[1].value;
+    //ingreso de datos tiempo
+    lblTime.innerHTML = idV[2].value;
+    lblUniTime.innerHTML = idUM[2].value;
 }

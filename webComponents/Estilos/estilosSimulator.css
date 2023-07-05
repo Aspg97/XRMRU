@@ -48,6 +48,7 @@ label {
 }
 
 .eti-incog{
+    color: #fff;
     margin-right: 5px;
     font-size: 20px;
     width: 15px;
@@ -287,7 +288,7 @@ option {
 .cont-simu-glob {
     display: flex;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     text-align: center;
     flex-grow: 1;
     border: solid 5px #555;
@@ -299,24 +300,50 @@ option {
 }
 
 .simu-start {
-    min-width: 130px;
+    min-width: 200px;
     background-color: black;
-    border-left: solid 5px #fff;
+    border-left: solid 2px #fff;
 }
 
 .cont-calle {
+    height: 135px;
     position: relative;
     display: flex;
 }
 
-.eti-a {
+.cont-eti-dist{
     position: absolute;
-    bottom: 10px;
+    top: 10px;
+    right: 0;
+    width: 0;
+}
+
+.cota-dist{
+    display: flex;
+    height: 7px;
+    border-left: solid 2px #fff;
+    align-items: center;
+}
+
+.eti-a {
+    font-size: 15px;
+    position: absolute;
+    top: 10px;
     left: 10px;
     color: #fff;
     font-family: 'Righteous', cursive;
 }
 
+.eti-dat-simu{
+    margin-bottom: 6px;
+    font-size: 15px;
+    margin-left: 6px;
+}
+
+.eti-time-simu{
+    position: absolute;
+    top: 50%;
+}
 
 .cont-calle img {
     width: 100%;
@@ -326,7 +353,7 @@ option {
 .cont-auto {
     width: 120px;
     position: absolute;
-    top: 0px;
+    bottom: 10px;
     right: -120px;
 
 }
