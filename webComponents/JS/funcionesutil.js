@@ -468,9 +468,12 @@ const desabilitarCheck = (idO, id, idInp) => {
 
 // INICIO >>> funcion para dibujar la longitud de la linea de cota
 function dibLong(dis, i) {
-    let idLong = "disRel" + i;
-    const idCota = document.getElementById(idLong);
+    let idLong = "disRel" + i,
+    idAuto = ".cont-auto-"+i;
+    const idCota = document.getElementById(idLong),
+    idContAuto = document.querySelector(idAuto);
     idCota.style.width = dis + "px";
+    idContAuto.style.right=-document.querySelector(idAuto).clientWidth+"px";
 }
 
 // INICIO >>> funcion para expresar los datos en simulacion
