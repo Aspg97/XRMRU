@@ -34,10 +34,6 @@ label {
     justify-content: center;
 }
 
-.cont-slc-incog{
-    
-}
-
 /*----->Diseno de check de incognita<-----*/
 .cont-inp-slc-incog{
     margin: 5px 0;
@@ -313,9 +309,10 @@ option {
 
 .cont-eti-dist{
     position: absolute;
-    top: 10px;
+    bottom: 20px;
     right: 0;
     width: 0;
+    z-index: 10;
 }
 
 .cota-dist{
@@ -338,6 +335,7 @@ option {
     margin-bottom: 6px;
     font-size: 15px;
     margin-left: 6px;
+    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
 }
 
 .eti-time-simu{
@@ -353,7 +351,7 @@ option {
 .cont-auto {
     width: 120px;
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     right: -120px;
 
 }

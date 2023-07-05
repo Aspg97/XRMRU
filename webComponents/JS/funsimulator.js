@@ -86,7 +86,7 @@ generar.addEventListener("click", () => {
                 <mi id="dis-auto-${i}">0</mi>
                 <mi id="uni-dis-auto-${i}"></mi>
             </math>
-            <div class="cota-dist">
+            <div class="cota-dist" id="cota-dist-${i}">
                 <hr width=100%>
             </div>
         </div>
@@ -125,6 +125,7 @@ let op;
 let afi; // Variable para activar el boton de play
 
 calcular.addEventListener("click", () => {
+    const wStreet = document.getElementById("street").clientWidth;
     console.log("Calculando");
     for (let i = 0; i < numObj.value; i++) {
         if ((idInputs(i)[0].value == "" & idInputs(i)[1].value == "") || (idInputs(i)[0].value == "" & idInputs(i)[2].value == "") || (idInputs(i)[1].value == "" & idInputs(i)[2].value == "")) {
@@ -146,7 +147,13 @@ calcular.addEventListener("click", () => {
             idInputs(i)[0].value = definirOP(idInputs(i)[1].value, idInputs(i)[2].value, op, i);
             afi = true;
         }
-        represtarDatosSimu(idInputs(i),idSelec(i),i);
+        represtarDatosSimu(idInputs(i), idSelec(i), i);
+        //console.log(distancias(mayores()[0],wStreet)[i]);
+    }
+    for (let i = 0; i < numObj.value; i++) {
+        if (afi) {
+            dibLong(distancias(mayores()[0], wStreet)[i], i);
+        }
     }
     activarBtnPlay(afi);
 });

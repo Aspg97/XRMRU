@@ -302,7 +302,7 @@ function redondear(res) {
     if (resulS.lastIndexOf(".") > 0) {
         if (resulS.length > resulS.lastIndexOf(".") + 4) {
             resulF = res.toFixed(3);
-            console.log("pss" + resulS.lastIndexOf(","));
+            //console.log("pss" + resulS.lastIndexOf(","));
             if (resulF == 0.000) {
                 alert("Resultado fuera de rango");
             }
@@ -339,6 +339,29 @@ function idSelec(i) {
     let idSelec = [idSlcV, idSlcD, idSlcT];
     return idSelec;
 }
+
+//INICIO >>> distancias para desplazamiento
+function distancias(maxDisIn, disTotal) {
+    let distanciasInput = [];
+    for (let i = 0; i < numObj.value; i++) {
+        let idInpDis = "inpD" + i;
+        const inDistancia = document.getElementById(idInpDis);
+        distanciasInput.push(parseFloat(inDistancia.value) * disTotal / maxDisIn);
+    }
+    return distanciasInput;
+}
+
+//INICIO >>> velocidades para desplazamiento
+function velocidades(maxVelIn) {
+    let velocidadesInput = [];
+    for (let i = 0; i < numObj.value; i++) {
+        let idInpVel = "inpV" + i;
+        const inVelocidad = document.getElementById(idInpVel);
+        velocidadesInput.push(parseFloat(inVelocidad.value) * 3 / maxVelIn);
+    }
+    return velocidadesInput;
+}
+
 // INICIO >>> Funcion para activar el boton de play
 function activarBtnPlay(afi) {
     if (afi == true) {
@@ -442,7 +465,15 @@ const desabilitarCheck = (idO, id, idInp) => {
     idInp.style.backgroundColor = "#fff";
     idInp.style.fontWeight = "normal";
 }
-// INICIO >>> creacion de funciones para expresar los datos en simulacion
+
+// INICIO >>> funcion para dibujar la longitud de la linea de cota
+function dibLong(dis, i) {
+    let idLong = "disRel" + i;
+    const idCota = document.getElementById(idLong);
+    idCota.style.width = dis + "px";
+}
+
+// INICIO >>> funcion para expresar los datos en simulacion
 function represtarDatosSimu(idV, idUM, i) {
     let idDatV = "vel-auto-" + i,
         idDatD = "dis-auto-" + i,
