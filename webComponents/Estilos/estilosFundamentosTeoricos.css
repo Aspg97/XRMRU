@@ -14,6 +14,7 @@
 
 .cont-info-mru ul {
     padding-left: 60px;
+    font-size: 20px;
 }
 
 .sub-tit-teo{
@@ -45,12 +46,14 @@
 
  .desc-teo,.cont-tipos-mag{
      padding: 0 15px;
+     font-size: 20px;
  }
  
  .table-leyes{
      width: 70%;
      margin: 0 auto;
      line-height: 20px;
+     font-size: 20px;
  }
  
  .space{
@@ -162,6 +165,7 @@
 .ecuaciones ul,
 .cont-graph-speed ul {
     padding-left: 60px;
+    font-size: 20px;
 }
 
 .ecuaciones {
@@ -213,6 +217,7 @@
 
 .cont-info-graficas ul{
     padding-right: 20px;
+    font-size: 20px;
 }
 
 .cont-grafica h3 {
