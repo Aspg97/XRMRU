@@ -4,7 +4,8 @@
 
 .cont-graph,
 .cont-info-mru,
-.cont-table {
+.cont-table,
+.cont-ecuaciones {
     padding-top: 25px;
     width: 80%;
     text-align: justify;
@@ -15,6 +16,47 @@
     padding-left: 60px;
 }
 
+.sub-tit-teo{
+    background-color: #2EC748;
+    margin: 10px;
+    padding: 0 10px;
+    display: inline-block;
+    color: #fff;
+    min-width: 200px;
+    text-align: center;
+    font-weight: lighter;
+    border-radius: 20px;
+    text-align: center;
+ }
+
+ .cont-ley-graph{
+    margin: 10px auto;
+    border: solid 2px #FA7C14;
+    max-width: 200px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+ }
+ 
+ .tit-ley-graph{
+    background-color: #FA7C14;
+    text-align: center;
+    color: #fff;
+ }
+
+ .desc-teo,.cont-tipos-mag{
+     padding: 0 15px;
+ }
+ 
+ .table-leyes{
+     width: 70%;
+     margin: 0 auto;
+     line-height: 20px;
+ }
+ 
+ .space{
+     height: 10px;
+ }
+
 .fact-conv {
     border-radius: 0 35px;
     background-color: var(--compl-color);
@@ -24,9 +66,7 @@
 }
 
 .ejemplo-mru {
-    display: flex;
     padding: 10px;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -34,8 +74,8 @@
     padding: 5px;
     text-align: center;
     width: 60%;
+    margin: 0 auto;
 }
-
 
 .eje-mru img {
     border-color: var(--compl-color);
@@ -43,6 +83,10 @@
     width: 100%;
     border-style: solid;
     margin: 0 auto;
+}
+
+.cont-full-info-mag{
+    width: 100%;
 }
 
 .cont-info-mag {
@@ -57,13 +101,14 @@
 .tiempo h3,
 .distancia h3 {
     text-align: center;
+    font-weight: lighter;
 }
 
 .cont-vel,
 .cont-dis,
 .cont-t {
-    display: grid;
-    grid-template-columns: 40% 1fr;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .velocidad,
@@ -88,9 +133,26 @@
 .gift2,
 .gift3 {
     align-self: center;
-    width: 100%;
+    width: 50%;
     padding: 10px;
     text-align: center;
+    margin: 0 auto;
+}
+
+.gift3{
+    width: 20%;
+}
+
+.cont-expl{
+    width: 100%;
+}
+
+.expl-time{
+    width: 80%;
+}
+
+.img-des{
+    margin: 0 20px;
 }
 
 .gift3 img {
@@ -107,10 +169,50 @@
     line-height: 40px;
 }
 
-.formula {
+.cont-triangulo {
+    background-color: #fff;
     width: 400px;
     padding: 10px;
     margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.cont-triangulos{
+    width: 600px;
+}
+
+.cont-info-recuerda{
+    width: 90%;
+    margin: 25px auto 0 auto;
+}
+
+.magnitudes-recuerda{
+    background-color: #FA7C14;
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+.cont-det-recuerda{
+    background-color: antiquewhite;
+    border: solid 2px #FA7C14;
+    border-radius: 0 0 20px 20px;
+}
+
+.info-graficas{
+    background-color: #A25AF3;
+}
+
+.cont-info-graficas{
+    border: solid 2px #A25AF3;
+    background-color: #E4D7F3;
+    margin-bottom: 15px;
+}
+
+.cont-info-graficas ul{
+    padding-right: 20px;
 }
 
 .cont-grafica h3 {
