@@ -13,6 +13,20 @@ main{
     min-height: 80vh;
 }
 
+.frase-pizarra{
+    width: 50%;
+    margin: 15px;
+    padding: 10px;
+    background-color: antiquewhite;
+    border: solid 2px #FA7C14;
+    border-radius: 20px;
+}
+
+.frase-pizarra p{
+    text-align: center;
+    font-size: 17px;
+}
+
 .container-pizz{
     background-image: url("../IMG/texturaDeMadera.jpg");
     background-repeat: no-repeat;
