@@ -49,7 +49,7 @@ function ini() {
     pincel.closePath();
     // Letra Eje Y
     pincel.font = "12px Arial";
-    pincel.fillText("d(m)", 7, 20);
+    pincel.fillText("x(m)", 7, 20);
     // Letra Eje X
     pincel.fillText("t(s)", canvas.width - 20, canvas.height - 7);
     // Valor de origen

@@ -403,8 +403,8 @@ function mostrarRes(cRes, nSeg, letra, cx, cy) {
     if (nSeg === 0) {
         cx[aux - 1] = 0;
         cy[aux - 1] = 0;
-        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; d<sub>1</sub> = ${cy[aux - 1]}</p>`;
-        p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; d<sub>2</sub> = ${cy[aux]}</p> `;
+        p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; x<sub>1</sub> = ${cy[aux - 1]}</p>`;
+        p2.innerHTML = `<label>Punto ${letra[aux + 1].toUpperCase()}:</label><p> t<sub>2</sub> = ${cx[aux]} ; x<sub>2</sub> = ${cy[aux]}</p> `;
     } else {
         aux = nSeg;
         p1.innerHTML = `<label>Punto ${letra[aux].toUpperCase()}:</label><p> t<sub>1</sub> = ${cx[aux - 1]} ; d<sub>1</sub> = ${cy[aux - 1]}</p> `;
@@ -415,7 +415,7 @@ function mostrarRes(cRes, nSeg, letra, cx, cy) {
     } else {
         res = (cy[aux] - cy[aux - 1]) / (cx[aux] - cx[aux - 1])
     }
-    expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δd</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msup><mi>d2</mi></msup><mo>-</mo><msup><mi>d1</mi></msup></mrow><mrow><msup><mi>t2</mi></msup><mo>-</mo><msup><mi>t1</mi></msup></mrow></mfrac></mrow></math>`;
+    expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δx</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msup><mi>x2</mi></msup><mo>-</mo><msup><mi>x1</mi></msup></mrow><mrow><msup><mi>t2</mi></msup><mo>-</mo><msup><mi>t1</mi></msup></mrow></mfrac></mrow></math>`;
     expGraf.innerHTML = `<h4>Entonces:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
     expGrafRes.innerHTML = `<math><mi>v</mi><mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
     divCont.innerHTML = `<h4>Datos:</h4>`;

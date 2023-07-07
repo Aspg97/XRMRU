@@ -257,6 +257,27 @@ option {
     font-size: 17px;
 }
 
+.cont-expli{
+    width: 70%;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 10px;
+    border: solid 2px #FA7C14;
+    border-radius: 20px;
+}
+
+.enunciado{
+    width: 80%;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+.img-enunciado{
+    height: 170px;
+    margin: 10px;
+}
+
 .mos-res{
     display: none;
     flex-wrap: wrap;
@@ -271,8 +292,6 @@ option {
 .mos-res-part-info{
     display: inline-block;
 }
-
-
 
 .mos-res-part{
     width: 100%;
