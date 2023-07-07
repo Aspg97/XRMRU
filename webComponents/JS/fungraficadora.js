@@ -2,7 +2,7 @@ const btnAuto = document.getElementById("btn-auto"),
     btnPerf = document.getElementById("btn-per"),
     btnGen = document.getElementById("gen-graph"),
     cantX = document.getElementById("select-cant-x"),
-    cantY = document.getElementById("select-cant-y"),
+    //cantY = document.getElementById("select-cant-y"),
     cantC = document.getElementById("select-cant-coor"),
     cantOpSol = document.querySelector(".op-seg-solu"),
     mosRes = document.querySelector(".mos-res"),
@@ -15,7 +15,7 @@ const btnAuto = document.getElementById("btn-auto"),
     contModoDatosP = document.querySelector(".cont-op-per"),
     contGraph = document.querySelector(".cont-graph"),
     contButtonDis = document.querySelector(".cont-button-dis");
-    descargar = document.querySelector(".cont-des-grap");
+descargar = document.querySelector(".cont-des-grap");
 ini(); // Inicializacion de canvas
 var slcAuto = true, conf = false// Variable para seleccion de modo/confirmacion para continuar con generar en personalizado
 //INICIO PROCESO >> cuando el usuario selecciona personalizado
@@ -33,10 +33,10 @@ btnPerf.addEventListener("click", () => {
     contInfoGraph.style.animation = "transparenciaActive 0.3s";
     contModoDatosA.style.display = "none";
     contModoDatosP.style.display = "flex";
-    if(dispDetected()){
-        contButtonDis.innerHTML="";
+    if (dispDetected()) {
+        contButtonDis.innerHTML = "";
         const buttonGenCoor = document.createElement("button");
-        buttonGenCoor.classList.add("btn-ingresar-datos","btn-resul");
+        buttonGenCoor.classList.add("btn-ingresar-datos", "btn-resul");
         buttonGenCoor.id = "btn-ingreDatos";
         buttonGenCoor.innerHTML = "Generar Campos";
         contButtonDis.appendChild(buttonGenCoor);
@@ -45,7 +45,7 @@ btnPerf.addEventListener("click", () => {
             contInfoGraph.style.display = "flex";
             agregarInputs();
         });
-    }else{
+    } else {
         generarBtnIn();
         contInfoGraph.style.display = "flex";
         cantC.addEventListener("click", () => {
@@ -67,7 +67,7 @@ btnAuto.addEventListener("click", () => {
     btnSelected(slcAuto);
     contGraph.style.left = ((contDateGraph.clientWidth / 2) - 365) + "px";
     contInfoGraph.removeAttribute("style");
-    contModoDatosA.style.display = "grid";
+    contModoDatosA.style.display = "flex";
     contModoDatosP.style.display = "none";
 });
 //FIN PROCESO >> cuando el usuario selecciona automatico
@@ -77,43 +77,38 @@ btnGen.addEventListener("click", () => {
     pincel.clearRect(0, 0, canvas.width, canvas.height);
     pincel.fillStyle = "#000";
     pincel.strokeStyle = "#000";
-    let numY = parseInt(cantY.value); // Recoge la cantidad de datos que se van a graficar en Y
+    //let numY = parseInt(cantY.value); // Recoge la cantidad de datos que se van a graficar en Y
     let numX = parseInt(cantX.value); // Recoge la cantidad de datos que se van a graficar en X
     let numC = parseInt(cantC.value); // Recoge la cantidad de datos que se van a graficar en X
     let letras = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]; //Letras para puntos de segmento
     ini();
-    console.log(numY + "---" + numX + "---" + numC);
-    if (numY > numX) {
-        alert("Asegurese de que los valores del eje Y no superen a los valores del eje X");
+    //console.log(numY + "---" + numX + "---" + numC);
+    if (slcAuto === true) {
+        mosRes.innerHTML = "";
+        const valoresY = llenarDatosAutomatico(numX); //Ingreso valores een recta > Eje Y
+        const valoresX = llenarDatosAutomatico(numX);  //Ingreso valores een recta > Eje X
+        const cy = coorCompletasY(numX, numX, valoresY); // Preparacion para graficar > arreglo para las coordenadas de Y
+        dibujarDatos(numX, valoresY, "Y"); //Impresion de valores > Eje Y
+        dibujarDatos(numX, valoresX, "X"); //Impresion de valores > Eje X
+        imprimirSegmento(numX, cy, valoresX, valoresY); // Imprimir Segmento
+        imprimirLetrasSegmento(numX, cy, valoresX, valoresY, letras); // Imprimir letra de cada punto del segmento
+        imprimirGuiasDePuntos(numX, cy, valoresX, valoresY); //Imprimir lineas guias de cada punto el plano cartesiano
+        mostrarSolucion(mosRes, numX, letras, valoresX[0], cy);
     } else {
-        // console.log("se va de largo");
-        if (slcAuto === true) {
-            mosRes.innerHTML = "";
-            const valoresY = llenarDatosAutomatico(numY); //Ingreso valores een recta > Eje Y
-            const valoresX = llenarDatosAutomatico(numX);  //Ingreso valores een recta > Eje X
-            const cy = coorCompletasY(numY, numX, valoresY); // Preparacion para graficar > arreglo para las coordenadas de Y
-            dibujarDatos(numY, valoresY, "Y"); //Impresion de valores > Eje Y
-            dibujarDatos(numX, valoresX, "X"); //Impresion de valores > Eje X
-            imprimirSegmento(numX, cy, valoresX, valoresY); // Imprimir Segmento
-            imprimirLetrasSegmento(numX, cy, valoresX, valoresY, letras); // Imprimir letra de cada punto del segmento
-            imprimirGuiasDePuntos(numX, cy, valoresX, valoresY); //Imprimir lineas guias de cada punto el plano cartesiano
-            mostrarSolucion(mosRes, numX, letras, valoresX[0], cy);
-        } else {
-            if (conf === true) {
-                const valoresPY = validarCampos(numC, "datY"); //Se envia la cantidad de coordenadas y el inicio del id
-                const valoresPX = validarCampos(numC, "datX"); //Se envia la cantidad de coordenadas y el inicio del id
-                if (valoresPX[2] === false || valoresPY[2] === false) {
-                    alert("Llene todos los campos de valores");
-                } else {
-                    dibujarDatos(numC, valoresPY, "Y"); //Impresion de valores > Eje Y
-                    dibujarDatos(numC, valoresPX, "X"); //Impresion de valores > Eje X
-                    imprimirSegmento(numC, valoresPY[0], valoresPX, valoresPY); // Imprimir Segmento
-                    imprimirLetrasSegmento(numC, valoresPY[0], valoresPX, valoresPY, letras); // Imprimir letra de cada punto del segmento
-                    imprimirGuiasDePuntos(numC, valoresPY[0], valoresPX, valoresPY); //Imprimir lineas guias de cada punto el plano cartesiano
-                }
+        if (conf === true) {
+            const valoresPY = validarCampos(numC, "datY"); //Se envia la cantidad de coordenadas y el inicio del id
+            const valoresPX = validarCampos(numC, "datX"); //Se envia la cantidad de coordenadas y el inicio del id
+            if (valoresPX[2] === false || valoresPY[2] === false) {
+                alert("Llene todos los campos de valores");
             } else {
-                alert("Ingrese los campos y llénelos");
+                dibujarDatos(numC, valoresPY, "Y"); //Impresion de valores > Eje Y
+                dibujarDatos(numC, valoresPX, "X"); //Impresion de valores > Eje X
+                imprimirSegmento(numC, valoresPY[0], valoresPX, valoresPY); // Imprimir Segmento
+                imprimirLetrasSegmento(numC, valoresPY[0], valoresPX, valoresPY, letras); // Imprimir letra de cada punto del segmento
+                imprimirGuiasDePuntos(numC, valoresPY[0], valoresPX, valoresPY); //Imprimir lineas guias de cada punto el plano cartesiano
             }
+        } else {
+            alert("Ingrese los campos y llénelos");
         }
     }
 });
@@ -255,8 +250,28 @@ function imprimirLetrasSegmento(nX, corY, valX, valY, letras) {
                 px: valX[0][i - 1] * 100 / valX[1],
                 py: -corY[i - 1] * 100 / valY[1]
             });
+
             letra.dibujarLetra();
             letra.dibujarPunto();
+        }
+    }
+    for (let i = 0; i < nX + 1; i++) {
+        if (i == 0) {
+            const letraV = componentesSegmento({
+                letra: "V",
+                subIndi: i+1,
+                px: (valX[0][i] * 100 / valX[1])/2,
+                py: (-corY[i] * 100 / valY[1])/2
+            });
+            letraV.dibujarLetraVelocidad();
+        } else {
+            const letraV = componentesSegmento({
+                letra: "V",
+                subIndi: i,
+                px: (valX[0][i - 1] * 100 / valX[1]) - (((valX[0][i - 1] * 100 / valX[1]) - (valX[0][i - 2] * 100 / valX[1])) / 2),
+                py: -((corY[i - 1] * 100 / valY[1]) - (((corY[i - 1] * 100 / valY[1])-(corY[i - 2] * 100 / valY[1]))/2))
+            });
+            letraV.dibujarLetraVelocidad();
         }
     }
 }
@@ -299,7 +314,7 @@ function agregarInputs() {
     const titContX = document.createElement("h3"); // Creacion de contenedor de datos  en Y
     titContX.innerHTML = "Tiempo (s)";
     const titContY = document.createElement("h3"); // Creacion de contenedor de datos  en X
-    titContY.innerHTML = "Distancia (m)";
+    titContY.innerHTML = "Distancia (x)";
     const divInpX = document.createElement("div"); // Creacion de contenedor de datos  en Y
     divInpX.classList.add("cont-info-per-uni");
     const divInpY = document.createElement("div"); // Creacion de contenedor de datos  en X
@@ -316,11 +331,11 @@ function agregarInputs() {
 
     for (let i = 0; i < numCoor; i++) {
         const contItemY = document.createElement("div");
-        contItemY.innerHTML = "<label class='eti-dat'>Valor " + (i + 1) + ":</label><input type='number' class='inpDato' id='datY" + i + "'>";
+        contItemY.innerHTML = "<label class='eti-dat'>x <sub>" + (i + 1) + "</sub>:</label><input type='number' class='inpDato' id='datY" + i + "'>";
         fragY.appendChild(contItemY);
 
         const contItemX = document.createElement("div");
-        contItemX.innerHTML = "<label class='eti-dat'>Valor " + (i + 1) + ":</label><input type='number' class='inpDato' id='datX" + i + "'>";
+        contItemX.innerHTML = "<label class='eti-dat'>t <sub>" + (i + 1) + "</sub>:</label><input type='number' class='inpDato' id='datX" + i + "'>";
         fragX.appendChild(contItemX);
     }
     divInpY.appendChild(fragY);
@@ -335,7 +350,7 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     slec.classList.add("op-num");
     slec.id = "select-sg-solu";
     const slectFrag = document.createDocumentFragment();
-    cantOpSol.innerHTML = `<label class="lbl-op-solu">Segmento: </label>`;
+    cantOpSol.innerHTML = `<label class="lbl-op-solu">Velocidad: </label>`;
     for (let i = 0; i < nPuntos; i++) {
         if (i === 0) {
             const optionIni = document.createElement("option");
@@ -345,7 +360,7 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
         }
         const option = document.createElement("option");
         option.value = i;
-        option.innerHTML = `${letra[i]} - ${letra[i + 1]}`;
+        option.innerHTML = `<math><msub><mi>V</mi><mn>${i+1}</mn></msub></math>`;
         slectFrag.appendChild(option);
     }
     slec.appendChild(slectFrag);
@@ -353,7 +368,7 @@ function mostrarSolucion(conRes, nPuntos, letra, cX, cY) {
     const numSelec = document.getElementById("select-sg-solu");
     if (dispDetected()) {
         const buttonRes = document.createElement("button");
-        buttonRes.classList.add("btn-ingresar-datos","btn-resul");
+        buttonRes.classList.add("btn-ingresar-datos", "btn-resul");
         buttonRes.id = "btn-verSolu";
         buttonRes.innerHTML = "Ver Solución";
         cantOpSol.appendChild(buttonRes);
@@ -415,9 +430,9 @@ function mostrarRes(cRes, nSeg, letra, cx, cy) {
     } else {
         res = (cy[aux] - cy[aux - 1]) / (cx[aux] - cx[aux - 1])
     }
-    expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δx</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msup><mi>x2</mi></msup><mo>-</mo><msup><mi>x1</mi></msup></mrow><mrow><msup><mi>t2</mi></msup><mo>-</mo><msup><mi>t1</mi></msup></mrow></mfrac></mrow></math>`;
-    expGraf.innerHTML = `<h4>Entonces:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
-    expGrafRes.innerHTML = `<math><mi>v</mi><mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
+    expFor.innerHTML = `<h4>Tomar en cuenta que:</h4><math><mi>v</mi><mo>=</mo><mrow><mfrac><msup><mrow><mi>Δx</mi></mrow></msup><msup><mrow><mi>Δt</mi></mrow></msup></mfrac></mrow><mo>=</mo><mrow><mfrac><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>-</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mrow><msub><mi>t</mi><mn>2</mn></msub><mo>-</mo><msub><mi>t</mi><mn>1</mn></msub></mrow></mfrac></mrow></math>`;
+    expGraf.innerHTML = `<h4>Entonces:</h4><math><msub><mi>v</mi><mn>${nSeg+1}</mn></msub><mo>=</mo><mrow><mfrac><msup><mrow><munder><mo>${cy[aux]}m</mo></munder><mo>-</mo><mi>${cy[aux - 1]}m</mi></mrow></msup><msup><mrow><mi>${cx[aux]}s</mi><mo>-</mo><mi>${cx[aux - 1]}s</mi></mrow></msup></mfrac></mrow></math>`
+    expGrafRes.innerHTML = `<math><msub><mi>v</mi><mn>${nSeg+1}</mn></msub><mo>=</mo><msup><mi>${redondear(res)}m/s</mi></msup></math>`;
     divCont.innerHTML = `<h4>Datos:</h4>`;
     divEncaDat.appendChild(p1);
     divEncaDat.appendChild(p2);
