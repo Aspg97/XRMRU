@@ -1,508 +1,720 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="webComponents/Estilos/estilosIndex.css">
-    <link rel="stylesheet" href="webComponents/Estilos/estilosFundamentosTeoricos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="webComponents/Estilos/estilosIndex.css" />
+    <link
+      rel="stylesheet"
+      href="webComponents/Estilos/estilosFundamentosTeoricos.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>M.R.U</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="head-page">
-        <div class="cont-head-tittle">
-            <h2 class="tittle-page">M.R.U.</h2>
-            <h1 class="tittle-complete-page">Movimiento Rectilíneo Uniforme</h1>
-        </div>
+      <div class="cont-head-tittle">
+        <h2 class="tittle-page">M.R.U.</h2>
+        <h1 class="tittle-complete-page">Movimiento Rectilíneo Uniforme</h1>
+      </div>
     </header>
     <div class="cont-nav-items">
-        <button class="menu-responsive">
-            <img src="webComponents/IMG/menu.svg" width="100%">
-        </button>
-        <nav class="nav-items">
-            <ul class="lista-items">
-                <a href="index.html" id="page-ini">
-                    <li>Inicio</li>
-                </a>
-                <a href="webComponents/PGG_ADD/pizarraDigital.html" id="page-pzdg">
-                    <li>Pizarra Digital</li>
-                </a>
-                <a href="webComponents/PGG_ADD/simulador.html" id="page-sim">
-                    <li>Simulador 2D</li>
-                </a>
-                <a href="webComponents/PGG_ADD/graficadora.html" id="page-gr">
-                    <li>Graficadora</li>
-                </a>
-            </ul>
-        </nav>
+      <button class="menu-responsive">
+        <img src="webComponents/IMG/menu.svg" width="100%" />
+      </button>
+      <nav class="nav-items">
+        <ul class="lista-items">
+          <a href="index.html" id="page-ini">
+            <li>Inicio</li>
+          </a>
+          <a href="webComponents/PGG_ADD/pizarraDigital.html" id="page-pzdg">
+            <li>Pizarra Digital</li>
+          </a>
+          <a href="webComponents/PGG_ADD/simulador.html" id="page-sim">
+            <li>Simulador 2D</li>
+          </a>
+          <a href="webComponents/PGG_ADD/graficadora.html" id="page-gr">
+            <li>Graficadora</li>
+          </a>
+        </ul>
+      </nav>
     </div>
 
     <main class="cont-fun-teo">
-        <section class="cont-info-mru">
-            <h2 class="fact-conv">Movimiento rectilíneo Uniforme</h2>
-            <div class="info-definicion">
-                <h3 class="sub-tit-teo">Definición</h3>
-                <p class="desc-teo">
-                    Es aquel movimiento en el cual un objeto se desplaza en línea recta donde el vector velocidad (<img
-                        src="webComponents/IMG/gift/vectores/vectores-01.svg" alt="v1" height="17px">) se mantiene
-                    constante en toda su trayectoria. Es decir, la velocidad es constante en módulo, dirección y
-                    sentido.
-                </p>
-                <h3 class="sub-tit-teo">características</h3>
-                <ul>
-                    <li>
-                        Su trayectoria es recta.
-                    </li>
-                    <li>
-                        Recorre distancias iguales en tiempos iguales.
-                    </li>
-                    <li>
-                        El desplazamiento es directamente proporcional al tiempo.
-                    </li>
-                    <li>
-                        La velocidad es constante diferente de 0.
-                    </li>
-                    <li>
-                        La aceleración es constante igual a 0 (nula), lo que implica que no hay cambios en la velocidad
-                    </li>
+      <section class="cont-info-mru">
+        <h2 class="fact-conv">Movimiento rectilíneo Uniforme</h2>
+        <div class="info-definicion">
+          <h3 class="sub-tit-teo">Definición</h3>
+          <p class="desc-teo">
+            Es aquel movimiento en el cual un objeto se desplaza en línea recta
+            donde el vector velocidad (<img
+              src="webComponents/IMG/gift/vectores/vectores-01.svg"
+              alt="v1"
+              height="17px"
+            />) se mantiene constante en toda su trayectoria. Es decir, la
+            velocidad es constante en módulo, dirección y sentido.
+          </p>
+          <h3 class="sub-tit-teo">características</h3>
+          <ul>
+            <li>Su trayectoria es recta.</li>
+            <li>Recorre distancias iguales en tiempos iguales.</li>
+            <li>El desplazamiento es directamente proporcional al tiempo.</li>
+            <li>La velocidad es constante diferente de 0.</li>
+            <li>
+              La aceleración es constante igual a 0 (nula), lo que implica que
+              no hay cambios en la velocidad
+            </li>
+          </ul>
+          <h3 class="sub-tit-teo">Leyes</h3>
+          <table class="table-leyes">
+            <tr>
+              <td>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-02.svg"
+                  alt="v2"
+                  height="17px"
+                />
+              </td>
+              <td>desplazamiento directamente proporcional al tiempo.</td>
+            </tr>
+            <tr class="space"></tr>
+            <tr>
+              <td>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-03.svg"
+                  alt="v3"
+                  height="17px"
+                />
+              </td>
+              <td>velocidad constante diferente de 0.</td>
+            </tr>
+            <tr class="space"></tr>
+            <tr>
+              <td>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-04.svg"
+                  alt="v4"
+                  height="17px"
+                />
+              </td>
+              <td>aceleración constante nula.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="info-ejemplo">
+          <h3 class="sub-tit-teo">Ejemplo</h3>
+          <div class="ejemplo-mru">
+            <p class="desc-teo">
+              En la siguiente imagen podemos observar las diferentes
+              características mencionadas anteriormente.
+            </p>
+            <div class="eje-mru">
+              <img
+                src="webComponents/IMG/gift/ejemplo distancia.jpg"
+                alt="Ejemplo de MRU"
+              />
+            </div>
+
+            <div class="descripcion">
+              <p class="desc-teo">De la imagen podemos decir que:</p>
+              <ul class="list-desc-ejemplo">
+                <li>
+                  <img
+                    src="webComponents/IMG/gift/vectores/vectores-05.svg"
+                    alt="v5"
+                    height="17px"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="webComponents/IMG/gift/vectores/vectores-06.svg"
+                    alt="v6"
+                    height="17px"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="webComponents/IMG/gift/vectores/vectores-07.svg"
+                    alt="v7"
+                    height="17px"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="webComponents/IMG/gift/vectores/vectores-08.svg"
+                    alt="v8"
+                    height="17px"
+                  />
+                </li>
+              </ul>
+              <p class="desc-teo">
+                Por lo tanto, el camión recorre distancias iguales en tiempos
+                iguales, la velocidad se mantiene constante en toda su
+                trayectoria y su aceleración es nula.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="cont-full-info-mag">
+          <h3 class="sub-tit-teo">Magnitudes</h3>
+          <div class="cont-tipos-mag">
+            <h4>Vectoriales</h4>
+            <ul>
+              <li>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-16.svg"
+                  alt="v16"
+                  height="15px"
+                />
+                (desplazamiento)
+              </li>
+              <li>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-01.svg"
+                  alt="v1"
+                  height="17px"
+                />
+                (velocidad)
+              </li>
+            </ul>
+            <h4>Escalares</h4>
+            <ul>
+              <li>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-30.svg"
+                  alt="v30"
+                  height="15px"
+                />
+                (distancia)
+              </li>
+              <li>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-31.svg"
+                  alt="v31"
+                  height="11px"
+                />
+                (rapidez)
+              </li>
+              <li>
+                <img
+                  src="webComponents/IMG/gift/vectores/vectores-11.svg"
+                  alt="v11"
+                  height="13px"
+                />
+                (tiempo)
+              </li>
+            </ul>
+          </div>
+          <div class="cont-info-mag">
+            <div class="velocidad">
+              <h3>
+                Velocidad (<img
+                  src="webComponents/IMG/gift/vectores/vectores-01.svg"
+                  alt="v1"
+                  height="17px"
+                />)
+              </h3>
+              <div class="cont-vel">
+                <div class="gift1">
+                  <img
+                    src="webComponents/IMG/gift/velocidad.gif"
+                    alt="Velocidad Gift"
+                    width="100%"
+                  />
+                </div>
+                <div class="cont-expl">
+                  <p class="desc-teo">
+                    Es una magnitud vectorial en la cual se refleja la relación
+                    entre el espacio recorrido por un objeto, el tiempo
+                    transcurrido y su dirección. Además, la
+                    <b>velocidad</b>
+                    al ser un vector se compone de un módulo, dirección y
+                    sentido, por lo que puede ser
+                    <span class="positivo">positiva</span> o
+                    <span class="negativo">negativa</span>.<br />Mientras que la
+                    <b>rapidez</b> es el módulo o tamaño del vector velocidad,
+                    es decir, es una magnitud escalar y de acuerdo con el
+                    Sistema Internacional la rapidez se mide en (<img
+                      src="webComponents/IMG/gift/vectores/vectores-18.svg"
+                      alt="v18"
+                      height="15px"
+                    />). Otra unidad de velocidad muy utilizada es el kilómetro
+                    por hora (<img
+                      src="webComponents/IMG/gift/vectores/vectores-19.svg"
+                      alt="v19"
+                      height="15px"
+                    />)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tiempo">
+              <h3>
+                Desplazamiento (<img
+                  src="webComponents/IMG/gift/vectores/vectores-16.svg"
+                  alt="v16"
+                  height="15px"
+                />)
+              </h3>
+              <div class="cont-t">
+                <div class="gift2">
+                  <img
+                    src="webComponents/IMG/gift/distancia.gif"
+                    alt="Distancia Gift"
+                    width="100%"
+                  />
+                </div>
+                <div class="cont-expl">
+                  <p class="desc-teo">
+                    Se debe recalcar la diferencia entre <b>desplazamiento</b> y
+                    <b>distancia</b>, ya que el <b>desplazamiento</b> es una
+                    magnitud vectorial y la <b>distancia</b> es una magnitud
+                    escalar.<br />
+                    La <b>distancia</b> representa la longitud total de la
+                    trayectoria que recorre un objeto de un punto a otro,
+                    mientras que el <b>desplazamiento</b> es el vector que une
+                    estos 2 puntos, por lo tanto, se compone de modulo,
+                    dirección y sentido. De acuerdo con el Sistema Internacional
+                    la distancia se mide en (<img
+                      src="webComponents/IMG/gift/vectores/vectores-13.svg"
+                      alt="v13"
+                      height="10px"
+                    />). Otra medida comúnmente utilizada es (<img
+                      src="webComponents/IMG/gift/vectores/vectores-14.svg"
+                      alt="v14"
+                      height="15px"
+                    />)<br />
+                  </p>
+                  <img
+                    src="webComponents/IMG/gift/ejemplo desplazamiento.jpg"
+                    alt="ejem-dis"
+                    width="90%"
+                    class="img-des"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="distancia">
+              <h3>Tiempo</h3>
+              <div class="cont-dis">
+                <div class="gift3">
+                  <img
+                    src="webComponents/IMG/gift/tiempo.gif"
+                    alt="Tiempo Gift"
+                    width="100%"
+                  />
+                </div>
+                <div class="cont-expl expl-time">
+                  <p class="desc-teo">
+                    Es una magnitud escalar, la cual sirve para medir la
+                    duración o la separación de uno o más eventos. De acuerdo
+                    con el Sistema Internacional el tiempo se mide en (<img
+                      src="webComponents/IMG/gift/vectores/vectores-20.svg"
+                      alt="v20"
+                      height="10px"
+                    />), de igual manera otra unidad comúnmente utilizada es
+                    (<img
+                      src="webComponents/IMG/gift/vectores/vectores-21.svg"
+                      alt="v21"
+                      height="13px"
+                    />).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cont-ecuaciones">
+        <h2 class="fact-conv">Ecuaciones</h2>
+        <div class="ecuaciones">
+          <p class="desc-teo">
+            Las ecuaciones del MRU están dadas en función de la
+            <span class="col-velocidad">velocidad</span>,
+            <span class="col-distancia">distancia</span> recorrida y el
+            <span class="col-tiempo">tiempo</span>
+            empleado. Por lo tanto, para realizar los diferentes cálculos
+            podemos ayudarnos del siguiente triángulo gráfico.
+          </p>
+          <div class="cont-triangulo">
+            <img
+              src="webComponents/IMG/gift/vectores/vectores-22.svg"
+              alt="triangulov22"
+              height="200px"
+            />
+          </div>
+          <p class="desc-teo">
+            Para utilizar este triángulo se debe tapar el dato que deseamos
+            conocer y del resto de datos; si están en la misma fila se
+            multiplican y si se encuentran en diferentes filas se dividen.
+          </p>
+          <div class="cont-triangulo cont-triangulos">
+            <img
+              src="webComponents/IMG/gift/vectores/vectores-23.svg"
+              alt="triangulov23"
+              width="100%"
+            />
+          </div>
+          <div class="cont-info-recuerda">
+            <h4 class="magnitudes-recuerda">¡Recuerda!</h4>
+            <div class="cont-det-recuerda">
+              <p class="desc-teo">
+                Antes de empezar a resolver ejercicios asegúrate de que los
+                datos tengan las mismas unidades de medida. Por ejemplo:
+              </p>
+              <div class="cont-ejem-med">
+                <ul class="ejemplos-med">
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-24.svg"
+                      alt="triangulov24"
+                      height="32px"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-25.svg"
+                      alt="triangulov25"
+                      height="16px"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-26.svg"
+                      alt="triangulov26"
+                      height="16px"
+                    />
+                  </li>
                 </ul>
-                <h3 class="sub-tit-teo">Leyes</h3>
-                <table class="table-leyes">
-                    <tr>
-                        <td><img src="webComponents/IMG/gift/vectores/vectores-02.svg" alt="v2" height="17px"></td>
-                        <td>desplazamiento directamente proporcional al tiempo.</td>
-                    </tr>
-                    <tr class="space"></tr>
-                    <tr>
-                        <td><img src="webComponents/IMG/gift/vectores/vectores-03.svg" alt="v3" height="17px"></td>
-                        <td>velocidad constante diferente de 0.</td>
-                    </tr>
-                    <tr class="space"></tr>
-                    <tr>
-                        <td><img src="webComponents/IMG/gift/vectores/vectores-04.svg" alt="v4" height="17px"></td>
-                        <td>aceleración constante nula.</td>
-                    </tr>
-                </table>
+                <ul class="ejemplos-med">
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-27.svg"
+                      alt="triangulov27"
+                      height="32px"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-28.svg"
+                      alt="triangulov28"
+                      height="16px"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-29.svg"
+                      alt="triangulov29"
+                      height="16px"
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="info-ejemplo">
-                <h3 class="sub-tit-teo">Ejemplo</h3>
-                <div class="ejemplo-mru">
-                    <p class="desc-teo">
-                        En la siguiente imagen podemos observar las diferentes características mencionadas
-                        anteriormente.
-                    </p>
-                    <div class="eje-mru">
-                        <img src="webComponents/IMG/gift/ejemplo distancia.jpg" alt="Ejemplo de MRU">
-                    </div>
-
-                    <div class="descripcion">
-                        <p class="desc-teo">De la imagen podemos decir que:</p>
-                        <ul class="list-desc-ejemplo">
-                            <li><img src="webComponents/IMG/gift/vectores/vectores-05.svg" alt="v5" height="17px"></li>
-                            <li><img src="webComponents/IMG/gift/vectores/vectores-06.svg" alt="v6" height="17px"></li>
-                            <li><img src="webComponents/IMG/gift/vectores/vectores-07.svg" alt="v7" height="17px"></li>
-                            <li><img src="webComponents/IMG/gift/vectores/vectores-08.svg" alt="v8" height="17px"></li>
-                        </ul>
-                        <p class="desc-teo">
-                            Por lo tanto, el camión recorre distancias iguales en tiempos iguales, la velocidad se
-                            mantiene constante en toda su trayectoria y su  aceleración es nula.
-                        </p>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </section>
+      <section class="cont-graph cont-info-mru">
+        <h2 class="fact-conv">Gráficas del MRU</h2>
+        <div class="cont-info-recuerda">
+          <h4 class="magnitudes-recuerda info-graficas">Tomar en cuenta</h4>
+          <div class="cont-det-recuerda cont-info-graficas">
+            <p class="desc-teo">
+              La forma en la que se va a trabajar con las diferentes magnitudes
+              ya sea escalares o vectoriales puede cambiar el signo de la
+              velocidad lo que determina si es
+              <span class="positivo">positiva</span> o
+              <span class="negativo">negativa</span>.
+            </p>
+            <ul>
+              <li>
+                Cuando se trabaja con magnitudes vectoriales, el vector
+                velocidad representa la relación del cambio entre el vector
+                desplazamiento y la variación de tiempo por lo que la velocidad
+                puede ser <span class="positivo">positiva</span> o
+                <span class="negativo">negativa</span> dependiendo de si el
+                desplazamiento es <span class="positivo">positivo</span> o
+                <span class="negativo">negativo</span>.<br />Ejemplo:
+                <ul>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-32.svg"
+                      alt="triangulov32"
+                      height="32px"
+                    />
+                  </li>
+                  <li>
+                    <img
+                      src="webComponents/IMG/gift/vectores/vectores-33.svg"
+                      alt="triangulov33"
+                      height="32px"
+                    />
+                  </li>
+                </ul>
+                <b>Nota:</b> el signo de la velocidad determina la dirección en
+                la que se dirige el objeto.
+              </li>
+              <li>
+                Por otro lado, cuando se trabaja con magnitudes escalares tanto
+                la distancia como la rapidez siempre son positivas.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <h3 class="sub-tit-teo">Gráfica velocidad en función del tiempo</h3>
+        <div class="cont-graph-speed">
+          <p class="desc-teo">
+            La velocidad se representa en la gráfica en forma de una línea recta
+            paralela al eje x, esto debido a que es constante en toda la
+            trayectoria del objeto en un determinado tiempo
+          </p>
+          <div class="cont-ley-graph">
+            <h4 class="tit-ley-graph">Ley</h4>
+            <img
+              src="webComponents/IMG/gift/vectores/vectores-03.svg"
+              alt="v3"
+              height="17px"
+            />
+          </div>
+          <div class="cont-grafica">
+            <div class="img-speed">
+              <img
+                src="webComponents/IMG/gift/velocidad.png"
+                alt="Gráfico de acuerdo a la velocidad con el tiempo"
+                width="100%"
+              />
             </div>
-            <div class="cont-full-info-mag">
-                <h3 class="sub-tit-teo">Magnitudes</h3>
-                <div class="cont-tipos-mag">
-                    <h4>Vectoriales</h4>
-                    <ul>
-                        <li><img
-                            src="webComponents/IMG/gift/vectores/vectores-16.svg" alt="v16" height="15px">
-                            (desplazamiento)</li>
-                        <li><img src="webComponents/IMG/gift/vectores/vectores-01.svg" alt="v1" height="17px">
-                            (velocidad)</li>
-                    </ul>
-                    <h4>Escalares</h4>
-                    <ul>
-                        <li><img src="webComponents/IMG/gift/vectores/vectores-30.svg" alt="v30" height="15px"> (distancia)
-                        </li><li><img src="webComponents/IMG/gift/vectores/vectores-31.svg" alt="v31" height="11px"> (rapidez)
-                        </li>
-                        <li><img src="webComponents/IMG/gift/vectores/vectores-11.svg" alt="v11" height="13px"> (tiempo)
-                        </li>
-                    </ul>
-                </div>
-                <div class="cont-info-mag">
-                    <div class="velocidad">
-                        <h3>Velocidad (<img src="webComponents/IMG/gift/vectores/vectores-01.svg" alt="v1"
-                                height="17px">)</h3>
-                        <div class="cont-vel">
-                            <div class="gift1">
-                                <img src="webComponents/IMG/gift/velocidad.gif" alt="Velocidad Gift" width="100%">
-                            </div>
-                            <div class="cont-expl">
-                                <p class="desc-teo">
-                                    Es una magnitud vectorial en la cual se refleja la relación entre el espacio
-                                    recorrido por un objeto, el tiempo transcurrido y su dirección. Además, la
-                                    <b>velocidad</b>
-                                    al ser un vector se compone de un módulo, dirección y sentido, por lo que puede ser
-                                    <span class="positivo">positiva</span> o <span
-                                        class="negativo">negativa</span>.<br>Mientras que la <b>rapidez</b> es el módulo
-                                    o
-                                    tamaño del vector velocidad, es decir, es una magnitud escalar y de acuerdo con el
-                                    Sistema Internacional la rapidez se mide en (<img
-                                        src="webComponents/IMG/gift/vectores/vectores-18.svg" alt="v18" height="15px">).
-                                    Otra unidad de velocidad muy utilizada es el kilómetro por hora (<img
-                                        src="webComponents/IMG/gift/vectores/vectores-19.svg" alt="v19" height="15px">)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tiempo">
-                        <h3>Desplazamiento (<img
-                            src="webComponents/IMG/gift/vectores/vectores-16.svg" alt="v16" height="15px">)</h3>
-                        <div class="cont-t">
-                            <div class="gift2">
-                                <img src="webComponents/IMG/gift/distancia.gif" alt="Distancia Gift" width="100%">
-                            </div>
-                            <div class="cont-expl">
-                                <p class="desc-teo">
-                                    Se debe recalcar la
-                                    diferencia entre <b>desplazamiento</b> y <b>distancia</b>, ya que el
-                                    <b>desplazamiento</b> es una magnitud
-                                    vectorial y la <b>distancia</b> es una magnitud escalar.<br>
-                                    La <b>distancia</b> representa la longitud total de la trayectoria que recorre un objeto de un punto a otro, mientras que el <b>desplazamiento</b> 
-                                    es el vector que une estos 2 puntos, por lo tanto, se compone de modulo, dirección y
-                                    sentido. De acuerdo con el Sistema Internacional la
-                                    distancia se mide en (<img src="webComponents/IMG/gift/vectores/vectores-13.svg"
-                                        alt="v13" height="10px">). Otra medida comúnmente utilizada es (<img
-                                        src="webComponents/IMG/gift/vectores/vectores-14.svg" alt="v14"
-                                        height="15px">)<br>
-                                </p>
-                                <img src="webComponents/IMG/gift/ejemplo desplazamiento.jpg" alt="ejem-dis" width="90%"
-                                    class="img-des">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="distancia">
-                        <h3>Tiempo</h3>
-                        <div class="cont-dis">
-                            <div class="gift3">
-                                <img src="webComponents/IMG/gift/tiempo.gif" alt="Tiempo Gift" width="100%">
-                            </div>
-                            <div class="cont-expl expl-time">
-                                <p class="desc-teo">
-                                    Es una magnitud escalar, la cual sirve para medir la duración o la separación de uno
-                                    o más eventos. De acuerdo con el Sistema Internacional el tiempo se mide en (<img
-                                        src="webComponents/IMG/gift/vectores/vectores-20.svg" alt="v20" height="10px">),
-                                    de igual manera otra unidad comúnmente utilizada es (<img
-                                        src="webComponents/IMG/gift/vectores/vectores-21.svg" alt="v21" height="13px">).
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cont-ecuaciones">
-            <h2 class="fact-conv">Ecuaciones</h2>
-            <div class="ecuaciones">
+          </div>
+        </div>
+        <h3 class="sub-tit-teo">Gráfica distancia en función del tiempo</h3>
+        <div class="cont-graph-speed">
+          <p class="desc-teo">
+            La distancia es proporcional al tiempo, ya que un objeto recorre
+            distancias iguales en tiempos iguales, la velocidad se ve
+            representada como una diagonal.
+          </p>
+          <div class="cont-ley-graph">
+            <h4 class="tit-ley-graph">Ley</h4>
+            <img
+              src="webComponents/IMG/gift/vectores/vectores-02.svg"
+              alt="v2"
+              height="17px"
+            />
+          </div>
+          <div class="cont-grafica cont-graph-ds">
+            <div class="cont-exp-pendiente">
+              <h4 class="tit-ley-graph rep-vel-pen">Tomar en cuenta</h4>
+              <div class="cont-exp-vel-pen">
                 <p class="desc-teo">
-                    Las ecuaciones del MRU están dadas en función de la <span class="col-velocidad">velocidad</span>,
-                    <span class="col-distancia">distancia</span> recorrida y el <span class="col-tiempo">tiempo</span>
-                    empleado. Por lo tanto, para realizar los diferentes cálculos podemos ayudarnos del siguiente
-                    triángulo gráfico.
+                  El valor de la pendiente representa la velocidad del objeto o
+                  partícula
                 </p>
-                <div class="cont-triangulo">
-                    <img src="webComponents/IMG/gift/vectores/vectores-22.svg" alt="triangulov22" height="200px">
-                </div>
-                <p class="desc-teo">
-                    Para utilizar este triángulo se debe tapar el dato que deseamos conocer y del resto de datos; si
-                    están en la misma fila se multiplican y si se encuentran en diferentes filas se dividen.
-                </p>
-                <div class="cont-triangulo cont-triangulos">
-                    <img src="webComponents/IMG/gift/vectores/vectores-23.svg" alt="triangulov23" width="100%">
-                </div>
-                <div class="cont-info-recuerda">
-                    <h4 class="magnitudes-recuerda">¡Recuerda!</h4>
-                    <div class="cont-det-recuerda">
-                        <p class="desc-teo">
-                            Antes de empezar a resolver ejercicios asegúrate de que los datos tengan las mismas unidades
-                            de medida. Por ejemplo:
-                        </p>
-                        <div class="cont-ejem-med">
-                            <ul class="ejemplos-med">
-                                <li><img src="webComponents/IMG/gift/vectores/vectores-24.svg" alt="triangulov24"
-                                        height="32px"></li>
-                                <li>
-                                    <img src="webComponents/IMG/gift/vectores/vectores-25.svg" alt="triangulov25"
-                                        height="16px">
-                                </li>
-                                <li>
-                                    <img src="webComponents/IMG/gift/vectores/vectores-26.svg" alt="triangulov26"
-                                        height="16px">
-                                </li>
-                            </ul>
-                            <ul class="ejemplos-med">
-                                <li><img src="webComponents/IMG/gift/vectores/vectores-27.svg" alt="triangulov27"
-                                        height="32px"></li>
-                                <li>
-                                    <img src="webComponents/IMG/gift/vectores/vectores-28.svg" alt="triangulov28"
-                                        height="16px">
-                                </li>
-                                <li>
-                                    <img src="webComponents/IMG/gift/vectores/vectores-29.svg" alt="triangulov29"
-                                        height="16px">
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
-        <section class="cont-graph cont-info-mru">
-            <h2 class="fact-conv">Gráficas del MRU</h2>
-            <div class="cont-info-recuerda">
-                <h4 class="magnitudes-recuerda info-graficas">Tomar en cuenta</h4>
-                <div class="cont-det-recuerda cont-info-graficas">
-                    <p class="desc-teo">
-                        La forma en la que se va a trabajar con las diferentes magnitudes ya sea escalares o
-                        vectoriales puede cambiar el signo de la velocidad lo que determina si es <span
-                            class="positivo">positiva</span> o <span class="negativo">negativa</span>.
-                    </p>
-                    <ul>
-                        <li>
-                            Cuando se trabaja con magnitudes vectoriales, el vector velocidad representa la relación del
-                            cambio entre el vector desplazamiento y la variación de tiempo por lo que la velocidad puede
-                            ser <span class="positivo">positiva</span> o <span class="negativo">negativa</span>
-                            dependiendo de si el desplazamiento es <span class="positivo">positivo</span> o <span
-                                class="negativo">negativo</span>.<br>Ejemplo:
-                                <ul>
-                                    <li><img src="webComponents/IMG/gift/vectores/vectores-32.svg" alt="triangulov32"
-                                        height="32px"></li>
-                                    <li><img src="webComponents/IMG/gift/vectores/vectores-33.svg" alt="triangulov33"
-                                        height="32px"></li>
-                                </ul>
-                                <b>Nota:</b> el signo de la velocidad determina la dirección en la que se dirige el objeto.
-                        </li>
-                        <li>
-                            Por otro lado, cuando se trabaja con magnitudes escalares tanto la distancia como la rapidez
-                            siempre son positivas.
-                        </li>
-                    </ul>
-                </div>
+            <div class="img-dist">
+              <img
+                src="webComponents/IMG/gift/Posición.png"
+                alt="Gráfico de acuerdo a la distancia y el tiempo"
+                width="100%"
+              />
             </div>
-            <h3 class="sub-tit-teo">Gráfica velocidad en función del tiempo</h3>
-            <div class="cont-graph-speed">
-                <p class="desc-teo">
-                    La velocidad se representa en la gráfica en forma de una línea recta paralela al eje x, esto debido
-                    a que es constante en toda la trayectoria del objeto en un determinado tiempo
-                </p>
-                <div class="cont-ley-graph">
-                    <h4 class="tit-ley-graph">Ley</h4>
-                    <img src="webComponents/IMG/gift/vectores/vectores-03.svg" alt="v3" height="17px">
-                </div>
-                <div class="cont-grafica">
-                    <div class="img-speed">
-                        <img src="webComponents/IMG/gift/velocidad.png"
-                            alt="Gráfico de acuerdo a la velocidad con el tiempo" width="100%">
-                    </div>
-                </div>
+          </div>
+        </div>
+        <h3 class="sub-tit-teo">Gráfica aceleración en función del tiempo</h3>
+        <div class="cont-graph-speed">
+          <p class="desc-teo">
+            Como ya se ha dicho anteriormente la aceleración es nula ósea es
+            igual a 0 puesto que la velocidad es constante. Por lo tanto, en la
+            gráfica se ve representada como una línea horizontal sobre el eje de
+            las x
+          </p>
+          <div class="cont-ley-graph">
+            <h4 class="tit-ley-graph">Ley</h4>
+            <img
+              src="webComponents/IMG/gift/vectores/vectores-04.svg"
+              alt="v4"
+              height="17px"
+            />
+          </div>
+          <div class="cont-grafica">
+            <div class="img-ace">
+              <img
+                src="webComponents/IMG/gift/aceleracion.png"
+                alt=""
+                width="100%"
+              />
             </div>
-            <h3 class="sub-tit-teo">Gráfica distancia en función del tiempo</h3>
-            <div class="cont-graph-speed">
-                <p class="desc-teo">
-                    La distancia es proporcional al tiempo, ya que un objeto recorre distancias iguales en tiempos
-                    iguales, la velocidad se ve representada como una diagonal.
-                </p>
-                <div class="cont-ley-graph">
-                    <h4 class="tit-ley-graph">Ley</h4>
-                    <img src="webComponents/IMG/gift/vectores/vectores-02.svg" alt="v2" height="17px">
-                </div>
-                <div class="cont-grafica">
-                    <div class="img-dist">
-                        <img src="webComponents/IMG/gift/Posición.png"
-                            alt="Gráfico de acuerdo a la distancia y el tiempo" width="100%">
-                    </div>
-                </div>
-            </div>
-            <h3 class="sub-tit-teo">Gráfica aceleración en función del tiempo</h3>
-            <div class="cont-graph-speed">
-                <p class="desc-teo">
-                    Como ya se ha dicho anteriormente la aceleración es nula ósea es igual a 0 puesto que la velocidad
-                    es constante. Por lo tanto, en la gráfica se ve representada como una línea horizontal sobre el eje
-                    de las x
-                </p>
-                <div class="cont-ley-graph">
-                    <h4 class="tit-ley-graph">Ley</h4>
-                    <img src="webComponents/IMG/gift/vectores/vectores-04.svg" alt="v4" height="17px">
-                </div>
-                <div class="cont-grafica">
-                    <div class="img-ace">
-                        <img src="webComponents/IMG/gift/aceleracion.png" alt="" width="100%">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="cont-table">
-            <h2 class="fact-conv">Factores de Conversión de Unidades</h2>
-            <div class="tables">
-                <div class="cont-magnitudes">
-                    <h2>Magnitudes</h2>
-                    <div class="cont-tabla">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Unidades de Medida</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th class="subtitulos" colspan="2">Longitud</th>
-                                </tr>
-                                <tr>
-                                    <td>Kilómetros</td>
-                                    <td>Km</td>
-                                </tr>
-                                <tr>
-                                    <td>Metro</td>
-                                    <td>m</td>
-                                </tr>
-                                <tr>
-                                    <td>Centímetro</td>
-                                    <td>cm</td>
-                                </tr>
+          </div>
+        </div>
+      </section>
+      <section class="cont-table">
+        <h2 class="fact-conv">Factores de Conversión de Unidades</h2>
+        <div class="tables">
+          <div class="cont-magnitudes">
+            <h2>Magnitudes</h2>
+            <div class="cont-tabla">
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Unidades de Medida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="subtitulos" colspan="2">Longitud</th>
+                  </tr>
+                  <tr>
+                    <td>Kilómetros</td>
+                    <td>Km</td>
+                  </tr>
+                  <tr>
+                    <td>Metro</td>
+                    <td>m</td>
+                  </tr>
+                  <tr>
+                    <td>Centímetro</td>
+                    <td>cm</td>
+                  </tr>
 
-                                <tr>
-                                    <td>Milímetro</td>
-                                    <td>mm</td>
-                                </tr>
+                  <tr>
+                    <td>Milímetro</td>
+                    <td>mm</td>
+                  </tr>
 
-                                <tr>
-                                    <td>Pulgada</td>
-                                    <td>in</td>
-                                </tr>
+                  <tr>
+                    <td>Pulgada</td>
+                    <td>in</td>
+                  </tr>
 
-                                <tr>
-                                    <td>Milla</td>
-                                    <td>mi</td>
-                                </tr>
+                  <tr>
+                    <td>Milla</td>
+                    <td>mi</td>
+                  </tr>
 
-                                <tr>
-                                    <td>Pies</td>
-                                    <td>ft</td>
-                                </tr>
+                  <tr>
+                    <td>Pies</td>
+                    <td>ft</td>
+                  </tr>
 
-                                <tr>
-                                    <td>Yarda</td>
-                                    <td>yd</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th colspan="2">Unidades de medida</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <th class="subtitulos" colspan="2">Tiempo</th>
-                            </tr>
-                            <tr>
-                                <td>Hora</td>
-                                <td>h</td>
-                            </tr>
-                            <tr>
-                                <td>Minutos</td>
-                                <td>min</td>
-                            </tr>
-                            <tr>
-                                <td>Segundos</td>
-                                <td>s</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="cont-magnitudes">
-                    <h2>Conversiones</h2>
-                    <div class="cont-tabla">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Conversiones de Medida</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th class="subtitulos">Longitud</th>
-                                </tr>
-                                <tr>
-                                    <td>1 m = 100 cm = 1000 mm</td>
-                                </tr>
-                                <tr>
-                                    <td>1 km = 1000 m = 0.6214 mi</td>
-                                </tr>
-                                <tr>
-                                    <td>1 m = 3.281 ft = 39.37 in</td>
-                                </tr>
-                                <tr>
-                                    <td>1 cm = 0.3937 in</td>
-                                </tr>
-                                <tr>
-                                    <td>1 in = 2.540 cm</td>
-                                </tr>
-                                <tr>
-                                    <td>1 ft = 30.48 cm</td>
-                                </tr>
-                                <tr>
-                                    <td>1 yd = 91.44 cm</td>
-                                </tr>
-                                <tr>
-                                    <td>1 mi = 5280 ft = 1.609 km</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Conversiones de Medida</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th class="subtitulos">Tiempo</th>
-                                </tr>
-                                <tr>
-                                    <td>1 min = 60 s</td>
-                                </tr>
-                                <tr>
-                                    <td>1 h = 3600 s</td>
-                                </tr>
-                                <tr>
-                                    <td>1 d = 24 h = 86400 s</td>
-                                </tr>
-                                <tr>
-                                    <td>1 año = 365.24 d = 3.156 x 10<sup>7</sup>s</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                  <tr>
+                    <td>Yarda</td>
+                    <td>yd</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="2">Unidades de medida</th>
+                  </tr>
+                </thead>
+                <tr>
+                  <th class="subtitulos" colspan="2">Tiempo</th>
+                </tr>
+                <tr>
+                  <td>Hora</td>
+                  <td>h</td>
+                </tr>
+                <tr>
+                  <td>Minutos</td>
+                  <td>min</td>
+                </tr>
+                <tr>
+                  <td>Segundos</td>
+                  <td>s</td>
+                </tr>
+              </table>
             </div>
-        </section>
+          </div>
+          <div class="cont-magnitudes">
+            <h2>Conversiones</h2>
+            <div class="cont-tabla">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Conversiones de Medida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="subtitulos">Longitud</th>
+                  </tr>
+                  <tr>
+                    <td>1 m = 100 cm = 1000 mm</td>
+                  </tr>
+                  <tr>
+                    <td>1 km = 1000 m = 0.6214 mi</td>
+                  </tr>
+                  <tr>
+                    <td>1 m = 3.281 ft = 39.37 in</td>
+                  </tr>
+                  <tr>
+                    <td>1 cm = 0.3937 in</td>
+                  </tr>
+                  <tr>
+                    <td>1 in = 2.540 cm</td>
+                  </tr>
+                  <tr>
+                    <td>1 ft = 30.48 cm</td>
+                  </tr>
+                  <tr>
+                    <td>1 yd = 91.44 cm</td>
+                  </tr>
+                  <tr>
+                    <td>1 mi = 5280 ft = 1.609 km</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Conversiones de Medida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="subtitulos">Tiempo</th>
+                  </tr>
+                  <tr>
+                    <td>1 min = 60 s</td>
+                  </tr>
+                  <tr>
+                    <td>1 h = 3600 s</td>
+                  </tr>
+                  <tr>
+                    <td>1 d = 24 h = 86400 s</td>
+                  </tr>
+                  <tr>
+                    <td>1 año = 365.24 d = 3.156 x 10<sup>7</sup>s</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer-page">
-        <div class="footer-info-dep">
-            <p class="sub-info-dep">Desarrollado por:</p>
-            <h3 class="info-dep">Ap97 & FDYanza</h3>
-        </div>
+      <div class="footer-info-dep">
+        <p class="sub-info-dep">Desarrollado por:</p>
+        <h3 class="info-dep">Ap97 & FDYanza</h3>
+      </div>
     </footer>
-</body>
-<script src="webComponents/JS/selectormenu.js"></script>
-
+  </body>
+  <script src="webComponents/JS/selectormenu.js"></script>
 </html>

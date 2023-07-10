@@ -271,6 +271,28 @@
     margin: 0 auto;
 }
 
+.cont-graph-ds{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-exp-pendiente{
+    width: 25%;
+    padding: 10px;
+}
+
+.rep-vel-pen{
+    background-color: #A25AF3;
+}
+
+.cont-exp-vel-pen{
+    background-color: #E4D7F3;
+    border-radius: 0 0 20px 20px;
+    border: solid 2px #A25AF3;
+}
+
 .cont-graph-speed {
     text-align: justify;
     line-height: 40px;
