@@ -95,14 +95,16 @@ const linNumX = ({ porcentaje = 20, etinum = 1 }) => ({
 });
 //FIN PROCESO >> dibujar numeros
 //INICIO PROCESO >> nomenclatura de punto del segmento
-const componentesSegmento = ({ letra = 'a', px = 0, py = 0, subIndi}) => ({
+
+
+const componentesSegmento = ({ letra = 'a', px = 0, py = 0, subIndi }) => ({
     letra,
     subIndi,
     x: (((canvas.width - 80) / 100) * px) + 22,
     y: (((canvas.height - 80) / 100) * py) + (canvas.height - (espX + 5)),
     fontSS: "15px Arial",
-    fontVector:"20px SansSerif",
-    fontSubVector:"12px SansSerif",
+    fontVector: "20px Math, sans-serif",
+    fontSubVector: "12px SansSerif",
     dibujarLetra() {
         pincel.beginPath();
         pincel.fillStyle = "#14A420";
@@ -121,12 +123,23 @@ const componentesSegmento = ({ letra = 'a', px = 0, py = 0, subIndi}) => ({
         pincel.beginPath();
         pincel.fillStyle = "red";
         pincel.strokeStyle = "red";
-        pincel.font = this.fontVector;
-        pincel.fillText(this.letra, this.x, this.y);
-        pincel.strokeText(this.letra, this.x, this.y);
+        const ruta = '../IMG/mathCanvas.ttf';
+        const fuente = new FontFace('Math', `url(${ruta})`);
+        fuente.load().then((loadedFont) => {
+            document.fonts.add(loadedFont);
+            if (document.fonts.check(`20px Math`)) {
+                pincel.font = "30px 'Math', arial";
+                pincel.fillText(this.letra, this.x, this.y);
+                pincel.strokeText(this.letra, this.x, this.y);
+                console.log("h");
+            } else {
+                console.log("hola");
+            }
+        });
+
         pincel.font = this.fontSubVector;
-        pincel.fillText(this.subIndi, this.x+15, this.y);
-        pincel.strokeText(this.subIndi, this.x+15, this.y);
+        pincel.fillText(this.subIndi, this.x + 15, this.y);
+        pincel.strokeText(this.subIndi, this.x + 15, this.y);
         pincel.closePath();
     }
 });

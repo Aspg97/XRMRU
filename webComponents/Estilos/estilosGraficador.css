@@ -4,6 +4,11 @@
     --compl-color: #0070C2;
 }
 
+@font-face {
+    font-family: 'Math';
+    src: url('../IMG/math-canvas.ttf');
+  }
+
 /*Estilos globales de etiquetas*/
 button {
     font-family: 'Cabin', sans-serif;
