@@ -291,6 +291,17 @@
     background-color: #E4D7F3;
     border-radius: 0 0 20px 20px;
     border: solid 2px #A25AF3;
+    line-height: 27px;
+}
+
+.cont-exp-vel-pen span{
+    display: block;
+    padding: 0 20px;
+}
+
+.formu-dt{
+    font-size: 20px;
+    margin: 10px 0;
 }
 
 .cont-graph-speed {
