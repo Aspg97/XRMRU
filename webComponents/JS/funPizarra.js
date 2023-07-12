@@ -10,18 +10,22 @@ const canvas = document.querySelector("canvas"),
     saveImg = document.querySelector(".save-img"),
     ctx = canvas.getContext("2d");
 
+const canvasText = document.createElement("canvas");
+const ctxText = canvasText.getContext("2d");
 
-let prevMouseX, prevMouseY, snapshot,
+let prevMouseX, prevMouseY, snapshot, lineTextX, lineTextY,
     isDrawing = false,
     selectedTool = "brush",
     brushWidth = 5,
-    selectedColor = "#000";
+    selectedColor = "#fff";
 
 
 window.addEventListener("load", () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    if(dispDetected()){
+    canvasText.width = canvas.offsetWidth;
+    canvasText.height = canvas.offsetHeight;
+    if (dispDetected()) {
         alert("Para hacer uso de la pizarra digital utiliza una computadora o laptop");
     }
 
@@ -32,6 +36,25 @@ const drawRect = (e) => {
         return ctx.strokeRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
     }
     ctx.fillRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+}
+
+let texto = "",
+    fullEra = false;
+const writeText = (e) => {
+    let cont = 0;
+    cont++;
+    console.log("borra >>> " + (lineTextX - 1) + "," + (lineTextY - 1) + "," + (lineTextX + 1) + "," + (lineTextY + 27));
+    ctx.clearRect(lineTextX - 1, lineTextY - 1, 2, 27);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = "#fff";
+    lineTextX = e.offsetX;
+    lineTextY = e.offsetY - 15;
+    ctx.moveTo(lineTextX, lineTextY);
+    ctx.lineTo(lineTextX, lineTextY + 26);
+    ctx.stroke();
+    ctx.closePath();
+    console.log("hace >>> " + (lineTextX) + "," + (lineTextY) + "," + (lineTextX) + "," + (lineTextY + 26));
+    console.log(cont);
 }
 
 const drawCircle = (e) => {
@@ -50,7 +73,16 @@ const drawTriangle = (e) => {
     fillColor.checked ? ctx.fill() : ctx.stroke();
 }
 
+const drawLine = (e)=>{
+    ctx.beginPath();
+    ctx.moveTo(prevMouseX, prevMouseY);
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.closePath();
+    fillColor.checked = ctx.stroke();
+}
+
 const startDraw = (e) => {
+    ctx.font = "26px Arial";
     isDrawing = true;
     prevMouseX = e.offsetX;
     prevMouseY = e.offsetY;
@@ -63,53 +95,78 @@ const startDraw = (e) => {
 
 const drawing = (e) => {
     if (!isDrawing) return;
-
-    if (selectedTool === "brush") {
-        ctx.putImageData(snapshot, 0, 0);
-        ctx.strokeStyle = selectedColor;
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.stroke();
-    } else if (selectedTool === "eraser") {
-        ctx.clearRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
-    } else if (selectedTool === "rectangle") {
-        ctx.putImageData(snapshot, 0, 0);
-        drawRect(e);
-    } else if (selectedTool === "circle") {
-        ctx.putImageData(snapshot, 0, 0);
-        drawCircle(e);
-    } else {
-        ctx.putImageData(snapshot, 0, 0);
-        drawTriangle(e);
+    switch (selectedTool) {
+        case "brush":
+            ctx.putImageData(snapshot, 0, 0);
+            ctx.strokeStyle = selectedColor;
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            break;
+        case "line":
+            console.log("rayar");
+            ctx.putImageData(snapshot, 0, 0);
+            drawLine(e);
+            break;
+        case "eraser":
+            ctx.clearRect(e.offsetX, e.offsetY, prevMouseX - e.offsetX, prevMouseY - e.offsetY);
+            break;
+        case "rectangle":
+            ctx.putImageData(snapshot, 0, 0);
+            drawRect(e);
+            break;
+        case "circle":
+            ctx.putImageData(snapshot, 0, 0);
+            drawCircle(e);
+            break;
+        case "triangle":
+            ctx.putImageData(snapshot, 0, 0);
+            drawTriangle(e);
+            break;
+    }
+}
+const text = (e) => {
+    if (texto != "") {
+        const elimBarra = ctx.measureText(texto).width;
+        ctx.clearRect(lineTextX + elimBarra + 2, lineTextY, 2, 27);
+    }
+    if (fullEra === true) {
+        ctx.clearRect(lineTextX - 1, lineTextY - 1, 5, 27);
+    }
+    texto = "";
+    if (selectedTool === "text") {
+        writeText(e);
     }
 }
 
-canvas.addEventListener("mousedown", () => {
-
-});
-
 toolBtns.forEach(btn => {
-    btn.addEventListener("click", () => { // adding click event to all tool option
-        // removing active class from the previous option and adding on current clicked option
+    btn.addEventListener("click", () => {
+        ctx.clearRect(lineTextX - 1, lineTextY - 1, 2, 27);
         document.querySelector(".options .active").classList.remove("active");
         btn.classList.add("active");
         selectedTool = btn.id;
+        if (selectedTool === "text") {
+            canvas.style.cursor = "text";
+        } else {
+            canvas.style.cursor = "auto";
+            const elimBarra = ctx.measureText(texto).width;
+            ctx.clearRect(lineTextX + elimBarra + 2, lineTextY, 2, 27);
+            lineTextX = 0;
+            lineTextY = 0;
+        }
     });
 });
 
 sizeSlider.addEventListener("change", () => brushWidth = sizeSlider.value);
 
 colorBtns.forEach(btn => {
-    btn.addEventListener("click", () => { // adding click event to all color button
-        // removing selected class from the previous option and adding on current clicked option
+    btn.addEventListener("click", () => {
         document.querySelector(".options .selected").classList.remove("selected");
         btn.classList.add("selected");
-        // passing selected btn background color as selectedColor value
         selectedColor = window.getComputedStyle(btn).getPropertyValue("background-color");
     });
 });
 
 colorPicker.addEventListener("change", () => {
-    // passing picked color value from color picker to last color btn background
     colorPicker.parentElement.style.background = colorPicker.value;
     colorPicker.parentElement.click();
 });
@@ -119,13 +176,55 @@ clearCanvas.addEventListener("click", () => {
 });
 
 saveImg.addEventListener("click", () => {
-    const link = document.createElement("a"); // creating <a> element
-    link.download = `${Date.now()}.jpg`; // passing current date as link download value
-    link.href = canvas.toDataURL(); // passing canvasData as link href value
-    link.click(); // clicking link to download image
+    const link = document.createElement("a");
+    link.download = `${Date.now()}.jpg`;
+    link.href = canvas.toDataURL();
+    link.click();
 });
 
-    
+
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", drawing);
 canvas.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("click", text);
+
+document.addEventListener("keydown", (e) => {
+    if (selectedTool === "text") {
+        ctx.clearRect(lineTextX - 1, lineTextY - 1, 2, 27);
+        if (e.key === "Backspace") {
+            const textWidth = ctx.measureText(texto).width;
+            ctx.clearRect(lineTextX, lineTextY, textWidth + 4, 30);
+            texto = texto.substring(0, texto.length - 1);
+            ctx.fillText(texto, lineTextX, lineTextY + 25);
+            const textWidthB = ctx.measureText(texto).width;
+            ctx.beginPath();
+            ctx.moveTo(lineTextX + textWidthB + 3, lineTextY);
+            ctx.lineTo(lineTextX + textWidthB + 3, lineTextY + 26);
+            ctx.stroke();
+            ctx.closePath();
+            if (texto === "") {
+                fullEra = true;
+            }
+        } else {
+            if (e.key === " ") {
+                e.preventDefault();
+            }
+            if (e.key.length === 1) {
+                console.log(e.key);
+                texto = texto + e.key;
+                const textWidth = ctx.measureText(texto).width;
+                ctx.clearRect(lineTextX, lineTextY, textWidth, 30);
+                ctx.beginPath();
+                ctx.fillStyle = selectedColor;
+                ctx.fillText(texto, lineTextX, lineTextY + 25);
+                ctx.closePath();
+                ctx.beginPath();
+                ctx.moveTo(lineTextX + textWidth + 3, lineTextY);
+                ctx.lineTo(lineTextX + textWidth + 3, lineTextY + 26);
+                ctx.stroke();
+                ctx.closePath();
+                fullEra = false;
+            }
+        }
+    }
+});
