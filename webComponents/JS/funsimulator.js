@@ -193,6 +193,7 @@ contDate.addEventListener("click", (e) => {
     if (numIdChecked == "c0" || numIdChecked == "c1" || numIdChecked == "c2" || numIdChecked == "c3") {
         let idForMod = "checked" + idChecked.substring(idChecked.indexOf("-"), idChecked.length);
         incogSelected(idForMod, numIdChecked); // funcion para mover el boton
+        document.querySelector(".btn-play").disabled = true;
     }
 });
 
