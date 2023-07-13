@@ -73,10 +73,14 @@ label {
 }
 /*----------------------------------------*/
 
-.lbl-auto, .lbl-num-auto, .lbl-incog {
+.lbl-auto, .lbl-num-auto, .lbl-incog, .lbl-incog-mob {
     text-align: center;
     align-self: center;
     width: 100%;
+}
+
+.lbl-incog-mob{
+    display: none;
 }
 
 select,
@@ -384,6 +388,10 @@ option {
     .cont-simulator{
         width: 100%;
     }
+
+    .cont-simu-glob{
+        width: 95%;
+    }
 }
 
 @media screen and (max-width:750px) {
@@ -396,24 +404,46 @@ option {
 
     .enter-date {
         padding: 3px;
+        margin-top: 50px;
     }
 
     .cont-simulator {
         width: 100%;
     }
 
+    .lbl-auto, .lbl-incog-mob, .label-tit{
+        align-self: end;
+    }
+
     .option-info {
         padding: 10px 15px;
-        width: 80%;
-        margin: 0 auto;
+        width: 40%;
+        margin: 0 60px;
+    }
+
+    .cont-inp-slc-incog{
+        flex-wrap: wrap;
+    }
+
+    .out-check{
+        width: 40%;
     }
 
     .cont-lbl-in {
-        padding: 15px;
+        padding: 5px;
     }
 
     .label-tit label{
         width: 100%;
+        text-align: center;
+    }
+
+    .lbl-incog{
+        display: none;
+    }
+
+    .lbl-incog-mob{
+        display: inline-block;
     }
 
     .titulo-obj {
@@ -442,24 +472,51 @@ option {
     .acc-sim p{
         margin: 0 5px;
     }
-    .cont-calle{
-        height: 40px;
-    }
     .cont-simu-street{
         width: 100%;
     }
     .simu-start{
         min-width: 80px;
     }
+
+    .cont-simu-glob{
+        width: 95%;
+    }
+
     .cont-auto{
         width: 70px;
         right: -70px;
+    }
+    .simu-start{
+        min-width: 150px;
     }
 }
 
 @media screen and (max-width: 400px){
     label{
         font-size: 17px;
+    }
+
+    .out-check{
+        width: 70%;
+    }
+
+    .eti-incog{
+        margin-bottom: 5px;
+    }
+
+    .cont-simu-glob{
+        width: 90%;
+    }
+
+    .option-info {
+        padding: 10px 15px;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .enter-date {
+        padding: 3px;
+        margin-top: 0;
     }
 }
 

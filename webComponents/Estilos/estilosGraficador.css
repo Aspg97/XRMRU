@@ -262,7 +262,7 @@ option {
 
 .cont-expli{
     width: 70%;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     background-color: antiquewhite;
     text-align: center;
     padding: 10px;
@@ -402,7 +402,12 @@ math{
     margin: 5px;
 }
 
-@media screen and (min-width: 260px) and (max-width: 600px){
+@media screen and (min-width: 260px) and (max-width: 700px){
+    .img-enunciado{
+        width: 100%;
+        margin: 0;
+    }
+    
     .cont-graph{    
         max-width: 90%;
         min-width: 200px;
@@ -420,5 +425,15 @@ math{
     }
     .tit-graph{
         font-size: 20px;
+    }
+    .cont-expli{
+        margin: 20px 0 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .cont-expli{
+        width: 100%;
+        margin: 20px auto;
     }
 }

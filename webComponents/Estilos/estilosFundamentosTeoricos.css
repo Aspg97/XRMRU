@@ -416,6 +416,10 @@ th {
     .cont-exp-pendiente{
         width: 70%;
     }
+
+    .ecuaciones ul{
+        padding-left: 5px;
+    }
 }
 
 @media screen and (min-width: 260px) and (max-width: 600px) {
