@@ -236,7 +236,7 @@ h3 {
     }
 }
 
-@media screen and (min-width: 260px) and (max-width: 750px) {
+@media screen and (min-width: 260px) and (max-width: 600px) {
 
     .cont-head-tittle {
         width: 90%;
@@ -296,5 +296,17 @@ h3 {
 
     h3,h2{
         font-weight: lighter;
+    }
+
+    .cont-dis{
+        flex-wrap: wrap;
+    }
+
+    .gift3{
+        width: 80%;
+    }
+
+    .cont-exp-pendiente{
+        width: 95%;
     }
 }

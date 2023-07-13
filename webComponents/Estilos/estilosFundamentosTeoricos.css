@@ -143,10 +143,13 @@
 }
 
 .cont-vel,
-.cont-dis,
 .cont-t {
     display: flex;
     flex-wrap: wrap;
+}
+
+.cont-dis {
+    display: flex;
 }
 
 .velocidad,
@@ -358,7 +361,7 @@ th {
     padding: 8px 15px;
 }
 
-@media screen and (min-width: 200px) and (max-width:900px) {
+@media screen and (min-width: 200px) and (max-width:915px) {
 
     .formula,
     .eje-mru {
@@ -372,10 +375,60 @@ th {
     }
 
     .cont-vel,
-    .cont-dis,
     .cont-t {
         display: grid;
         grid-template-columns: 80%;
         justify-content: center;
+    }
+
+    .cont-tipos-mag{
+        flex-wrap: wrap;
+    }
+
+    .cont-triangulo{
+        width: 100%;
+    }
+
+    .cont-info-mru, .cont-ecuaciones{
+        width: 95%;
+    }
+
+    .eje-mru{
+        width: 100%;
+    }
+
+    .gift1, .gift2{
+        width: 80%;
+    }
+    
+    .cont-vel, .cont-t{
+        grid-template-columns: 100%;
+    }
+
+    .expl-time{
+        width: 100%;
+    }
+
+    .gift3{
+        width: 25%;
+    }
+
+    .cont-exp-pendiente{
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 260px) and (max-width: 600px) {
+
+    .cont-dis{
+        flex-wrap: wrap;
+    }
+
+    .gift3{
+        width: 80%;
+    }
+
+    .cont-exp-pendiente{
+        width: 95%;
     }
 }
